@@ -1,37 +1,73 @@
-// Navigation Scroll Effect
-const navbar = document.querySelector('.apple-nav');
+// --- Theme Toggle Logic ---
+const themeToggle = document.getElementById('themeToggle');
+const htmlTag = document.documentElement;
+const themeLabel = document.querySelector('.toggle-label');
 
-window.addEventListener('scroll', () => {
-    if (window.scrollY > 50) {
-        navbar.style.background = 'rgba(0, 0, 0, 0.85)';
-        navbar.style.boxShadow = '0 4px 30px rgba(0, 0, 0, 0.5)';
-    } else {
-        navbar.style.background = 'rgba(0, 0, 0, 0.7)';
-        navbar.style.boxShadow = 'none';
+// Check for saved theme
+const savedTheme = localStorage.getItem('mobile_express_theme') || 'dark';
+htmlTag.setAttribute('data-theme', savedTheme);
+if(themeLabel) themeLabel.textContent = savedTheme === 'dark' ? 'Dark Mode' : 'Light Mode';
+
+themeToggle.addEventListener('click', () => {
+    const currentTheme = htmlTag.getAttribute('data-theme');
+    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+    
+    htmlTag.setAttribute('data-theme', newTheme);
+    localStorage.setItem('mobile_express_theme', newTheme);
+    
+    if(themeLabel) {
+        themeLabel.textContent = newTheme === 'dark' ? 'Dark Mode' : 'Light Mode';
     }
 });
 
-// Smooth reveal for cards
-const cards = document.querySelectorAll('.apple-card');
+
+// --- Reveal Animations ---
+const reveals = document.querySelectorAll('.reveal');
+const scrollContainer = document.getElementById('scroll-container');
 
 const revealOnScroll = () => {
     const windowHeight = window.innerHeight;
-    cards.forEach(card => {
-        const elementTop = card.getBoundingClientRect().top;
-        if (elementTop < windowHeight - 100) {
-            card.style.opacity = '1';
-            card.style.transform = 'translateY(0)';
+    reveals.forEach(el => {
+        const elementTop = el.getBoundingClientRect().top;
+        if (elementTop < windowHeight - 50) {
+            el.classList.add('active');
         }
     });
 };
 
-// Initial state for animation
-cards.forEach(card => {
-    card.style.opacity = '0';
-    card.style.transform = 'translateY(40px)';
-    card.style.transition = 'all 0.6s cubic-bezier(0.25, 1, 0.5, 1)';
-});
+// Listen on the scrolling pane
+if (scrollContainer) {
+    scrollContainer.addEventListener('scroll', revealOnScroll);
+} else {
+    window.addEventListener('scroll', revealOnScroll);
+}
 
-window.addEventListener('scroll', revealOnScroll);
 // Trigger once on load
 setTimeout(revealOnScroll, 100);
+
+
+// --- Navigation Active State Sync ---
+const panels = document.querySelectorAll('.panel');
+const navItems = document.querySelectorAll('.nav-item[data-target]');
+
+if (scrollContainer && panels.length > 0) {
+    scrollContainer.addEventListener('scroll', () => {
+        let current = '';
+        const scrollY = scrollContainer.scrollTop;
+        
+        panels.forEach(panel => {
+            const panelTop = panel.offsetTop;
+            const panelHeight = panel.clientHeight;
+            if (scrollY >= (panelTop - panelHeight / 3)) {
+                current = panel.getAttribute('id');
+            }
+        });
+
+        navItems.forEach(item => {
+            item.classList.remove('active');
+            if (item.getAttribute('data-target') === current) {
+                item.classList.add('active');
+            }
+        });
+    });
+}
