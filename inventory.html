@@ -1,155 +1,68 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mobile Express | Tech Solutions</title>
+    <title>Mobile Express | Active Inventory</title>
     
-    <meta name="description" content="Mobile Express by Iqbal Tanvir. Premium 2nd hand mobiles, Apple unlocking, and software fixation.">
-    <meta name="theme-color" content="#050505" id="meta-theme-color">
-    
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- Split Screen Layout -->
-    <div class="layout-wrapper">
-        
-        <!-- Left Pane: Fixed Sidebar -->
-        <aside class="sidebar">
-            <div class="sidebar-top">
-                <div class="brand">
-                    <img src="assets/logo.png" alt="Logo" class="logo" onerror="this.style.display='none'">
-                    <div>
-                        <h1 class="brand-name">Mobile Express</h1>
-                        <p class="brand-tag">by Iqbal Tanvir</p>
-                    </div>
-                </div>
-                
-                <nav class="side-nav">
-                    <a href="index.html#hero" class="nav-item">
-                        <span class="nav-num">01</span>
-                        <span class="nav-text">Introduction</span>
-                    </a>
-                    <a href="index.html#services" class="nav-item">
-                        <span class="nav-num">02</span>
-                        <span class="nav-text">Diagnostics</span>
-                    </a>
-                    <a href="inventory.html" class="nav-item active">
-                        <span class="nav-num">03</span>
-                        <span class="nav-text">Inventory</span>
-                    </a>
-                    <a href="index.html#contact" class="nav-item">
-                        <span class="nav-num">04</span>
-                        <span class="nav-text">Terminal</span>
-                    </a>
-                </nav>
-            </div>
-            
-            <div class="sidebar-bottom">
-                <button class="theme-toggle" id="themeToggle" aria-label="Toggle Dark/Light Mode">
-                    <div class="toggle-track">
-                        <div class="toggle-thumb">
-                            <i class="fa-solid fa-moon dark-icon"></i>
-                            <i class="fa-solid fa-sun light-icon"></i>
-                        </div>
-                    </div>
-                    <span class="toggle-label">Dark Mode</span>
-                </button>
-                
-                <div class="contact-quick">
-                    <a href="tel:+8801834254875"><i class="fa-solid fa-phone"></i> +88 01834 254875</a>
-                    <a href="https://wa.me/8801834254875" class="wa-link"><i class="fa-brands fa-whatsapp"></i> Live Support</a>
-                </div>
-            </div>
-        </aside>
-
-        <!-- Right Pane: Scrolling Content -->
-        <main class="content-pane" id="scroll-container">
-            
-            <section class="panel">
-                <div class="panel-inner">
-                    <div class="section-head reveal">
-                        <h2 class="panel-title">Active Inventory.</h2>
-                        <p class="panel-desc">All devices are rigorously tested, graded, and wiped. 100% functionality guaranteed.</p>
-                    </div>
-                    
-                    <div class="inventory-grid">
-                        
-                        <!-- Device 1 -->
-                        <div class="inv-card reveal">
-                            <div class="inv-img">
-                                <img src="https://fdn2.gsmarena.com/vv/bigpic/apple-iphone-14-pro-max-.jpg" alt="iPhone 14 Pro Max">
-                            </div>
-                            <h3>Apple iPhone 14 Pro Max</h3>
-                            <div class="inv-price">৳ 95,000</div>
-                            <ul class="inv-specs">
-                                <li><span>Condition</span> <span>Mint</span></li>
-                                <li><span>Display</span> <span>6.7" Super Retina XDR</span></li>
-                                <li><span>Processor</span> <span>A16 Bionic</span></li>
-                                <li><span>RAM / ROM</span> <span>6 GB / 256 GB</span></li>
-                                <li><span>Battery Health</span> <span>98%</span></li>
-                            </ul>
-                            <a href="https://wa.me/8801834254875?text=I'm%20interested%20in%20the%20iPhone%2014%20Pro%20Max" class="btn btn-solid btn-full">
-                                Acquire Device
-                            </a>
-                        </div>
-                        
-                        <!-- Device 2 -->
-                        <div class="inv-card reveal delay-1">
-                            <div class="inv-img">
-                                <img src="https://fdn2.gsmarena.com/vv/bigpic/samsung-galaxy-s23-ultra-5g.jpg" alt="Galaxy S23 Ultra">
-                            </div>
-                            <h3>Samsung Galaxy S23 Ultra</h3>
-                            <div class="inv-price">৳ 85,000</div>
-                            <ul class="inv-specs">
-                                <li><span>Condition</span> <span>Excellent</span></li>
-                                <li><span>Display</span> <span>6.8" Dynamic AMOLED</span></li>
-                                <li><span>Processor</span> <span>Snapdragon 8 Gen 2</span></li>
-                                <li><span>RAM / ROM</span> <span>12 GB / 256 GB</span></li>
-                                <li><span>Battery</span> <span>5000 mAh</span></li>
-                            </ul>
-                            <a href="https://wa.me/8801834254875?text=I'm%20interested%20in%20the%20Galaxy%20S23%20Ultra" class="btn btn-solid btn-full">
-                                Acquire Device
-                            </a>
-                        </div>
-                        
-                        <!-- Device 3 -->
-                        <div class="inv-card reveal delay-2">
-                            <div class="inv-img">
-                                <img src="https://fdn2.gsmarena.com/vv/bigpic/apple-iphone-13-pro.jpg" alt="iPhone 13 Pro">
-                            </div>
-                            <h3>Apple iPhone 13 Pro</h3>
-                            <div class="inv-price">৳ 65,000</div>
-                            <ul class="inv-specs">
-                                <li><span>Condition</span> <span>Good</span></li>
-                                <li><span>Display</span> <span>6.1" Super Retina XDR</span></li>
-                                <li><span>Processor</span> <span>A15 Bionic</span></li>
-                                <li><span>RAM / ROM</span> <span>6 GB / 128 GB</span></li>
-                                <li><span>Battery Health</span> <span>89%</span></li>
-                            </ul>
-                            <a href="https://wa.me/8801834254875?text=I'm%20interested%20in%20the%20iPhone%2013%20Pro" class="btn btn-solid btn-full">
-                                Acquire Device
-                            </a>
-                        </div>
-
-                    </div>
-                </div>
-            </section>
-
-            <footer class="site-footer">
-                <p>&copy; 2026 Mobile Express. System architecture by Iqbal Tanvir.</p>
-            </footer>
-
-        </main>
+    <!-- 3D Interactive Business Card Artifacts -->
+    <div class="parallax-environment">
+        <div class="card-band band-left-1" data-speed="0.3"></div>
+        <div class="card-band band-left-2" data-speed="0.6"></div>
+        <div class="card-band band-right-1" data-speed="-0.3"></div>
+        <div class="card-band band-right-2" data-speed="-0.6"></div>
+        <div class="ambient-glow"></div>
     </div>
 
+    <!-- Floating Glass Navbar -->
+    <header class="glass-header">
+        <nav class="nav-container">
+            <a href="index.html" class="brand">
+                <img src="assets/logo.png" alt="ME" onerror="this.src='https://i.postimg.cc/PJhCYJzg/Artboard_1logo_border_radious.png'">
+                <div class="brand-text">
+                    <strong>Mobile Express</strong>
+                    <span>Iqbal Tanvir</span>
+                </div>
+            </a>
+            <div class="nav-links">
+                <a href="index.html#hero">Home</a>
+                <a href="index.html#services">Diagnostics</a>
+                <a href="inventory.html" class="active">Inventory <span class="badge">25+</span></a>
+                <a href="index.html#contact">Contact</a>
+            </div>
+            <a href="https://wa.me/8801834254875" class="btn-support">
+                <i class="fa-brands fa-whatsapp"></i> Support
+            </a>
+        </nav>
+    </header>
+
+    <main class="app-content">
+        <section class="glass-panel" style="padding: 60px;">
+            <div class="hero-inner" data-tilt data-tilt-max="2" data-tilt-glare="true" data-tilt-max-glare="0.1">
+                <h1 class="section-title" style="margin-bottom: 20px;">Mid & Budget Range</h1>
+                <p style="text-align: center; color: var(--text-secondary); margin-bottom: 50px;">
+                    Handpicked, highly popular devices for the Bangladeshi market. All units pass rigorous software and hardware testing.
+                </p>
+                
+                <div class="inv-grid" id="inventory-grid">
+                    <!-- Products injected via JS -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p>&copy; 2026 Mobile Express. System architecture by Iqbal Tanvir.</p>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.0/vanilla-tilt.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>

@@ -1,185 +1,142 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mobile Express | Tech Solutions</title>
+    <title>Mobile Express | Diagnostic Lab</title>
     
-    <meta name="description" content="Mobile Express by Iqbal Tanvir. Premium 2nd hand mobiles, Apple unlocking, and software fixation.">
-    <meta name="theme-color" content="#050505" id="meta-theme-color">
-    
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- Split Screen Layout -->
-    <div class="layout-wrapper">
-        
-        <!-- Left Pane: Fixed Sidebar -->
-        <aside class="sidebar">
-            <div class="sidebar-top">
-                <div class="brand">
-                    <img src="assets/logo.png" alt="Logo" class="logo" onerror="this.style.display='none'">
-                    <div>
-                        <h1 class="brand-name">Mobile Express</h1>
-                        <p class="brand-tag">by Iqbal Tanvir</p>
-                    </div>
-                </div>
-                
-                <nav class="side-nav">
-                    <a href="#hero" class="nav-item active" data-target="hero">
-                        <span class="nav-num">01</span>
-                        <span class="nav-text">Introduction</span>
-                    </a>
-                    <a href="#services" class="nav-item" data-target="services">
-                        <span class="nav-num">02</span>
-                        <span class="nav-text">Diagnostics</span>
-                    </a>
-                    <a href="inventory.html" class="nav-item">
-                        <span class="nav-num">03</span>
-                        <span class="nav-text">Inventory</span>
-                    </a>
-                    <a href="#contact" class="nav-item" data-target="contact">
-                        <span class="nav-num">04</span>
-                        <span class="nav-text">Terminal</span>
-                    </a>
-                </nav>
-            </div>
-            
-            <div class="sidebar-bottom">
-                <button class="theme-toggle" id="themeToggle" aria-label="Toggle Dark/Light Mode">
-                    <div class="toggle-track">
-                        <div class="toggle-thumb">
-                            <i class="fa-solid fa-moon dark-icon"></i>
-                            <i class="fa-solid fa-sun light-icon"></i>
-                        </div>
-                    </div>
-                    <span class="toggle-label">Dark Mode</span>
-                </button>
-                
-                <div class="contact-quick">
-                    <a href="tel:+8801834254875"><i class="fa-solid fa-phone"></i> +88 01834 254875</a>
-                    <a href="https://wa.me/8801834254875" class="wa-link"><i class="fa-brands fa-whatsapp"></i> Live Support</a>
-                </div>
-            </div>
-        </aside>
-
-        <!-- Right Pane: Scrolling Content -->
-        <main class="content-pane" id="scroll-container">
-            
-            <!-- Hero Section -->
-            <section id="hero" class="panel hero-panel">
-                <div class="panel-inner reveal">
-                    <div class="tech-badge">SYS_STATUS: ONLINE</div>
-                    <h2 class="massive-text">Logic.<br><span class="text-accent">Restored.</span></h2>
-                    <p class="panel-desc">We don't just fix phones. We resurrect them. Precision iCloud unlocking, FRP bypass, and deep OS level engineering right here in Badarganj.</p>
-                    
-                    <div class="action-group">
-                        <a href="inventory.html" class="btn btn-solid">
-                            Access Inventory <i class="fa-solid fa-arrow-right"></i>
-                        </a>
-                        <a href="#services" class="btn btn-ghost">
-                            View Protocols
-                        </a>
-                    </div>
-                </div>
-                <!-- Abstract Background Element -->
-                <div class="abstract-shape"></div>
-            </section>
-
-            <!-- Services Section -->
-            <section id="services" class="panel services-panel">
-                <div class="panel-inner">
-                    <div class="section-head reveal">
-                        <h2 class="panel-title">Diagnostic Protocols.</h2>
-                        <p class="panel-desc">Certified software interventions for iOS and Android environments.</p>
-                    </div>
-                    
-                    <div class="service-list">
-                        <div class="service-row reveal">
-                            <div class="s-icon"><i class="fa-brands fa-apple"></i></div>
-                            <div class="s-content">
-                                <h3>iCloud Activation Bypass</h3>
-                                <p>Hardware & software tethered unlocking for severe lockouts.</p>
-                            </div>
-                            <div class="s-status">100% Success</div>
-                        </div>
-                        
-                        <div class="service-row reveal">
-                            <div class="s-icon"><i class="fa-solid fa-unlock-keyhole"></i></div>
-                            <div class="s-content">
-                                <h3>FRP Security Removal</h3>
-                                <p>Bypass Factory Reset Protection on advanced Android systems.</p>
-                            </div>
-                            <div class="s-status">Instant</div>
-                        </div>
-                        
-                        <div class="service-row reveal">
-                            <div class="s-icon"><i class="fa-solid fa-microchip"></i></div>
-                            <div class="s-content">
-                                <h3>Dead Boot Repair</h3>
-                                <p>Reviving completely bricked devices via direct emmc/ufs flashing.</p>
-                            </div>
-                            <div class="s-status">Advanced</div>
-                        </div>
-                        
-                        <div class="service-row reveal">
-                            <div class="s-icon"><i class="fa-solid fa-mobile-screen"></i></div>
-                            <div class="s-content">
-                                <h3>Pre-Owned Flagships</h3>
-                                <p>Certified, tested, and restored devices ready for new owners.</p>
-                            </div>
-                            <div class="s-action">
-                                <a href="inventory.html">View <i class="fa-solid fa-arrow-right"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Contact/Terminal Section -->
-            <section id="contact" class="panel contact-panel">
-                <div class="panel-inner reveal">
-                    <h2 class="panel-title">Initiate Connection.</h2>
-                    <p class="panel-desc">Drop your device at our lab or connect remotely for software evaluation.</p>
-                    
-                    <div class="terminal-box">
-                        <div class="t-header">
-                            <span class="dot red"></span>
-                            <span class="dot yellow"></span>
-                            <span class="dot green"></span>
-                            <span class="t-title">guest@mobile-express:~</span>
-                        </div>
-                        <div class="t-body">
-                            <p><span class="prompt">$</span> fetch contact_info</p>
-                            <ul class="t-list">
-                                <li>> <span>NAME:</span> Iqbal Tanvir</li>
-                                <li>> <span>PHONE:</span> <a href="tel:+8801834254875">+88 01834 254875</a></li>
-                                <li>> <span>EMAIL:</span> <a href="mailto:iqbaltanvir514@gmail.com">iqbaltanvir514@gmail.com</a></li>
-                                <li>> <span>LOC:</span> Badarganj, Rangpur</li>
-                            </ul>
-                            <p><span class="prompt">$</span> <span class="blink">_</span></p>
-                        </div>
-                        <a href="https://maps.app.goo.gl/1e6A4LQxwAeqnt4p8" target="_blank" class="btn btn-solid btn-full">
-                            <i class="fa-solid fa-location-crosshairs"></i> Execute Map Routing
-                        </a>
-                    </div>
-                </div>
-            </section>
-
-            <footer class="site-footer">
-                <p>&copy; 2026 Mobile Express. System architecture by Iqbal Tanvir.</p>
-            </footer>
-
-        </main>
+    <!-- 3D Interactive Business Card Artifacts -->
+    <div class="parallax-environment">
+        <div class="card-band band-left-1" data-speed="0.3"></div>
+        <div class="card-band band-left-2" data-speed="0.6"></div>
+        <div class="card-band band-right-1" data-speed="-0.3"></div>
+        <div class="card-band band-right-2" data-speed="-0.6"></div>
+        <div class="ambient-glow"></div>
     </div>
 
+    <!-- Floating Glass Navbar -->
+    <header class="glass-header">
+        <nav class="nav-container">
+            <a href="index.html" class="brand">
+                <img src="assets/logo.png" alt="ME" onerror="this.src='https://i.postimg.cc/PJhCYJzg/Artboard_1logo_border_radious.png'">
+                <div class="brand-text">
+                    <strong>Mobile Express</strong>
+                    <span>Iqbal Tanvir</span>
+                </div>
+            </a>
+            <div class="nav-links">
+                <a href="#hero" class="active">Home</a>
+                <a href="#services">Diagnostics</a>
+                <a href="inventory.html">Inventory <span class="badge">25+</span></a>
+                <a href="#contact">Contact</a>
+            </div>
+            <a href="https://wa.me/8801834254875" class="btn-support">
+                <i class="fa-brands fa-whatsapp"></i> Support
+            </a>
+        </nav>
+    </header>
+
+    <main class="app-content">
+        
+        <!-- Hero Section -->
+        <section id="hero" class="hero-section glass-panel">
+            <div class="hero-inner" data-tilt data-tilt-max="3" data-tilt-glare="true" data-tilt-max-glare="0.1">
+                <div class="hero-badge">
+                    <i class="fa-brands fa-apple"></i> Apple Expert
+                </div>
+                <h1 class="hero-title">
+                    Flawless Security <br>
+                    <span class="red-gradient-text">Bypass & Fixation.</span>
+                </h1>
+                <p class="hero-desc">
+                    Permanent iCloud unlocking, instant FRP removal, and deep software restoration alongside a premium selection of BD's favorite smartphones.
+                </p>
+                <div class="hero-actions">
+                    <a href="inventory.html" class="btn-primary">Browse Devices</a>
+                    <a href="#services" class="btn-secondary">View Protocols</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services" class="services-section">
+            <h2 class="section-title">Diagnostic Expertise</h2>
+            <div class="bento-grid">
+                <div class="service-card glass-panel" data-tilt data-tilt-max="5">
+                    <div class="s-icon-box"><i class="fa-solid fa-cloud-arrow-up"></i></div>
+                    <h3>iCloud Bypass</h3>
+                    <p>Hardware and software-tethered bypass solutions for all iOS architectures.</p>
+                </div>
+                <div class="service-card glass-panel" data-tilt data-tilt-max="5">
+                    <div class="s-icon-box"><i class="fa-solid fa-lock-open"></i></div>
+                    <h3>FRP Removal</h3>
+                    <p>Instantaneous Factory Reset Protection unlocking for top Android brands.</p>
+                </div>
+                <div class="service-card glass-panel" data-tilt data-tilt-max="5">
+                    <div class="s-icon-box"><i class="fa-solid fa-microchip"></i></div>
+                    <h3>Dead Boot Fix</h3>
+                    <p>Motherboard flashing and deeply bricked device resurrection.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section (Business Card Style) -->
+        <section id="contact" class="contact-section glass-panel" data-tilt data-tilt-max="2">
+            <h2 class="section-title" style="margin-bottom: 50px;">Establish Connection</h2>
+            
+            <div class="contact-layout">
+                <!-- Pill Buttons like the Business Card -->
+                <div class="card-pills">
+                    <a href="tel:+8801834254875" class="card-pill">
+                        <div class="pill-icon"><i class="fa-solid fa-phone-volume"></i></div>
+                        <div class="pill-content">
+                            <span>Direct Line</span>
+                            <strong>+88 01834 254875</strong>
+                        </div>
+                    </a>
+                    
+                    <a href="mailto:iqbaltanvir514@gmail.com" class="card-pill">
+                        <div class="pill-icon"><i class="fa-solid fa-envelope"></i></div>
+                        <div class="pill-content">
+                            <span>Email Support</span>
+                            <strong>iqbaltanvir514@gmail.com</strong>
+                        </div>
+                    </a>
+                    
+                    <a href="https://maps.app.goo.gl/1e6A4LQxwAeqnt4p8" target="_blank" class="card-pill">
+                        <div class="pill-icon"><i class="fa-solid fa-location-dot"></i></div>
+                        <div class="pill-content">
+                            <span>Lab Location</span>
+                            <strong>Badarganj, Rangpur</strong>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- QR Code Box -->
+                <div class="qr-box">
+                    <div class="qr-frame">
+                        <i class="fa-solid fa-qrcode qr-placeholder"></i>
+                        <div class="qr-whatsapp-icon"><i class="fa-brands fa-whatsapp"></i></div>
+                    </div>
+                    <span>Scan to Connect</span>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="site-footer">
+        <p>&copy; 2026 Mobile Express. System architecture by Iqbal Tanvir.</p>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.0/vanilla-tilt.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
