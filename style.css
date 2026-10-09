@@ -899,21 +899,26 @@ body:not([data-theme="light"]) .toggle-slider {
 }
 
 .section-title {
-    font-size: 2.5rem;
+    font-size: clamp(1.75rem, 3.6vw, 2.35rem);
     font-weight: 800;
     letter-spacing: -0.02em;
+    line-height: 1.22;
     margin-bottom: 12px;
+    color: var(--text-primary);
 }
 
-.section-title span {
+.section-title span.red-text,
+.section-title span.text-highlight,
+.section-title span:last-of-type {
     color: var(--red-main);
 }
 
 .section-subtitle {
-    font-size: 1.05rem;
+    font-size: clamp(0.92rem, 2vw, 1.05rem);
     color: var(--text-secondary);
     max-width: 620px;
-    margin: 0 auto 44px;
+    margin: 0 auto 40px;
+    line-height: 1.6;
 }
 
 .bento-grid {
@@ -1066,14 +1071,15 @@ body:not([data-theme="light"]) .toggle-slider {
    Business Card Contact Layout (Signature Pill Buttons & QR)
    ========================================================================== */
 .contact-section {
-    padding: 60px 48px;
+    padding: 60px 40px;
     text-align: center;
+    scroll-margin-top: 80px;
 }
 
 .contact-layout {
     display: flex;
     flex-wrap: wrap;
-    gap: 40px;
+    gap: 36px;
     justify-content: center;
     align-items: center;
 }
@@ -1081,47 +1087,46 @@ body:not([data-theme="light"]) .toggle-slider {
 .card-pills {
     display: flex;
     flex-direction: column;
-    gap: 22px;
+    gap: 16px;
     flex: 1;
-    min-width: 320px;
+    min-width: 280px;
     max-width: 520px;
+    width: 100%;
 }
 
 .card-pill {
-    position: relative;
     background: var(--bg-card-inner);
     border: 1px solid var(--border-red);
-    border-radius: 999px;
-    padding: 18px 24px 18px 75px;
+    border-radius: 20px;
+    padding: 14px 18px;
     display: flex;
     align-items: center;
+    gap: 16px;
     transition: var(--transition);
     text-align: left;
+    text-decoration: none;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
 }
 
 .card-pill:hover {
     background: var(--bg-panel-hover);
-    transform: translateX(6px);
-    box-shadow: 0 12px 28px var(--red-glow);
+    transform: translateX(4px);
+    box-shadow: 0 8px 24px var(--red-glow);
     border-color: var(--red-main);
 }
 
 .pill-icon {
-    position: absolute;
-    left: -12px;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 64px;
-    height: 64px;
+    flex-shrink: 0;
+    width: 50px;
+    height: 50px;
     background: linear-gradient(135deg, var(--red-main), var(--red-dark));
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     color: #fff;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
-    border: 3px solid var(--bg-dark);
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
 }
 
 .pill-icon.wa {
@@ -1129,22 +1134,28 @@ body:not([data-theme="light"]) .toggle-slider {
 }
 
 .pill-content {
+    flex: 1;
+    min-width: 0;
     display: flex;
     flex-direction: column;
+    gap: 2px;
 }
 
 .pill-content span {
-    font-size: 0.74rem;
+    font-size: 0.72rem;
     color: var(--text-secondary);
     text-transform: uppercase;
-    letter-spacing: 0.06em;
+    letter-spacing: 0.05em;
     font-weight: 700;
 }
 
 .pill-content strong {
-    font-size: 1.05rem;
+    font-size: 0.96rem;
     color: var(--text-primary);
     font-weight: 700;
+    word-break: break-word;
+    overflow-wrap: anywhere;
+    line-height: 1.35;
 }
 
 /* Business QR Code Presentation */
@@ -1227,6 +1238,11 @@ body:not([data-theme="light"]) .toggle-slider {
 /* ==========================================================================
    Inventory Catalog Grid & Filtering
    ========================================================================== */
+.inv-main-panel {
+    padding: 48px 36px;
+    text-align: center;
+}
+
 .inv-controls-wrapper {
     margin-bottom: 40px;
 }
@@ -1478,13 +1494,46 @@ body:not([data-theme="light"]) .toggle-slider {
     box-shadow: 0 12px 30px rgba(37, 211, 102, 0.5);
 }
 
+/* Drawer Segmented Controls System */
+.drawer-segmented-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 14px;
+    background: var(--bg-surface-input);
+    border: 1px solid var(--border-glass);
+    border-radius: 18px;
+    margin-bottom: 14px;
+}
+
+.drawer-toggle-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.drawer-toggle-label {
+    font-size: 0.86rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.drawer-toggle-label i {
+    color: var(--red-hover);
+    font-size: 0.9rem;
+}
+
 /* ==========================================================================
    Responsive Adaptations & Smart Mobile Top Bar
    ========================================================================== */
 @media (max-width: 960px) {
     .glass-header {
-        top: 14px;
-        padding: 0 14px;
+        top: 12px;
+        padding: 0 12px;
     }
 
     .nav-container {
@@ -1515,26 +1564,18 @@ body:not([data-theme="light"]) .toggle-slider {
         display: none;
     }
 
-    /* Collapse wide support button on mobile to give room to brand & toggles */
+    /* Collapse wide support button on mobile */
     .btn-live-support {
         display: none;
     }
 
+    /* Transfer toggles into 3-line hamburger menu: hide toggles in top nav on mobile */
+    .nav-actions .segmented-toggle {
+        display: none !important;
+    }
+
     .nav-actions {
-        gap: 6px;
-    }
-
-    .btn-toggle-ctrl {
-        height: 34px;
-        padding: 0 10px;
-        font-size: 0.78rem;
-    }
-
-    .btn-toggle-icon {
-        width: 34px;
-        height: 34px;
-        padding: 0;
-        font-size: 0.9rem;
+        gap: 0;
     }
 
     .menu-toggle {
@@ -1550,11 +1591,19 @@ body:not([data-theme="light"]) .toggle-slider {
         font-size: 0.95rem;
     }
     
-    .hero-section { padding: 50px 24px; }
+    .hero-section { padding: 36px 20px; }
+    .hero-title {
+        font-size: clamp(2rem, 4.4vw, 2.8rem);
+        line-height: 1.18;
+    }
+    .section-title {
+        font-size: clamp(1.55rem, 3.4vw, 1.95rem);
+        line-height: 1.22;
+    }
     .hero-stats-row { 
         grid-template-columns: repeat(3, 1fr); 
-        gap: 10px; 
-        padding-top: 22px; 
+        gap: 8px; 
+        padding-top: 18px; 
     }
     .calc-grid { grid-template-columns: 1fr 1fr; }
     .contact-section { padding: 40px 24px; }
@@ -1563,37 +1612,156 @@ body:not([data-theme="light"]) .toggle-slider {
 }
 
 @media (max-width: 640px) {
-    .app-content { padding-top: 88px; }
-    .hero-section { padding: 40px 14px; }
-    .hero-title { font-size: 2.2rem; }
-    .hero-desc { font-size: 1rem; margin-bottom: 28px; }
-    .hero-actions { flex-direction: column; }
-    .btn-primary, .btn-secondary { width: 100%; justify-content: center; padding: 14px 24px; }
+    .app-content { padding-top: 80px; padding-left: 14px; padding-right: 14px; }
+    
+    /* Global Section Titles & Subtitles Harmony Across Entire Website */
+    .section-title {
+        font-size: clamp(1.35rem, 5.2vw, 1.65rem) !important;
+        line-height: 1.25;
+        letter-spacing: -0.015em;
+        margin-bottom: 8px;
+        text-align: center;
+    }
+    
+    .section-subtitle {
+        font-size: 0.86rem;
+        line-height: 1.48;
+        margin-bottom: 22px;
+        max-width: 100%;
+        text-align: center;
+    }
+
+    /* Hero Section Responsive Typography */
+    .hero-section { padding: 26px 14px 20px; }
+    .hero-badge { 
+        padding: 5px 13px; 
+        font-size: 0.74rem; 
+        margin-bottom: 12px; 
+    }
+    .hero-title { 
+        font-size: clamp(1.65rem, 7.2vw, 2.15rem); 
+        line-height: 1.18; 
+        letter-spacing: -0.02em;
+        margin-bottom: 12px; 
+        max-width: 100%;
+    }
+    .hero-title br {
+        display: none;
+    }
+    .hero-desc { 
+        font-size: 0.86rem; 
+        line-height: 1.48; 
+        margin-bottom: 18px; 
+        max-width: 100%; 
+    }
+    .hero-actions { 
+        flex-direction: column; 
+        gap: 8px; 
+        margin-bottom: 18px; 
+    }
+    .btn-primary, .btn-secondary { 
+        width: 100%; 
+        justify-content: center; 
+        padding: 12px 18px; 
+        font-size: 0.88rem; 
+    }
     
     .hero-stats-row {
         grid-template-columns: repeat(3, 1fr);
-        gap: 6px;
-        padding-top: 18px;
+        gap: 4px;
+        padding-top: 14px;
     }
     .stat-box {
         padding: 2px 2px;
     }
     .stat-box strong {
-        font-size: clamp(0.95rem, 4.2vw, 1.25rem);
+        font-size: clamp(0.95rem, 4vw, 1.2rem);
         line-height: 1.1;
         margin-bottom: 2px;
     }
     .stat-box span {
-        font-size: clamp(0.6rem, 2.3vw, 0.72rem);
+        font-size: clamp(0.58rem, 2.2vw, 0.68rem);
         line-height: 1.2;
     }
 
-    .calc-grid { grid-template-columns: 1fr; }
-    .estimator-panel { padding: 24px 18px; }
+    /* Services Section Bento Harmony */
+    .services-section {
+        padding: 10px 0 24px;
+    }
+    .bento-grid {
+        gap: 12px;
+        grid-template-columns: 1fr;
+    }
+    .service-card {
+        padding: 20px 16px;
+        border-radius: 18px;
+    }
+    .s-icon-box {
+        width: 44px;
+        height: 44px;
+        border-radius: 12px;
+        font-size: 1.25rem;
+        margin-bottom: 12px;
+    }
+    .service-card h3 {
+        font-size: 1.1rem;
+        margin-bottom: 6px;
+    }
+    .service-card p {
+        font-size: 0.82rem;
+        line-height: 1.42;
+        margin-bottom: 12px;
+    }
+    .service-meta-badge {
+        padding-top: 10px;
+        font-size: 0.76rem;
+    }
+
+    /* Estimator Panel Mobile Harmony */
+    .estimator-panel { 
+        padding: 20px 14px; 
+        border-radius: 18px;
+        margin-bottom: 24px;
+    }
+    .calc-grid { 
+        grid-template-columns: 1fr; 
+        gap: 10px;
+        margin-top: 16px;
+    }
+    .form-group {
+        gap: 6px;
+    }
+    .form-label {
+        font-size: 0.76rem;
+    }
+    .form-control {
+        padding: 11px 14px;
+        font-size: 0.86rem;
+        border-radius: 12px;
+    }
+    .calc-result {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 12px;
+        padding: 14px 16px;
+        border-radius: 14px;
+    }
+    .calc-result-title {
+        font-size: 0.95rem;
+    }
+    .calc-result-desc {
+        font-size: 0.8rem;
+    }
     
     /* Inventory Mobile 2-Devices Side-by-Side & Compact Controls */
+    .glass-panel {
+        border-radius: 20px;
+    }
+    .inv-main-panel {
+        padding: 24px 14px 20px;
+    }
     .inv-controls-wrapper {
-        margin-bottom: 24px;
+        margin-bottom: 20px;
     }
     
     .inv-search-bar { 
@@ -1711,8 +1879,56 @@ body:not([data-theme="light"]) .toggle-slider {
         border-radius: 999px;
     }
 
-    .card-pill { padding: 16px 18px 16px 65px; }
-    .pill-icon { width: 52px; height: 52px; font-size: 1.2rem; }
-    .qr-frame { width: 130px; height: 130px; }
-    .floating-wa-btn { bottom: 20px; right: 20px; width: 52px; height: 52px; font-size: 1.6rem; }
+    /* Contact Section Mobile Ergonomics */
+    .contact-section { 
+        padding: 24px 14px 20px; 
+    }
+    .card-pills { 
+        min-width: 100%; 
+        gap: 10px;
+    }
+    .card-pill { 
+        padding: 12px 14px; 
+        border-radius: 16px;
+        gap: 12px;
+    }
+    .pill-icon { 
+        width: 40px; 
+        height: 40px; 
+        font-size: 1rem; 
+    }
+    .pill-content span { 
+        font-size: 0.65rem; 
+    }
+    .pill-content strong { 
+        font-size: clamp(0.78rem, 3.2vw, 0.88rem); 
+        line-height: 1.3;
+    }
+    .qr-box {
+        margin-top: 10px;
+        gap: 10px;
+    }
+    .qr-frame { 
+        width: 110px; 
+        height: 110px; 
+        border-radius: 14px;
+        padding: 6px;
+    }
+    .qr-box span {
+        font-size: 0.82rem;
+    }
+    .ethics-box {
+        margin-top: 20px;
+        padding: 14px 16px;
+        border-radius: 14px;
+    }
+    .ethics-text {
+        font-size: 0.84rem;
+        line-height: 1.55;
+    }
+    .ethics-ref {
+        font-size: 0.72rem;
+    }
+
+    .floating-wa-btn { bottom: 20px; right: 20px; width: 50px; height: 50px; font-size: 1.5rem; }
 }
