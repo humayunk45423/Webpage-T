@@ -102,7 +102,7 @@ const I18N_DICTIONARY = {
         'btn-calc': 'Calculate',
         'contact-title-1': 'Establish',
         'contact-title-2': 'Connection',
-        'contact-sub': 'Direct communication channels and laboratory location for proprietor Iqbal Tanvir.',
+        'contact-sub': 'Direct communication channels and laboratory location for proprietor Tanvir Iqbal.',
         'contact-pill-1-sub': 'Direct Line',
         'contact-pill-2-sub': 'Official WhatsApp Desk',
         'contact-pill-3-sub': 'Email Support',
@@ -126,7 +126,7 @@ const I18N_DICTIONARY = {
         'filter-motorola': 'Motorola',
         'guarantee-badge': '7-Day Replacement Guarantee Included',
         'btn-order': 'Acquire Device',
-        'footer-copy': '© 2026 Mobile Express. System architecture & diagnostics by Iqbal Tanvir.',
+        'footer-copy': '© 2026 Mobile Express. System architecture & diagnostics by Tanvir Iqbal.',
         'footer-loc': 'Mita Road, Zilla Parishad Market, Badarganj, Rangpur • Bangladesh'
     },
     bn: {
@@ -173,7 +173,7 @@ const I18N_DICTIONARY = {
         'btn-calc': 'হিসাব করুন',
         'contact-title-1': 'সরাসরি',
         'contact-title-2': 'যোগাযোগ ও ঠিকানা',
-        'contact-sub': 'স্বত্বাধিকারী ইকবাল তানভীরের ডায়াগনস্টিক ল্যাব ও শোরুমে যোগাযোগের ঠিকানা।',
+        'contact-sub': 'স্বত্বাধিকারী তানভীর ইকবালের ডায়াগনস্টিক ল্যাব ও শোরুমে যোগাযোগের ঠিকানা।',
         'contact-pill-1-sub': 'সরাসরি কল',
         'contact-pill-2-sub': 'অফিসিয়াল হোয়াটসঅ্যাপ ডেস্ক',
         'contact-pill-3-sub': 'ইমেইল সাপোর্ট',
@@ -197,7 +197,7 @@ const I18N_DICTIONARY = {
         'filter-motorola': 'মটোরোলা',
         'guarantee-badge': '৭ দিনের রিপ্লেসমেন্ট গ্যারান্টি অন্তর্ভুক্ত',
         'btn-order': 'অর্ডার / তথ্য জানুন',
-        'footer-copy': '© ২০২৬ মোবাইল এক্সপ্রেস। সিস্টেম আর্কিটেকচার ও ডায়াগনস্টিক: ইকবাল তানভীর।',
+        'footer-copy': '© ২০২৬ মোবাইল এক্সপ্রেস। সিস্টেম আর্কিটেকচার ও ডায়াগনস্টিক: তানভীর ইকবাল।',
         'footer-loc': 'মিতা রোড, জেলা পরিষদ মার্কেট, বদরগঞ্জ, রংপুর • বাংলাদেশ'
     }
 };
@@ -353,35 +353,43 @@ function initNavPillSelector() {
     if (!links.length) return;
 
     let currentActiveLink = navLinksContainer.querySelector('a.active') || links[0];
+    let isClickScrolling = false;
+    let clickScrollTimer = null;
 
     const updatePillPosition = (targetLink, animate = true) => {
         if (!targetLink) return;
 
-        const left = targetLink.offsetLeft;
-        const width = targetLink.offsetWidth;
+        const targetRect = targetLink.getBoundingClientRect();
+        const containerRect = navLinksContainer.getBoundingClientRect();
+
+        // Subpixel precision coordinate math
+        const left = Math.round((targetRect.left - containerRect.left) * 10) / 10;
+        const width = Math.round(targetRect.width * 10) / 10;
 
         if (!animate) {
             indicator.style.transition = 'none';
         } else {
-            indicator.style.transition = 'transform 0.38s cubic-bezier(0.16, 1, 0.3, 1), width 0.32s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.2s ease';
+            indicator.style.transition = 'transform 0.35s cubic-bezier(0.25, 1, 0.35, 1), width 0.35s cubic-bezier(0.25, 1, 0.35, 1), opacity 0.2s ease';
         }
 
-        indicator.style.transform = `translateX(${left}px)`;
+        indicator.style.transform = `translate3d(${left}px, 0, 0)`;
         indicator.style.width = `${width}px`;
         indicator.style.opacity = '1';
 
         if (!animate) {
             indicator.offsetHeight; // force reflow
-            indicator.style.transition = 'transform 0.38s cubic-bezier(0.16, 1, 0.3, 1), width 0.32s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.2s ease';
+            indicator.style.transition = 'transform 0.35s cubic-bezier(0.25, 1, 0.35, 1), width 0.35s cubic-bezier(0.25, 1, 0.35, 1), opacity 0.2s ease';
         }
     };
 
-    // Position indicator once layout is ready
-    requestAnimationFrame(() => {
-        updatePillPosition(currentActiveLink, false);
-    });
+    // Position indicator once layout and fonts are ready
+    const initPosition = () => updatePillPosition(currentActiveLink, false);
+    requestAnimationFrame(initPosition);
+    if (document.fonts && document.fonts.ready) {
+        document.fonts.ready.then(initPosition);
+    }
 
-    // Handle clicks: smoothly glide the indicator to the new active tab
+    // Handle clicks: smoothly glide the indicator to clicked tab and lock scroll spy during travel
     links.forEach(link => {
         link.addEventListener('click', () => {
             const href = link.getAttribute('href');
@@ -390,11 +398,17 @@ function initNavPillSelector() {
                 link.classList.add('active');
                 currentActiveLink = link;
                 updatePillPosition(link, true);
+
+                isClickScrolling = true;
+                clearTimeout(clickScrollTimer);
+                clickScrollTimer = setTimeout(() => {
+                    isClickScrolling = false;
+                }, 800);
             }
         });
     });
 
-    // Scroll spy for index.html sections
+    // Scroll spy for in-page sections on index.html
     const isIndexPage = window.location.pathname.endsWith('index.html') || window.location.pathname === '/' || !window.location.pathname.includes('.html');
     if (isIndexPage) {
         const sectionIds = ['hero', 'services', 'estimator', 'contact'];
@@ -402,7 +416,12 @@ function initNavPillSelector() {
 
         let scrollTicking = false;
         const handleScrollSpy = () => {
-            const scrollPos = window.scrollY + 160;
+            if (isClickScrolling) {
+                scrollTicking = false;
+                return;
+            }
+
+            const scrollPos = window.scrollY + 180;
             let activeSection = null;
 
             for (let i = sections.length - 1; i >= 0; i--) {
@@ -413,10 +432,14 @@ function initNavPillSelector() {
                 }
             }
 
+            if (!activeSection && sections.length > 0) {
+                activeSection = sections[0];
+            }
+
             if (activeSection) {
                 const activeHref = `#${activeSection.id}`;
                 const matchingLink = links.find(l => l.getAttribute('href') === activeHref);
-                if (matchingLink && !matchingLink.classList.contains('active')) {
+                if (matchingLink && matchingLink !== currentActiveLink) {
                     links.forEach(l => l.classList.remove('active'));
                     matchingLink.classList.add('active');
                     currentActiveLink = matchingLink;
@@ -444,8 +467,8 @@ function initNavPillSelector() {
     window.refreshNavPill = () => {
         setTimeout(() => {
             const active = navLinksContainer.querySelector('a.active') || currentActiveLink;
-            updatePillPosition(active, true);
-        }, 60);
+            updatePillPosition(active, false);
+        }, 50);
     };
 }
 

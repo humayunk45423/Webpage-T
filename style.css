@@ -426,8 +426,12 @@ img {
     pointer-events: none;
     z-index: 0;
     opacity: 0;
+    transform: translate3d(0, 0, 0);
+    transform-origin: left center;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
     will-change: transform, width;
-    transition: transform 0.38s cubic-bezier(0.16, 1, 0.3, 1), width 0.32s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.2s ease;
+    transition: transform 0.35s cubic-bezier(0.25, 1, 0.35, 1), width 0.35s cubic-bezier(0.25, 1, 0.35, 1), opacity 0.2s ease;
 }
 
 [data-theme="light"] .nav-pill-indicator {
