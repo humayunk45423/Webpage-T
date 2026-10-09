@@ -389,23 +389,68 @@ function initNavPillSelector() {
         document.fonts.ready.then(initPosition);
     }
 
+    // Helper for buttery smooth scrolling with header offset
+    const smoothScrollTo = (targetId) => {
+        if (targetId === 'hero') {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+            return;
+        }
+        const targetEl = document.getElementById(targetId);
+        if (!targetEl) return;
+        const isMobile = window.innerWidth <= 960;
+        const headerOffset = isMobile ? 80 : 105;
+        const targetPosition = targetEl.getBoundingClientRect().top + window.pageYOffset;
+        const offsetPosition = Math.max(0, targetPosition - headerOffset);
+        window.scrollTo({
+            top: offsetPosition,
+            behavior: 'smooth'
+        });
+    };
+
     // Handle clicks: smoothly glide the indicator to clicked tab and lock scroll spy during travel
     links.forEach(link => {
-        link.addEventListener('click', () => {
+        link.addEventListener('click', (e) => {
             const href = link.getAttribute('href');
-            if (href && (href.startsWith('#') || href.includes('#'))) {
-                links.forEach(l => l.classList.remove('active'));
-                link.classList.add('active');
-                currentActiveLink = link;
-                updatePillPosition(link, true);
+            if (href && (href.startsWith('#') || (href.includes('index.html#') && isIndexPage))) {
+                const targetId = href.replace(/^.*#/, '');
+                const targetEl = document.getElementById(targetId);
+                if (targetEl) {
+                    e.preventDefault();
+                    links.forEach(l => l.classList.remove('active'));
+                    link.classList.add('active');
+                    currentActiveLink = link;
+                    updatePillPosition(link, true);
 
-                isClickScrolling = true;
-                clearTimeout(clickScrollTimer);
-                clickScrollTimer = setTimeout(() => {
-                    isClickScrolling = false;
-                }, 800);
+                    isClickScrolling = true;
+                    clearTimeout(clickScrollTimer);
+                    clickScrollTimer = setTimeout(() => {
+                        isClickScrolling = false;
+                    }, 800);
+
+                    smoothScrollTo(targetId);
+                    if (history.pushState) {
+                        history.pushState(null, null, `#${targetId}`);
+                    }
+                }
             }
         });
+    });
+
+    // Also bind generic anchor links like .btn-secondary (#services)
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        if (!anchor.closest('.nav-links') && !anchor.closest('.drawer-links')) {
+            anchor.addEventListener('click', (e) => {
+                const targetId = anchor.getAttribute('href').replace(/^#/, '');
+                const targetEl = document.getElementById(targetId);
+                if (targetEl) {
+                    e.preventDefault();
+                    smoothScrollTo(targetId);
+                    if (history.pushState) {
+                        history.pushState(null, null, `#${targetId}`);
+                    }
+                }
+            });
+        }
     });
 
     // Scroll spy for in-page sections on index.html
@@ -500,7 +545,40 @@ function initMobileDrawer() {
     if (closeBtn) closeBtn.addEventListener('click', closeDrawer);
     overlay.addEventListener('click', closeDrawer);
 
-    links.forEach(l => l.addEventListener('click', closeDrawer));
+    links.forEach(l => {
+        l.addEventListener('click', (e) => {
+            const href = l.getAttribute('href');
+            if (href && (href.startsWith('#') || (href.includes('index.html#') && isIndexPage))) {
+                const targetId = href.replace(/^.*#/, '');
+                const targetEl = document.getElementById(targetId);
+                if (targetEl) {
+                    e.preventDefault();
+                    closeDrawer();
+                    setTimeout(() => {
+                        if (targetId === 'hero') {
+                            window.scrollTo({ top: 0, behavior: 'smooth' });
+                        } else {
+                            const isMobile = window.innerWidth <= 960;
+                            const headerOffset = isMobile ? 80 : 105;
+                            const targetPosition = targetEl.getBoundingClientRect().top + window.pageYOffset;
+                            const offsetPosition = Math.max(0, targetPosition - headerOffset);
+                            window.scrollTo({
+                                top: offsetPosition,
+                                behavior: 'smooth'
+                            });
+                        }
+                        if (history.pushState) {
+                            history.pushState(null, null, `#${targetId}`);
+                        }
+                    }, 120);
+                } else {
+                    closeDrawer();
+                }
+            } else {
+                closeDrawer();
+            }
+        });
+    });
 
     document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape' && drawer.classList.contains('open')) {
@@ -700,7 +778,7 @@ function initInventoryCatalog() {
                         <span class="inv-brand">${item.brand}</span>
                     </div>
                     <div class="inv-img">
-                        <img src="${item.img}" alt="${item.name}" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null; this.src='assets/logo.png';">
+                        <img src="${item.img}" alt="${item.name}" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="this.onerror=null; this.src='Mobile Express.svg';">
                     </div>
                     <h3>${item.name}</h3>
                     <div class="inv-price">৳ ${formattedPrice}</div>

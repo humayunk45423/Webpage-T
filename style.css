@@ -84,6 +84,7 @@
 
 html {
     scroll-behavior: smooth;
+    scroll-padding-top: 105px;
     font-size: 16px;
     transition: background-color var(--transition);
     -webkit-tap-highlight-color: transparent;
@@ -833,6 +834,7 @@ body:not([data-theme="light"]) .toggle-slider {
 .hero-section {
     padding: 70px 60px;
     text-align: center;
+    scroll-margin-top: 140px;
 }
 
 .hero-badge {
@@ -966,6 +968,9 @@ body:not([data-theme="light"]) .toggle-slider {
 .services-section {
     padding: 20px 0 50px;
     text-align: center;
+    scroll-margin-top: 105px;
+    content-visibility: auto;
+    contain-intrinsic-size: 1px 450px;
 }
 
 .section-title {
@@ -1060,6 +1065,9 @@ body:not([data-theme="light"]) .toggle-slider {
 .estimator-panel {
     padding: 44px;
     margin-bottom: 50px;
+    scroll-margin-top: 105px;
+    content-visibility: auto;
+    contain-intrinsic-size: 1px 400px;
 }
 
 .calc-grid {
@@ -1143,7 +1151,9 @@ body:not([data-theme="light"]) .toggle-slider {
 .contact-section {
     padding: 60px 40px;
     text-align: center;
-    scroll-margin-top: 80px;
+    scroll-margin-top: 105px;
+    content-visibility: auto;
+    contain-intrinsic-size: 1px 450px;
 }
 
 .contact-layout {
@@ -1440,6 +1450,8 @@ body:not([data-theme="light"]) .toggle-slider {
     flex-direction: column;
     position: relative;
     transition: var(--transition);
+    content-visibility: auto;
+    contain-intrinsic-size: 1px 360px;
 }
 
 .inv-card:hover {
@@ -1634,6 +1646,20 @@ body:not([data-theme="light"]) .toggle-slider {
    Responsive Adaptations & Smart Mobile Top Bar
    ========================================================================== */
 @media (max-width: 960px) {
+    html {
+        scroll-padding-top: 80px;
+    }
+
+    .hero-section {
+        scroll-margin-top: 95px;
+    }
+
+    .services-section,
+    .estimator-panel,
+    .contact-section {
+        scroll-margin-top: 80px;
+    }
+
     .glass-header {
         top: 12px;
         padding: 0 12px;
