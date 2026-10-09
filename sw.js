@@ -47,8 +47,15 @@ self.addEventListener('fetch', (event) => {
     // Ignore non-GET requests
     if (request.method !== 'GET') return;
 
-    // Handle same-origin static assets & CDN assets
     const url = new URL(request.url);
+
+    // Never intercept sitemap.xml, robots.txt, or llms.txt
+    if (url.pathname.endsWith('sitemap.xml') ||
+        url.pathname.endsWith('robots.txt') ||
+        url.pathname.endsWith('llms.txt')) {
+        return;
+    }
+
     const isSameOrigin = url.origin === self.location.origin;
     const isFontOrCDN = url.hostname.includes('googleapis.com') ||
                         url.hostname.includes('gstatic.com') ||

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+    <!-- Home / Diagnostics & Service Center -->
+    <url>
+        <loc>https://mobileexpress.vercel.app/</loc>
+        <lastmod>2026-10-09</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+        <xhtml:link rel="alternate" hreflang="bn" href="https://mobileexpress.vercel.app/" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://mobileexpress.vercel.app/" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://mobileexpress.vercel.app/" />
+    </url>
+
+    <!-- Handset Inventory (24+ Devices) -->
+    <url>
+        <loc>https://mobileexpress.vercel.app/inventory.html</loc>
+        <lastmod>2026-10-09</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.9</priority>
+        <xhtml:link rel="alternate" hreflang="bn" href="https://mobileexpress.vercel.app/inventory.html" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://mobileexpress.vercel.app/inventory.html" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://mobileexpress.vercel.app/inventory.html" />
+    </url>
+</urlset>

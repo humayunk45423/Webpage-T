@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+
+# Host & Sitemap
+Host: https://mobileexpress.vercel.app
+Sitemap: https://mobileexpress.vercel.app/sitemap.xml
