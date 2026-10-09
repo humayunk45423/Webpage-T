@@ -837,6 +837,15 @@ body:not([data-theme="light"]) .toggle-slider {
     scroll-margin-top: 140px;
 }
 
+.hero-badges-cluster {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 24px;
+}
+
 .hero-badge {
     display: inline-flex;
     align-items: center;
@@ -847,12 +856,160 @@ body:not([data-theme="light"]) .toggle-slider {
     border-radius: 999px;
     font-weight: 700;
     font-size: 0.88rem;
-    margin-bottom: 24px;
     color: var(--text-secondary);
+    transition: var(--transition-fast);
 }
 
-.hero-badge i {
+.hero-badge:hover {
+    border-color: var(--border-glass-hover);
+    transform: translateY(-2px);
+}
+
+.hero-badge.apple-specialist-badge {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.22);
     color: var(--text-primary);
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.25);
+}
+
+[data-theme="light"] .hero-badge.apple-specialist-badge {
+    background: rgba(15, 23, 42, 0.06);
+    border-color: rgba(15, 23, 42, 0.15);
+    color: #0f172a;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
+}
+
+.hero-badge.apple-specialist-badge i {
+    font-size: 1.05rem;
+    color: var(--text-primary);
+}
+
+.hero-badge.motto-badge {
+    background: var(--red-subtle);
+    border-color: var(--border-red);
+    color: var(--red-hover);
+    font-weight: 800;
+    letter-spacing: 0.02em;
+}
+
+.hero-badge.motto-badge i {
+    color: var(--red-main);
+    animation: rotateSlow 8s linear infinite;
+}
+
+@keyframes rotateSlow {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.badge-pulse {
+    background: #22c55e;
+    color: #fff;
+    font-size: 0.72rem;
+    font-weight: 800;
+    padding: 2px 8px;
+    border-radius: 999px;
+    margin-left: 6px;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    box-shadow: 0 0 10px rgba(34, 197, 94, 0.6);
+}
+
+/* Feature Spotlight Quick-Action Grid */
+.feature-strip {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
+    margin: 36px 0 10px;
+    text-align: left;
+}
+
+.feature-pill-card {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 16px;
+    background: var(--bg-surface-input);
+    border: 1px solid var(--border-glass);
+    border-radius: 18px;
+    transition: var(--transition-fast);
+}
+
+.feature-pill-card:hover {
+    border-color: var(--border-red);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+.feature-pill-icon {
+    width: 38px;
+    height: 38px;
+    border-radius: 12px;
+    background: var(--red-subtle);
+    color: var(--red-main);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.15rem;
+    flex-shrink: 0;
+}
+
+.feature-pill-icon.apple {
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--text-primary);
+}
+
+[data-theme="light"] .feature-pill-icon.apple {
+    background: rgba(15, 23, 42, 0.08);
+    color: #0f172a;
+}
+
+.feature-pill-text {
+    min-width: 0;
+}
+
+.feature-pill-text strong {
+    display: block;
+    font-size: 0.88rem;
+    font-weight: 800;
+    color: var(--text-primary);
+    line-height: 1.25;
+}
+
+.feature-pill-text span {
+    display: block;
+    font-size: 0.74rem;
+    color: var(--text-secondary);
+    line-height: 1.3;
+}
+
+/* Featured Apple Card Enhancement in Bento Grid */
+.service-card.featured-apple-card {
+    border-color: rgba(255, 255, 255, 0.25);
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.05) 0%, var(--bg-panel) 100%);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.35);
+}
+
+[data-theme="light"] .service-card.featured-apple-card {
+    border-color: rgba(15, 23, 42, 0.18);
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.95) 0%, rgba(245, 247, 250, 0.9) 100%);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.06);
+}
+
+.featured-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: var(--red-subtle);
+    color: var(--red-hover);
+    border: 1px solid var(--border-red);
+    padding: 3px 10px;
+    border-radius: 999px;
+    font-size: 0.72rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 12px;
 }
 
 .hero-title {
@@ -881,6 +1038,22 @@ body:not([data-theme="light"]) .toggle-slider {
     max-width: 680px;
     margin: 0 auto 36px;
     line-height: 1.7;
+}
+
+.location-highlight {
+    color: var(--red-hover);
+    font-weight: 700;
+    display: inline;
+}
+
+[data-theme="light"] .location-highlight {
+    color: var(--red-main);
+}
+
+.location-highlight i {
+    color: var(--red-main);
+    margin-right: 4px;
+    font-size: 0.9em;
 }
 
 .hero-actions {
@@ -1205,6 +1378,10 @@ body:not([data-theme="light"]) .toggle-slider {
 
 .pill-icon.wa {
     background: linear-gradient(135deg, #25d366, #128c7e);
+}
+
+.pill-icon.fb {
+    background: linear-gradient(135deg, #1877f2, #0d5bbd);
 }
 
 .pill-content {
@@ -1805,6 +1982,29 @@ body:not([data-theme="light"]) .toggle-slider {
     .stat-box span {
         font-size: clamp(0.58rem, 2.2vw, 0.68rem);
         line-height: 1.2;
+    }
+
+    .feature-strip {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 8px;
+        margin: 18px 0 6px;
+    }
+    .feature-pill-card {
+        padding: 10px 12px;
+        gap: 8px;
+        border-radius: 14px;
+    }
+    .feature-pill-icon {
+        width: 32px;
+        height: 32px;
+        font-size: 0.95rem;
+        border-radius: 10px;
+    }
+    .feature-pill-text strong {
+        font-size: 0.78rem;
+    }
+    .feature-pill-text span {
+        font-size: 0.66rem;
     }
 
     /* Services Section Bento Harmony */
