@@ -1,68 +1,199 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mobile Express | Active Inventory</title>
+    <title>Active Inventory | Mobile Express</title>
+    <meta name="description" content="Certified mid and budget-range smartphones in Bangladesh. Tested, verified, and warrantied by Mobile Express.">
+    <meta name="theme-color" content="#0d0e12">
+
+    <!-- Typography (English & Bengali Fonts) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Noto+Sans+Bengali:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <!-- Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     
+    <!-- Core Styles -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- 3D Interactive Business Card Artifacts -->
-    <div class="parallax-environment">
-        <div class="card-band band-left-1" data-speed="0.3"></div>
-        <div class="card-band band-left-2" data-speed="0.6"></div>
-        <div class="card-band band-right-1" data-speed="-0.3"></div>
-        <div class="card-band band-right-2" data-speed="-0.6"></div>
+    <!-- 3D Kinetic Parallax Architectural Ribbons -->
+    <div class="parallax-environment" aria-hidden="true">
         <div class="ambient-glow"></div>
-    </div>
+        <div class="ambient-glow-secondary"></div>
+        
+        <!-- Left Kinetic Ribbon Cluster -->
+        <div class="ribbon-cluster left-cluster">
+            <div class="card-band band-outer band-left-outer" data-speed="0.22"></div>
+            <div class="card-band band-main band-left-main" data-speed="0.45">
+                <div class="band-sheen"></div>
+            </div>
+            <div class="band-beam band-left-beam" data-speed="0.65"></div>
+        </div>
 
-    <!-- Floating Glass Navbar -->
+        <!-- Right Kinetic Ribbon Cluster -->
+        <div class="ribbon-cluster right-cluster">
+            <div class="card-band band-outer band-right-outer" data-speed="-0.22"></div>
+            <div class="card-band band-main band-right-main" data-speed="-0.45">
+                <div class="band-sheen"></div>
+            </div>
+            <div class="band-beam band-right-beam" data-speed="-0.65"></div>
+        </div>
+    </div>
+    <div class="grid-texture" aria-hidden="true"></div>
+
+    <!-- Floating Glass Header (Matched Width with Content Card) -->
     <header class="glass-header">
-        <nav class="nav-container">
+        <nav class="nav-container" aria-label="Main Navigation">
             <a href="index.html" class="brand">
-                <img src="assets/logo.png" alt="ME" onerror="this.src='https://i.postimg.cc/PJhCYJzg/Artboard_1logo_border_radious.png'">
-                <div class="brand-text">
-                    <strong>Mobile Express</strong>
-                    <span>Iqbal Tanvir</span>
+                <img src="assets/logo.png" alt="Mobile Express" onerror="this.src='https://i.postimg.cc/PJhCYJzg/Artboard_1logo_border_radious.png'">
+                <div class="brand-info-wrap">
+                    <span class="brand-title">Mobile <span>Express</span></span>
+                    <span class="brand-subtitle">Iqbal Tanvir</span>
                 </div>
             </a>
+
             <div class="nav-links">
-                <a href="index.html#hero">Home</a>
-                <a href="index.html#services">Diagnostics</a>
-                <a href="inventory.html" class="active">Inventory <span class="badge">25+</span></a>
-                <a href="index.html#contact">Contact</a>
+                <a href="index.html#hero" data-i18n="nav-home">Home</a>
+                <a href="index.html#services" data-i18n="nav-diagnostics">Diagnostics</a>
+                <a href="index.html#estimator" data-i18n="nav-estimator">Estimator</a>
+                <a href="inventory.html" class="active"><span data-i18n="nav-inventory">Inventory</span> <span class="nav-count">24+</span></a>
+                <a href="index.html#contact" data-i18n="nav-contact">Contact</a>
             </div>
-            <a href="https://wa.me/8801834254875" class="btn-support">
-                <i class="fa-brands fa-whatsapp"></i> Support
-            </a>
+
+            <div class="nav-actions">
+                <!-- Theme Mode Switcher (Dark / Light White Mode) -->
+                <button class="btn-toggle-ctrl btn-toggle-icon theme-toggle-btn" aria-label="Toggle Light / Dark Mode" title="Toggle Light / Dark Mode">
+                    <i class="fa-solid fa-sun theme-icon"></i>
+                </button>
+
+                <!-- Language Switcher (EN / BN) -->
+                <button class="btn-toggle-ctrl lang-toggle-btn" aria-label="Toggle Language" title="Toggle Language (English / বাংলা)">
+                    <i class="fa-solid fa-globe"></i>
+                    <span class="lang-label">বাং</span>
+                </button>
+
+                <!-- WhatsApp Live Support -->
+                <a href="https://wa.me/8801834254875?text=Hello%20Mobile%20Express,%20I%20need%20assistance" target="_blank" rel="noopener noreferrer" class="btn-live-support">
+                    <span class="pulse-indicator"></span>
+                    <i class="fa-brands fa-whatsapp"></i>
+                    <span data-i18n="nav-support">Support</span>
+                </a>
+
+                <!-- Mobile Hamburger Toggle -->
+                <button id="menu-toggle" class="menu-toggle" aria-label="Toggle Menu">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
         </nav>
     </header>
 
-    <main class="app-content">
-        <section class="glass-panel" style="padding: 60px;">
-            <div class="hero-inner" data-tilt data-tilt-max="2" data-tilt-glare="true" data-tilt-max-glare="0.1">
-                <h1 class="section-title" style="margin-bottom: 20px;">Mid & Budget Range</h1>
-                <p style="text-align: center; color: var(--text-secondary); margin-bottom: 50px;">
-                    Handpicked, highly popular devices for the Bangladeshi market. All units pass rigorous software and hardware testing.
-                </p>
-                
-                <div class="inv-grid" id="inventory-grid">
-                    <!-- Products injected via JS -->
+    <!-- Mobile Drawer -->
+    <div id="drawer-overlay" class="drawer-overlay" aria-hidden="true"></div>
+    <aside id="mobile-drawer" class="mobile-drawer" aria-label="Mobile Navigation Drawer">
+        <div>
+            <div class="drawer-header">
+                <div class="brand">
+                    <img src="assets/logo.png" alt="ME">
+                    <div class="brand-info-wrap">
+                        <span class="brand-title">Mobile <span>Express</span></span>
+                        <span class="brand-subtitle">Iqbal Tanvir</span>
+                    </div>
                 </div>
+                <button id="drawer-close" class="drawer-close" aria-label="Close Navigation">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+            <ul class="drawer-links">
+                <li><a href="index.html#hero"><i class="fa-solid fa-house"></i> <span data-i18n="nav-home">Home</span></a></li>
+                <li><a href="index.html#services"><i class="fa-solid fa-microchip"></i> <span data-i18n="nav-diagnostics">Diagnostic Lab</span></a></li>
+                <li><a href="index.html#estimator"><i class="fa-solid fa-calculator"></i> <span data-i18n="nav-estimator">Cost Estimator</span></a></li>
+                <li><a href="inventory.html" class="active"><i class="fa-solid fa-mobile-screen"></i> <span data-i18n="nav-inventory">Inventory</span> <span class="nav-count">24+</span></a></li>
+                <li><a href="index.html#contact"><i class="fa-solid fa-address-card"></i> <span data-i18n="nav-contact">Contact & Location</span></a></li>
+            </ul>
+        </div>
+
+        <div>
+            <div style="display: flex; gap: 8px; margin-bottom: 12px;">
+                <button class="btn-toggle-ctrl theme-toggle-btn" style="flex: 1; justify-content: center;">
+                    <i class="fa-solid fa-sun theme-icon"></i> Theme
+                </button>
+                <button class="btn-toggle-ctrl lang-toggle-btn" style="flex: 1; justify-content: center;">
+                    <i class="fa-solid fa-globe"></i> <span class="lang-label">বাং</span>
+                </button>
+            </div>
+            <a href="https://wa.me/8801834254875" target="_blank" class="btn-primary btn-full" style="margin-bottom: 10px;">
+                <i class="fa-brands fa-whatsapp"></i> <span data-i18n="nav-support">WhatsApp Live</span>
+            </a>
+            <a href="tel:+8801834254875" class="btn-secondary btn-full">
+                <i class="fa-solid fa-phone"></i> +88 01834 254875
+            </a>
+        </div>
+    </aside>
+
+    <main class="app-content">
+        <section class="glass-panel" style="padding: 50px 36px;">
+            <h1 class="section-title" style="text-align: center; margin-bottom: 10px;">
+                <span data-i18n="inv-header-1">Mid & Budget Range</span> <span data-i18n="inv-header-2">Handsets</span>
+            </h1>
+            <p style="text-align: center; color: var(--text-secondary); max-width: 640px; margin: 0 auto 36px;" data-i18n="inv-header-sub">
+                Handpicked, highly popular devices for the Bangladeshi market. All units pass rigorous software, battery health, and hardware motherboard bench testing.
+            </p>
+
+            <!-- Search and Brand Filters -->
+            <div class="inv-controls-wrapper">
+                <div class="inv-search-bar">
+                    <div class="search-input-wrap">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <input type="text" id="inv-search" placeholder="Search by name, brand, processor, camera (e.g. Note 13, 108MP, G99)...">
+                    </div>
+                    <select id="inv-sort" class="sort-dropdown" aria-label="Sort Handsets">
+                        <option value="featured">Sort: Featured</option>
+                        <option value="price-low">Price: Low to High</option>
+                        <option value="price-high">Price: High to Low</option>
+                        <option value="name">Name: A to Z</option>
+                    </select>
+                </div>
+
+                <div class="brand-chips">
+                    <button class="chip-btn active" data-filter="all" data-i18n="filter-all">All Brands</button>
+                    <button class="chip-btn" data-filter="xiaomi" data-i18n="filter-xiaomi">Xiaomi & Poco</button>
+                    <button class="chip-btn" data-filter="samsung" data-i18n="filter-samsung">Samsung</button>
+                    <button class="chip-btn" data-filter="realme" data-i18n="filter-realme">Realme</button>
+                    <button class="chip-btn" data-filter="vivo" data-i18n="filter-vivo">Vivo</button>
+                    <button class="chip-btn" data-filter="oppo" data-i18n="filter-oppo">Oppo</button>
+                    <button class="chip-btn" data-filter="infinix" data-i18n="filter-infinix">Infinix & Tecno</button>
+                    <button class="chip-btn" data-filter="oneplus" data-i18n="filter-oneplus">OnePlus</button>
+                    <button class="chip-btn" data-filter="motorola" data-i18n="filter-motorola">Motorola</button>
+                </div>
+
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 18px; padding-top: 12px; border-top: 1px solid var(--border-glass);">
+                    <span id="inv-count" style="font-size: 0.88rem; font-weight: 700; color: var(--text-secondary);">Loading handsets...</span>
+                    <span style="font-size: 0.82rem; color: var(--green-wa);"><i class="fa-solid fa-shield-check"></i> <span data-i18n="guarantee-badge">7-Day Replacement Guarantee Included</span></span>
+                </div>
+            </div>
+            
+            <div class="inv-grid" id="inventory-grid">
+                <!-- Products dynamically injected via script.js -->
             </div>
         </section>
     </main>
 
+    <!-- Site Footer -->
     <footer class="site-footer">
-        <p>&copy; 2026 Mobile Express. System architecture by Iqbal Tanvir.</p>
+        <p data-i18n="footer-copy">&copy; 2026 Mobile Express. System architecture & diagnostics by Iqbal Tanvir.</p>
+        <span class="footer-sub" data-i18n="footer-loc">Mita Road, Zilla Parishad Market, Badarganj, Rangpur • Bangladesh</span>
     </footer>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.0/vanilla-tilt.min.js"></script>
+    <!-- Persistent Floating WhatsApp Desk -->
+    <a href="https://wa.me/8801834254875?text=Hello%20Mobile%20Express,%20I%20need%20assistance" target="_blank" rel="noopener noreferrer" class="floating-wa-btn" aria-label="WhatsApp Support">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <!-- Core JavaScript Engine -->
     <script src="script.js"></script>
 </body>
 </html>

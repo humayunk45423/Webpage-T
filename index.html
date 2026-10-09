@@ -1,103 +1,290 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mobile Express | Diagnostic Lab</title>
+    <title>Mobile Express | Advanced Smartphone Diagnostic Lab</title>
+    <meta name="description" content="Mobile Express by Iqbal Tanvir - Professional Apple iCloud unlocking, Android FRP removal, dead boot revival, and certified smartphone sales in Badarganj, Rangpur.">
+    <meta name="keywords" content="Mobile Express, Iqbal Tanvir, iCloud unlock, Apple Expert, FRP removal, Dead Boot fix, Badarganj, Rangpur">
+    <meta name="theme-color" content="#0d0e12">
+
+    <!-- Typography (English & Bengali Fonts) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Noto+Sans+Bengali:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <!-- Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     
+    <!-- Core Styles -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- 3D Interactive Business Card Artifacts -->
-    <div class="parallax-environment">
-        <div class="card-band band-left-1" data-speed="0.3"></div>
-        <div class="card-band band-left-2" data-speed="0.6"></div>
-        <div class="card-band band-right-1" data-speed="-0.3"></div>
-        <div class="card-band band-right-2" data-speed="-0.6"></div>
+    <!-- 3D Kinetic Parallax Architectural Ribbons -->
+    <div class="parallax-environment" aria-hidden="true">
         <div class="ambient-glow"></div>
-    </div>
+        <div class="ambient-glow-secondary"></div>
+        
+        <!-- Left Kinetic Ribbon Cluster -->
+        <div class="ribbon-cluster left-cluster">
+            <div class="card-band band-outer band-left-outer" data-speed="0.22"></div>
+            <div class="card-band band-main band-left-main" data-speed="0.45">
+                <div class="band-sheen"></div>
+            </div>
+            <div class="band-beam band-left-beam" data-speed="0.65"></div>
+        </div>
 
-    <!-- Floating Glass Navbar -->
+        <!-- Right Kinetic Ribbon Cluster -->
+        <div class="ribbon-cluster right-cluster">
+            <div class="card-band band-outer band-right-outer" data-speed="-0.22"></div>
+            <div class="card-band band-main band-right-main" data-speed="-0.45">
+                <div class="band-sheen"></div>
+            </div>
+            <div class="band-beam band-right-beam" data-speed="-0.65"></div>
+        </div>
+    </div>
+    <div class="grid-texture" aria-hidden="true"></div>
+
+    <!-- Floating Glass Header (Matched Width with Hero Card) -->
     <header class="glass-header">
-        <nav class="nav-container">
+        <nav class="nav-container" aria-label="Main Navigation">
             <a href="index.html" class="brand">
-                <img src="assets/logo.png" alt="ME" onerror="this.src='https://i.postimg.cc/PJhCYJzg/Artboard_1logo_border_radious.png'">
-                <div class="brand-text">
-                    <strong>Mobile Express</strong>
-                    <span>Iqbal Tanvir</span>
+                <img src="assets/logo.png" alt="Mobile Express" onerror="this.src='https://i.postimg.cc/PJhCYJzg/Artboard_1logo_border_radious.png'">
+                <div class="brand-info-wrap">
+                    <span class="brand-title">Mobile <span>Express</span></span>
+                    <span class="brand-subtitle">Iqbal Tanvir</span>
                 </div>
             </a>
+
             <div class="nav-links">
-                <a href="#hero" class="active">Home</a>
-                <a href="#services">Diagnostics</a>
-                <a href="inventory.html">Inventory <span class="badge">25+</span></a>
-                <a href="#contact">Contact</a>
+                <a href="#hero" class="active" data-i18n="nav-home">Home</a>
+                <a href="#services" data-i18n="nav-diagnostics">Diagnostics</a>
+                <a href="#estimator" data-i18n="nav-estimator">Estimator</a>
+                <a href="inventory.html"><span data-i18n="nav-inventory">Inventory</span> <span class="nav-count">24+</span></a>
+                <a href="#contact" data-i18n="nav-contact">Contact</a>
             </div>
-            <a href="https://wa.me/8801834254875" class="btn-support">
-                <i class="fa-brands fa-whatsapp"></i> Support
-            </a>
+
+            <div class="nav-actions">
+                <!-- Theme Mode Switcher (Dark / Light White Mode) -->
+                <button class="btn-toggle-ctrl btn-toggle-icon theme-toggle-btn" aria-label="Toggle Light / Dark Mode" title="Toggle Light / Dark Mode">
+                    <i class="fa-solid fa-sun theme-icon"></i>
+                </button>
+
+                <!-- Language Switcher (EN / BN) -->
+                <button class="btn-toggle-ctrl lang-toggle-btn" aria-label="Toggle Language" title="Toggle Language (English / বাংলা)">
+                    <i class="fa-solid fa-globe"></i>
+                    <span class="lang-label">বাং</span>
+                </button>
+
+                <!-- WhatsApp Live Support -->
+                <a href="https://wa.me/8801834254875?text=Hello%20Mobile%20Express,%20I%20need%20assistance" target="_blank" rel="noopener noreferrer" class="btn-live-support">
+                    <span class="pulse-indicator"></span>
+                    <i class="fa-brands fa-whatsapp"></i>
+                    <span data-i18n="nav-support">Support</span>
+                </a>
+
+                <!-- Mobile Hamburger Toggle -->
+                <button id="menu-toggle" class="menu-toggle" aria-label="Toggle Menu">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
         </nav>
     </header>
+
+    <!-- Mobile Drawer -->
+    <div id="drawer-overlay" class="drawer-overlay" aria-hidden="true"></div>
+    <aside id="mobile-drawer" class="mobile-drawer" aria-label="Mobile Navigation Drawer">
+        <div>
+            <div class="drawer-header">
+                <div class="brand">
+                    <img src="assets/logo.png" alt="ME">
+                    <div class="brand-info-wrap">
+                        <span class="brand-title">Mobile <span>Express</span></span>
+                        <span class="brand-subtitle">Iqbal Tanvir</span>
+                    </div>
+                </div>
+                <button id="drawer-close" class="drawer-close" aria-label="Close Navigation">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+            <ul class="drawer-links">
+                <li><a href="#hero" class="active"><i class="fa-solid fa-house"></i> <span data-i18n="nav-home">Home</span></a></li>
+                <li><a href="#services"><i class="fa-solid fa-microchip"></i> <span data-i18n="nav-diagnostics">Diagnostic Lab</span></a></li>
+                <li><a href="#estimator"><i class="fa-solid fa-calculator"></i> <span data-i18n="nav-estimator">Cost Estimator</span></a></li>
+                <li><a href="inventory.html"><i class="fa-solid fa-mobile-screen"></i> <span data-i18n="nav-inventory">Inventory</span> <span class="nav-count">24+</span></a></li>
+                <li><a href="#contact"><i class="fa-solid fa-address-card"></i> <span data-i18n="nav-contact">Contact & Location</span></a></li>
+            </ul>
+        </div>
+
+        <div>
+            <div style="display: flex; gap: 8px; margin-bottom: 12px;">
+                <button class="btn-toggle-ctrl theme-toggle-btn" style="flex: 1; justify-content: center;">
+                    <i class="fa-solid fa-sun theme-icon"></i> Theme
+                </button>
+                <button class="btn-toggle-ctrl lang-toggle-btn" style="flex: 1; justify-content: center;">
+                    <i class="fa-solid fa-globe"></i> <span class="lang-label">বাং</span>
+                </button>
+            </div>
+            <a href="https://wa.me/8801834254875" target="_blank" class="btn-primary btn-full" style="margin-bottom: 10px;">
+                <i class="fa-brands fa-whatsapp"></i> <span data-i18n="nav-support">WhatsApp Live</span>
+            </a>
+            <a href="tel:+8801834254875" class="btn-secondary btn-full">
+                <i class="fa-solid fa-phone"></i> +88 01834 254875
+            </a>
+        </div>
+    </aside>
 
     <main class="app-content">
         
         <!-- Hero Section -->
         <section id="hero" class="hero-section glass-panel">
-            <div class="hero-inner" data-tilt data-tilt-max="3" data-tilt-glare="true" data-tilt-max-glare="0.1">
-                <div class="hero-badge">
-                    <i class="fa-brands fa-apple"></i> Apple Expert
+            <div class="hero-badge">
+                <i class="fa-brands fa-apple"></i> <span data-i18n="apple-badge">Apple Expert Diagnostic Lab</span>
+            </div>
+            <h1 class="hero-title">
+                <span data-i18n="hero-title-1">Flawless Security</span> <br>
+                <span class="red-gradient-text" data-i18n="hero-title-2">Bypass & Fixation.</span>
+            </h1>
+            <p class="hero-desc" data-i18n="hero-desc">
+                Permanent iCloud unlocking, instant FRP removal, and deep software restoration alongside a premium selection of BD's favorite smartphones.
+            </p>
+            <div class="hero-actions">
+                <a href="inventory.html" class="btn-primary">
+                    <i class="fa-solid fa-mobile-screen"></i> <span data-i18n="btn-browse">Browse Devices</span>
+                </a>
+                <a href="#services" class="btn-secondary">
+                    <i class="fa-solid fa-microchip"></i> <span data-i18n="btn-protocols">View Protocols</span>
+                </a>
+            </div>
+
+            <!-- Key Metric Highlights (Updated 100+ Stat) -->
+            <div class="hero-stats-row">
+                <div class="stat-box">
+                    <strong data-i18n="stat-restored-num">100+</strong>
+                    <span data-i18n="stat-restored-lbl">Devices Restored</span>
                 </div>
-                <h1 class="hero-title">
-                    Flawless Security <br>
-                    <span class="red-gradient-text">Bypass & Fixation.</span>
-                </h1>
-                <p class="hero-desc">
-                    Permanent iCloud unlocking, instant FRP removal, and deep software restoration alongside a premium selection of BD's favorite smartphones.
-                </p>
-                <div class="hero-actions">
-                    <a href="inventory.html" class="btn-primary">Browse Devices</a>
-                    <a href="#services" class="btn-secondary">View Protocols</a>
+                <div class="stat-box">
+                    <strong data-i18n="stat-success-num">99.4%</strong>
+                    <span data-i18n="stat-success-lbl">Bypass Success Rate</span>
+                </div>
+                <div class="stat-box">
+                    <strong data-i18n="stat-turnaround-num">15 Mins</strong>
+                    <span data-i18n="stat-turnaround-lbl">Express Turnaround</span>
                 </div>
             </div>
         </section>
 
-        <!-- Services Section -->
+        <!-- Services Bento Section -->
         <section id="services" class="services-section">
-            <h2 class="section-title">Diagnostic Expertise</h2>
+            <h2 class="section-title"><span data-i18n="services-tag">Diagnostic</span> <span data-i18n="services-tag-hi">Expertise</span></h2>
+            <p class="section-subtitle" data-i18n="services-sub">
+                Advanced hardware benches and proprietary diagnostic algorithms engineered to safely restore locked, disabled, and bricked devices.
+            </p>
+            
             <div class="bento-grid">
-                <div class="service-card glass-panel" data-tilt data-tilt-max="5">
+                <div class="service-card glass-panel">
                     <div class="s-icon-box"><i class="fa-solid fa-cloud-arrow-up"></i></div>
-                    <h3>iCloud Bypass</h3>
-                    <p>Hardware and software-tethered bypass solutions for all iOS architectures.</p>
+                    <h3 data-i18n="srv-icloud-title">iCloud & Security Bypass</h3>
+                    <p data-i18n="srv-icloud-desc">Hardware and Ramdisk-tethered bypass solutions for all iOS architectures, disabled screens, and activation locked iPhones & iPads.</p>
+                    <div class="service-meta-badge">
+                        <span><i class="fa-regular fa-clock"></i> <span data-i18n="srv-icloud-time">15 - 45 Mins</span></span>
+                        <a href="https://wa.me/8801834254875?text=Hello,%20I%20need%20iCloud%20Bypass" target="_blank" style="color: var(--red-hover); font-weight: 700;"><span data-i18n="btn-inquire">Inquire</span> <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
                 </div>
-                <div class="service-card glass-panel" data-tilt data-tilt-max="5">
+
+                <div class="service-card glass-panel">
                     <div class="s-icon-box"><i class="fa-solid fa-lock-open"></i></div>
-                    <h3>FRP Removal</h3>
-                    <p>Instantaneous Factory Reset Protection unlocking for top Android brands.</p>
+                    <h3 data-i18n="srv-frp-title">FRP Account Removal</h3>
+                    <p data-i18n="srv-frp-desc">Instantaneous Factory Reset Protection (FRP) unlocking for Samsung, Xiaomi, Oppo, Vivo, Realme, and Infinix with zero data risk.</p>
+                    <div class="service-meta-badge">
+                        <span><i class="fa-regular fa-clock"></i> <span data-i18n="srv-frp-time">10 - 25 Mins</span></span>
+                        <a href="https://wa.me/8801834254875?text=Hello,%20I%20need%20FRP%20Removal" target="_blank" style="color: var(--red-hover); font-weight: 700;"><span data-i18n="btn-inquire">Inquire</span> <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
                 </div>
-                <div class="service-card glass-panel" data-tilt data-tilt-max="5">
+
+                <div class="service-card glass-panel">
                     <div class="s-icon-box"><i class="fa-solid fa-microchip"></i></div>
-                    <h3>Dead Boot Fix</h3>
-                    <p>Motherboard flashing and deeply bricked device resurrection.</p>
+                    <h3 data-i18n="srv-deadboot-title">Dead Boot & Board Fix</h3>
+                    <p data-i18n="srv-deadboot-desc">Motherboard flashing, Qualcomm 9008 EDL revival, direct ISP memory reconstruction, and deeply bricked device resurrection.</p>
+                    <div class="service-meta-badge">
+                        <span><i class="fa-regular fa-clock"></i> <span data-i18n="srv-deadboot-time">Same Day Turnaround</span></span>
+                        <a href="https://wa.me/8801834254875?text=Hello,%20I%20have%20a%20Dead%20Boot%20Device" target="_blank" style="color: var(--red-hover); font-weight: 700;"><span data-i18n="btn-inquire">Inquire</span> <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- Contact Section (Business Card Style) -->
-        <section id="contact" class="contact-section glass-panel" data-tilt data-tilt-max="2">
-            <h2 class="section-title" style="margin-bottom: 50px;">Establish Connection</h2>
+        <!-- Interactive Diagnostic Cost & Feasibility Calculator -->
+        <section id="estimator" class="glass-panel estimator-panel">
+            <h2 class="section-title" style="font-size: 2rem; margin-bottom: 8px;"><span data-i18n="est-title-1">Instant Diagnostic</span> <span>Estimator</span></h2>
+            <p style="color: var(--text-secondary); font-size: 0.95rem;" data-i18n="est-sub">Select your device platform and failure type for an immediate cost range and procedure estimate.</p>
+
+            <div class="calc-grid">
+                <div class="form-group">
+                    <label for="calc-brand" class="form-label" data-i18n="est-lbl-plat">Platform</label>
+                    <select id="calc-brand" class="form-control">
+                        <option value="" disabled selected>Select Platform...</option>
+                        <option value="apple">Apple (iPhone / iPad)</option>
+                        <option value="android">Android (Samsung / Xiaomi / etc.)</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="calc-issue" class="form-label" data-i18n="est-lbl-issue">Failure / Symptom</label>
+                    <select id="calc-issue" class="form-control">
+                        <option value="" disabled selected>Select Issue...</option>
+                        <option value="icloud">iCloud Activation Lock</option>
+                        <option value="disabled">iPhone Disabled / Unavailable</option>
+                        <option value="restore">Unable to Activate / Baseband</option>
+                        <option value="frp">Android Google FRP Lock</option>
+                        <option value="deadboot">Dead Boot / Qualcomm 9008</option>
+                        <option value="network">SIM Carrier / Region Locked</option>
+                        <option value="hardware">Motherboard Power Short</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="calc-model" class="form-label" data-i18n="est-lbl-model">Model (Optional)</label>
+                    <input type="text" id="calc-model" class="form-control" placeholder="e.g. iPhone 13, Note 12">
+                </div>
+
+                <button id="calc-btn" class="btn-primary" style="height: 50px; justify-content: center;">
+                    <i class="fa-solid fa-calculator"></i> <span data-i18n="btn-calc">Calculate</span>
+                </button>
+            </div>
+
+            <div id="calc-result" class="calc-result">
+                <div>
+                    <div id="calc-result-title" class="calc-result-title">Selected Diagnostic Procedure</div>
+                    <div id="calc-result-desc" class="calc-result-desc">Estimation details will appear here.</div>
+                </div>
+                <a id="calc-wa-btn" href="#" target="_blank" rel="noopener noreferrer" class="btn-live-support" style="flex-shrink: 0; padding: 10px 22px;">
+                    <i class="fa-brands fa-whatsapp"></i> Confirm on WhatsApp
+                </a>
+            </div>
+        </section>
+
+        <!-- Contact Section (Authentic Business Card Style) -->
+        <section id="contact" class="contact-section glass-panel">
+            <h2 class="section-title" style="margin-bottom: 12px;"><span data-i18n="contact-title-1">Establish</span> <span>Connection</span></h2>
+            <p style="color: var(--text-secondary); margin-bottom: 45px;" data-i18n="contact-sub">Direct communication channels and laboratory location for proprietor Iqbal Tanvir.</p>
             
             <div class="contact-layout">
-                <!-- Pill Buttons like the Business Card -->
+                <!-- Signature Pill Buttons like the Business Card -->
                 <div class="card-pills">
                     <a href="tel:+8801834254875" class="card-pill">
                         <div class="pill-icon"><i class="fa-solid fa-phone-volume"></i></div>
                         <div class="pill-content">
-                            <span>Direct Line</span>
+                            <span data-i18n="contact-pill-1-sub">Direct Line</span>
+                            <strong>+88 01834 254875</strong>
+                        </div>
+                    </a>
+                    
+                    <a href="https://wa.me/8801834254875" target="_blank" rel="noopener noreferrer" class="card-pill">
+                        <div class="pill-icon wa"><i class="fa-brands fa-whatsapp"></i></div>
+                        <div class="pill-content">
+                            <span data-i18n="contact-pill-2-sub">Official WhatsApp Desk</span>
                             <strong>+88 01834 254875</strong>
                         </div>
                     </a>
@@ -105,38 +292,53 @@
                     <a href="mailto:iqbaltanvir514@gmail.com" class="card-pill">
                         <div class="pill-icon"><i class="fa-solid fa-envelope"></i></div>
                         <div class="pill-content">
-                            <span>Email Support</span>
+                            <span data-i18n="contact-pill-3-sub">Email Support</span>
                             <strong>iqbaltanvir514@gmail.com</strong>
                         </div>
                     </a>
                     
-                    <a href="https://maps.app.goo.gl/1e6A4LQxwAeqnt4p8" target="_blank" class="card-pill">
+                    <a href="https://maps.app.goo.gl/1e6A4LQxwAeqnt4p8" target="_blank" rel="noopener noreferrer" class="card-pill">
                         <div class="pill-icon"><i class="fa-solid fa-location-dot"></i></div>
                         <div class="pill-content">
-                            <span>Lab Location</span>
-                            <strong>Badarganj, Rangpur</strong>
+                            <span data-i18n="contact-pill-4-sub">Lab Location</span>
+                            <strong data-i18n="contact-pill-4-val">মিতা সিনেমা হল সংলগ্ন, জেলা পরিষদ মার্কেট, বদরগঞ্জ, রংপুর</strong>
                         </div>
                     </a>
                 </div>
 
-                <!-- QR Code Box -->
+                <!-- QR Code Presentation -->
                 <div class="qr-box">
                     <div class="qr-frame">
-                        <i class="fa-solid fa-qrcode qr-placeholder"></i>
+                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=160x160&data=https%3A%2F%2Fwa.me%2F8801834254875&color=0d0e12&bgcolor=ffffff" alt="Scan to WhatsApp" loading="lazy">
                         <div class="qr-whatsapp-icon"><i class="fa-brands fa-whatsapp"></i></div>
                     </div>
-                    <span>Scan to Connect</span>
+                    <span data-i18n="qr-scan-label">Scan to Connect on WhatsApp</span>
                 </div>
+            </div>
+
+            <!-- Authentic Ethics Banner from Business Card -->
+            <div class="ethics-box">
+                <p class="ethics-text" data-i18n="ethics-text">
+                    "রাসূলুল্লাহ (সা.) বলেছেন, 'সত্যবাদী ও আমানতদার (বিশ্বস্ত) ব্যবসায়ী কিয়ামতের দিন নবীগণ, সিদ্দিকগণ এবং শহীদগণের সাথে থাকবেন।'"
+                </p>
+                <span class="ethics-ref" data-i18n="ethics-ref">[সুনান আত-তিরমিজি, হাদিস নং ১২০৯]</span>
             </div>
         </section>
 
     </main>
 
+    <!-- Site Footer -->
     <footer class="site-footer">
-        <p>&copy; 2026 Mobile Express. System architecture by Iqbal Tanvir.</p>
+        <p data-i18n="footer-copy">&copy; 2026 Mobile Express. System architecture & diagnostics by Iqbal Tanvir.</p>
+        <span class="footer-sub" data-i18n="footer-loc">Mita Road, Zilla Parishad Market, Badarganj, Rangpur • Bangladesh</span>
     </footer>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.0/vanilla-tilt.min.js"></script>
+    <!-- Persistent Floating WhatsApp Desk -->
+    <a href="https://wa.me/8801834254875?text=Hello%20Mobile%20Express,%20I%20need%20assistance" target="_blank" rel="noopener noreferrer" class="floating-wa-btn" aria-label="WhatsApp Support">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <!-- Core JavaScript Engine -->
     <script src="script.js"></script>
 </body>
 </html>
