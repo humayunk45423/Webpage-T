@@ -969,8 +969,6 @@ body:not([data-theme="light"]) .toggle-slider {
     padding: 20px 0 50px;
     text-align: center;
     scroll-margin-top: 105px;
-    content-visibility: auto;
-    contain-intrinsic-size: 1px 450px;
 }
 
 .section-title {
@@ -1066,8 +1064,6 @@ body:not([data-theme="light"]) .toggle-slider {
     padding: 44px;
     margin-bottom: 50px;
     scroll-margin-top: 105px;
-    content-visibility: auto;
-    contain-intrinsic-size: 1px 400px;
 }
 
 .calc-grid {
@@ -1152,8 +1148,6 @@ body:not([data-theme="light"]) .toggle-slider {
     padding: 60px 40px;
     text-align: center;
     scroll-margin-top: 105px;
-    content-visibility: auto;
-    contain-intrinsic-size: 1px 450px;
 }
 
 .contact-layout {

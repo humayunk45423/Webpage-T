@@ -68,7 +68,7 @@ const I18N_DICTIONARY = {
         'theme-lbl': 'Theme',
         'lang-lbl': 'Language',
         'call-line': '+88 01834 254875',
-        'apple-badge': 'Apple Expert Diagnostic Lab',
+        'apple-badge': 'Apple & Android Expert Service Center',
         'hero-title-1': 'Flawless Security',
         'hero-title-2': 'Bypass & Fixation.',
         'hero-desc': 'Permanent iCloud unlocking, instant FRP removal, and deep software restoration alongside a premium selection of BD\'s favorite smartphones.',
@@ -102,11 +102,11 @@ const I18N_DICTIONARY = {
         'btn-calc': 'Calculate',
         'contact-title-1': 'Establish',
         'contact-title-2': 'Connection',
-        'contact-sub': 'Direct communication channels and laboratory location for proprietor Tanvir Iqbal.',
+        'contact-sub': 'Direct communication channels and shop location for proprietor Tanvir Iqbal.',
         'contact-pill-1-sub': 'Direct Line',
         'contact-pill-2-sub': 'Official WhatsApp Desk',
         'contact-pill-3-sub': 'Email Support',
-        'contact-pill-4-sub': 'Lab Location',
+        'contact-pill-4-sub': 'Shop Location',
         'contact-pill-4-val': 'Mita Cinema Hall Adjacent, Zilla Parishad Market, Badarganj, Rangpur',
         'qr-scan-label': 'Scan to Connect on WhatsApp',
         'ethics-text': '"The honest and trustworthy merchant will be with the prophets, the truthful ones, and the martyrs on the Day of Resurrection."',
@@ -139,7 +139,7 @@ const I18N_DICTIONARY = {
         'theme-lbl': 'থিম মোড',
         'lang-lbl': 'ভাষা নির্বাচন',
         'call-line': '+৮৮ ০১৮৩৪ ২৫৪৮৭৫',
-        'apple-badge': 'অ্যাপল এক্সপার্ট ডায়াগনস্টিক ল্যাব',
+        'apple-badge': 'অ্যাপল ও অ্যান্ড্রয়েড এক্সপার্ট সার্ভিস সেন্টার',
         'hero-title-1': 'নিখুঁত সিকিউরিটি',
         'hero-title-2': 'বাইপাস ও সমাধান।',
         'hero-desc': 'আইক্লাউড আনলকিং, এফআরপি রিমুভাল, ডেড বুট রিকভারি এবং বাংলাদেশের জনপ্রিয় সেরা স্মার্টফোনের প্রিমিয়াম সম্ভার।',
@@ -173,11 +173,11 @@ const I18N_DICTIONARY = {
         'btn-calc': 'হিসাব করুন',
         'contact-title-1': 'সরাসরি',
         'contact-title-2': 'যোগাযোগ ও ঠিকানা',
-        'contact-sub': 'স্বত্বাধিকারী তানভীর ইকবালের ডায়াগনস্টিক ল্যাব ও শোরুমে যোগাযোগের ঠিকানা।',
+        'contact-sub': 'স্বত্বাধিকারী তানভীর ইকবালের শোরুম ও সার্ভিস সেন্টারে যোগাযোগের ঠিকানা।',
         'contact-pill-1-sub': 'সরাসরি কল',
         'contact-pill-2-sub': 'অফিসিয়াল হোয়াটসঅ্যাপ ডেস্ক',
         'contact-pill-3-sub': 'ইমেইল সাপোর্ট',
-        'contact-pill-4-sub': 'ল্যাব ঠিকানা',
+        'contact-pill-4-sub': 'দোকানের ঠিকানা',
         'contact-pill-4-val': 'মিতা সিনেমা হল সংলগ্ন, জেলা পরিষদ মার্কেট, বদরগঞ্জ, রংপুর',
         'qr-scan-label': 'হোয়াটসঅ্যাপে কানেক্ট করতে স্ক্যান করুন',
         'ethics-text': '"রাসূলুল্লাহ (সা.) বলেছেন, \'সত্যবাদী ও আমানতদার (বিশ্বস্ত) ব্যবসায়ী কিয়ামতের দিন নবীগণ, সিদ্দিকগণ এবং শহীদগণের সাথে থাকবেন।\'"',
@@ -502,6 +502,41 @@ function initNavPillSelector() {
         }, { passive: true });
     }
 
+    // Check if page was loaded with a hash (e.g. user clicked Diagnostics, Estimator, Contact from inventory.html)
+    if (isIndexPage && window.location.hash) {
+        const targetId = window.location.hash.replace(/^#/, '');
+        const targetEl = document.getElementById(targetId);
+        if (targetEl) {
+            const matchingLink = links.find(l => {
+                const h = l.getAttribute('href') || '';
+                return h === `#${targetId}` || h.endsWith(`#${targetId}`);
+            });
+            if (matchingLink) {
+                links.forEach(l => l.classList.remove('active'));
+                matchingLink.classList.add('active');
+                currentActiveLink = matchingLink;
+                updatePillPosition(matchingLink, false);
+            }
+
+            isClickScrolling = true;
+            clearTimeout(clickScrollTimer);
+            clickScrollTimer = setTimeout(() => {
+                isClickScrolling = false;
+            }, 1200);
+
+            const executeInitialScroll = () => {
+                smoothScrollTo(targetId);
+            };
+
+            // Run at multiple frames to ensure fonts and layout have stabilized
+            setTimeout(executeInitialScroll, 50);
+            setTimeout(executeInitialScroll, 250);
+            if (document.fonts && document.fonts.ready) {
+                document.fonts.ready.then(() => setTimeout(executeInitialScroll, 100));
+            }
+        }
+    }
+
     // Handle window resize
     window.addEventListener('resize', () => {
         const active = navLinksContainer.querySelector('a.active') || currentActiveLink;
@@ -655,7 +690,7 @@ function initDiagnosticCalculator() {
             title: currentLanguage === 'bn' ? 'কাস্টম প্রিসিশন ডায়াগনস্টিক' : 'Custom Precision Diagnostics',
             time: currentLanguage === 'bn' ? '৩০ - ৬০ মিনিট' : '30 - 60 Mins',
             cost: currentLanguage === 'bn' ? 'চেক করে জানানো হবে' : 'Estimate upon inspection',
-            note: currentLanguage === 'bn' ? 'ল্যাবে ফুল হার্ডওয়্যার ও সফটওয়্যার টেস্টের পর সমাধান দেওয়া হবে।' : 'Full hardware and software bench diagnostic.'
+            note: currentLanguage === 'bn' ? 'দোকানে ফুল হার্ডওয়্যার ও সফটওয়্যার টেস্টের পর সমাধান দেওয়া হবে।' : 'Full hardware and software bench diagnostic at store.'
         };
 
         if (resultBox && resultTitle && resultDesc && resultBtn) {
