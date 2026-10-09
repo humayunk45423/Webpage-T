@@ -1559,6 +1559,7 @@ body:not([data-theme="light"]) .toggle-slider {
     .calc-grid { grid-template-columns: 1fr 1fr; }
     .contact-section { padding: 40px 24px; }
     .card-pills { min-width: 100%; }
+    .inv-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
 }
 
 @media (max-width: 640px) {
@@ -1589,8 +1590,127 @@ body:not([data-theme="light"]) .toggle-slider {
 
     .calc-grid { grid-template-columns: 1fr; }
     .estimator-panel { padding: 24px 18px; }
-    .inv-search-bar { flex-direction: column; }
-    .sort-dropdown { width: 100%; }
+    
+    /* Inventory Mobile 2-Devices Side-by-Side & Compact Controls */
+    .inv-controls-wrapper {
+        margin-bottom: 24px;
+    }
+    
+    .inv-search-bar { 
+        display: flex;
+        flex-direction: row; 
+        gap: 8px;
+        margin-bottom: 12px;
+    }
+    
+    .search-input-wrap input {
+        padding: 10px 14px 10px 36px;
+        font-size: 0.82rem;
+    }
+    
+    .search-input-wrap i {
+        left: 13px;
+        font-size: 0.82rem;
+    }
+    
+    .sort-dropdown { 
+        width: auto;
+        padding: 10px 12px;
+        font-size: 0.78rem;
+        min-width: 120px;
+    }
+    
+    .brand-chips {
+        display: flex;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        gap: 6px;
+        padding-bottom: 6px;
+        margin-bottom: 6px;
+        scrollbar-width: none;
+    }
+    
+    .brand-chips::-webkit-scrollbar {
+        display: none;
+    }
+    
+    .chip-btn {
+        flex-shrink: 0;
+        padding: 6px 13px;
+        font-size: 0.76rem;
+        white-space: nowrap;
+    }
+    
+    .inv-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+    
+    .inv-card {
+        padding: 12px 10px;
+        border-radius: 18px;
+    }
+    
+    .inv-badge-top {
+        top: 8px;
+        left: 8px;
+        font-size: 0.58rem;
+        padding: 2px 7px;
+    }
+    
+    .inv-img {
+        height: 110px;
+        padding: 8px;
+        margin-bottom: 8px;
+        border-radius: 12px;
+    }
+    
+    .inv-brand {
+        font-size: 0.62rem;
+        margin-bottom: 2px;
+    }
+    
+    .inv-card h3 {
+        font-size: 0.88rem;
+        line-height: 1.2;
+        margin-bottom: 4px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    
+    .inv-price {
+        font-size: 0.95rem;
+        margin-bottom: 8px;
+        font-weight: 800;
+    }
+    
+    .inv-specs {
+        font-size: 0.66rem;
+        gap: 4px;
+        margin-bottom: 10px;
+        padding-top: 6px;
+    }
+    
+    .inv-specs li {
+        gap: 5px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    
+    .inv-specs li i {
+        font-size: 0.62rem;
+    }
+    
+    .inv-card .btn-full {
+        padding: 8px 6px;
+        font-size: 0.72rem;
+        gap: 4px;
+        border-radius: 999px;
+    }
+
     .card-pill { padding: 16px 18px 16px 65px; }
     .pill-icon { width: 52px; height: 52px; font-size: 1.2rem; }
     .qr-frame { width: 130px; height: 130px; }
