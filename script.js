@@ -71,11 +71,11 @@ const I18N_DICTIONARY = {
         'call-line': '+88 01834 254875',
         'brand-motto': 'Buy • Exchange • Sell',
         'brand-motto-full': 'Buy • Exchange • Sell Smartphones',
-        'hero-apple-tag': 'Apple Expert • iCloud Creator & Fixer',
+        'hero-apple-tag': 'Apple Expert Tanvir Iqbal • Mobile Express',
         'apple-badge': 'Apple & Android Expert Service Center',
-        'hero-title-1': 'Apple Expert',
+        'hero-title-1': 'Mobile Express',
         'hero-title-2': 'Buy • Exchange • Sell.',
-        'hero-desc': 'Specialist Apple iCloud account creation, activation lock bypass, and board diagnostics alongside 24+ certified smartphones to Buy, Exchange, or Sell in <span class="location-highlight"><i class="fa-solid fa-location-dot"></i> Badarganj, Rangpur & Parbatipur</span>.',
+        'hero-desc': 'Your trusted Apple & Smartphone destination by Tanvir Iqbal — permanent iCloud bypass, expert hardware repair, and certified handset exchange in <a href="https://maps.app.goo.gl/1e6A4LQxwAeqnt4p8" target="_blank" rel="noopener noreferrer" class="location-highlight" title="Get Directions to Mobile Express on Google Maps"><i class="fa-solid fa-location-dot"></i> Badarganj, Rangpur & Parbatipur</a>.',
         'btn-browse': 'Browse Handsets',
         'btn-browse-motto': 'Buy / Exchange Phones (24+)',
         'btn-protocols': 'View Protocols',
@@ -121,7 +121,7 @@ const I18N_DICTIONARY = {
         'ethics-ref': '[Sunan At-Tirmidhi, Hadith No. 1209]',
         'inv-header-1': 'Certified Smartphone',
         'inv-header-2': 'Inventory',
-        'inv-header-sub': 'Looking to buy, exchange, or sell your smartphone? Explore 24+ handpicked, motherboard-tested devices in <span class="location-highlight"><i class="fa-solid fa-location-dot"></i> Badarganj, Rangpur & Parbatipur</span> with our 7-Day Replacement Guarantee.',
+        'inv-header-sub': 'Looking to buy, exchange, or sell your smartphone? Explore 24+ handpicked, motherboard-tested devices at <a href="https://maps.app.goo.gl/1e6A4LQxwAeqnt4p8" target="_blank" rel="noopener noreferrer" class="location-highlight" title="Get Directions to Mobile Express on Google Maps"><i class="fa-solid fa-location-dot"></i> Badarganj, Rangpur & Parbatipur</a> with our 7-Day Replacement Guarantee.',
         'inv-search-placeholder': 'Search by name, brand, processor, camera (e.g. Note 13, 108MP, G99)...',
         'filter-all': 'All Brands',
         'filter-xiaomi': 'Xiaomi & Poco',
@@ -146,14 +146,13 @@ const I18N_DICTIONARY = {
         'nav-support': 'সাপোর্ট',
         'theme-lbl': 'থিম মোড',
         'lang-lbl': 'ভাষা নির্বাচন',
-        'call-line': '+৮৮ ০১৮৩৪ ২৫৪৮৭৫',
-        'brand-motto': 'কিনুন • এক্সচেঞ্জ • বিক্রি',
-        'brand-motto-full': 'স্মার্টফোন কিনুন • এক্সচেঞ্জ করুন • বিক্রি করুন',
-        'hero-apple-tag': 'অ্যাপল এক্সপার্ট • আইক্লাউড একাউন্ট ক্রিয়েটর ও ফিক্সার',
+        'brand-motto': 'ক্রয় • বিনিময় • বিক্রয়',
+        'brand-motto-full': 'স্মার্টফোন ক্রয় • বিনিময় • বিক্রয়',
+        'hero-apple-tag': 'অ্যাপল এক্সপার্ট তানভীর ইকবাল • মোবাইল এক্সপ্রেস',
         'apple-badge': 'অ্যাপল ও অ্যান্ড্রয়েড এক্সপার্ট সার্ভিস সেন্টার',
-        'hero-title-1': 'অ্যাপল এক্সপার্ট',
-        'hero-title-2': 'Buy • Exchange • Sell.',
-        'hero-desc': 'আইক্লাউড অ্যাকাউন্ট তৈরি, পাসকোড/লক রিকভারি ও বাইপাস সমাধান এবং <span class="location-highlight"><i class="fa-solid fa-location-dot"></i> বদরগঞ্জ, রংপুর ও পার্বতীপুরে</span> ৭ দিনের গ্যারান্টি সহ স্মার্টফোন Buy • Exchange • Sell সুবিধা।',
+        'hero-title-1': 'মোবাইল এক্সপ্রেস',
+        'hero-title-2': 'ক্রয় • বিনিময় • বিক্রয়।',
+        'hero-desc': 'তানভীর ইকবালের বিশ্বস্ত অ্যাপল ও স্মার্টফোন হাব — আইক্লাউড অ্যাকাউন্ট তৈরি, পাসকোড/লক রিকভারি ও বাইপাস সমাধান এবং <a href="https://maps.app.goo.gl/1e6A4LQxwAeqnt4p8" target="_blank" rel="noopener noreferrer" class="location-highlight" title="গুগল ম্যাপে শপের লোকেশন ও ডিরেকশন দেখুন"><i class="fa-solid fa-location-dot"></i> বদরগঞ্জ, রংপুর ও পার্বতীপুরে</a> ৭ দিনের গ্যারান্টি সহ স্মার্টফোন ক্রয় • বিনিময় • বিক্রয় সুবিধা।',
         'btn-browse': 'স্মার্টফোন দেখুন',
         'btn-browse-motto': 'স্মার্টফোন দেখুন ও এক্সচেঞ্জ (২৪+)',
         'btn-protocols': 'সার্ভিস প্রটোকল',
@@ -198,8 +197,8 @@ const I18N_DICTIONARY = {
         'ethics-text': '"রাসূলুল্লাহ (সা.) বলেছেন, \'সত্যবাদী ও আমানতদার (বিশ্বস্ত) ব্যবসায়ী কিয়ামতের দিন নবীগণ, সিদ্দিকগণ এবং শহীদগণের সাথে থাকবেন।\'"',
         'ethics-ref': '[সুনান আত-তিরমিজি, হাদিস নং ১২০৯]',
         'inv-header-1': 'ভেরিফাইড স্মার্টফোন',
-        'inv-header-2': 'সম্ভার (Buy • Exchange • Sell)',
-        'inv-header-sub': 'স্মার্টফোন কিনতে, এক্সচেঞ্জ করতে বা বিক্রি করতে চান? <span class="location-highlight"><i class="fa-solid fa-location-dot"></i> বদরগঞ্জ, রংপুর ও পার্বতীপুরের</span> সবচেয়ে বিশ্বস্ত ২৪+ টেস্টেড হ্যান্ডসেট কালেকশন।',
+        'inv-header-2': 'সম্ভার (ক্রয় • বিনিময় • বিক্রয়)',
+        'inv-header-sub': 'স্মার্টফোন ক্রয়, বিনিময় বা বিক্রয় করতে চান? <a href="https://maps.app.goo.gl/1e6A4LQxwAeqnt4p8" target="_blank" rel="noopener noreferrer" class="location-highlight" title="গুগল ম্যাপে শপের লোকেশন ও ডিরেকশন দেখুন"><i class="fa-solid fa-location-dot"></i> বদরগঞ্জ, রংপুর ও পার্বতীপুরের</a> সবচেয়ে বিশ্বস্ত ২৪+ টেস্টেড হ্যান্ডসেট কালেকশন।',
         'inv-search-placeholder': 'মডেল, ব্র্যান্ড, প্রসেসর বা ক্যামেরা দিয়ে সার্চ করুন (যেমন: Note 13, 108MP, G99)...',
         'filter-all': 'সকল ব্র্যান্ড',
         'filter-xiaomi': 'শাওমি ও পোকো',
@@ -229,7 +228,7 @@ function initLanguageManager() {
             currentLanguage = currentLanguage === 'en' ? 'bn' : 'en';
             applyLanguage(currentLanguage);
             localStorage.setItem('me_lang', currentLanguage);
-            
+
             // Re-render catalog if present
             if (typeof window.reRenderInventory === 'function') {
                 window.reRenderInventory();
@@ -240,7 +239,7 @@ function initLanguageManager() {
 
 function applyLanguage(lang) {
     document.body.classList.toggle('lang-bn', lang === 'bn');
-    
+
     // Update segmented toggle state (BN on left, EN on right)
     const langToggles = document.querySelectorAll('.lang-segmented-toggle, #langToggleBtn, .lang-toggle-btn');
     langToggles.forEach(btn => {
@@ -256,7 +255,7 @@ function applyLanguage(lang) {
 
     const dict = I18N_DICTIONARY[lang] || I18N_DICTIONARY['en'];
     const elements = document.querySelectorAll('[data-i18n]');
-    
+
     elements.forEach(el => {
         const key = el.getAttribute('data-i18n');
         if (dict[key]) {
@@ -302,15 +301,15 @@ function initCrossingBandsParallax() {
             const speed = parseFloat(el.getAttribute('data-speed') || '0.35');
             const yMove = scrolled * speed;
 
-            const isLeft = el.classList.contains('band-left-outer') || 
-                           el.classList.contains('band-left-main') || 
-                           el.classList.contains('band-left-beam') ||
-                           el.classList.contains('band-left-1') || 
-                           el.classList.contains('band-left-2');
-                           
+            const isLeft = el.classList.contains('band-left-outer') ||
+                el.classList.contains('band-left-main') ||
+                el.classList.contains('band-left-beam') ||
+                el.classList.contains('band-left-1') ||
+                el.classList.contains('band-left-2');
+
             const baseRotate = isLeft ? 24 : -24;
             const dynamicRotate = baseRotate + (isLeft ? (scrolled * 0.004) : -(scrolled * 0.004));
-            
+
             let zDepth = -90;
             if (el.classList.contains('band-outer') || el.classList.contains('band-left-2') || el.classList.contains('band-right-2')) {
                 zDepth = -200;
@@ -716,7 +715,7 @@ function initDiagnosticCalculator() {
             resultTitle.textContent = `${data.title} (${data.time})`;
             resultDesc.textContent = `${currentLanguage === 'bn' ? 'আনুমানিক ডায়াগনস্টিক খরচ' : 'Diagnostic Cost Range'}: ${data.cost}. ${data.note}`;
 
-            const text = encodeURIComponent(currentLanguage === 'bn' 
+            const text = encodeURIComponent(currentLanguage === 'bn'
                 ? `আসসালামু আলাইকুম মোবাইল এক্সপ্রেস, আমি ${brand.toUpperCase()} - ${data.title} সম্পর্কিত সার্ভিস নিতে চাচ্ছি।`
                 : `Hello Mobile Express, I would like to consult about ${brand.toUpperCase()} - ${data.title}. Issue: ${issue}`);
             resultBtn.href = `https://wa.me/8801834254875?text=${text}`;
@@ -736,30 +735,30 @@ const INVENTORY_DATA = [
     { id: 3, brand: 'Xiaomi', name: 'Redmi 12', price: 16999, tag: { en: 'Budget King', bn: 'বাজেট কিং' }, specs: ['90Hz FHD+ IPS Display', 'MediaTek Helio G88', '50MP Triple Camera', 'Glass Back Finish'], img: 'https://fdn2.gsmarena.com/vv/bigpic/xiaomi-redmi-12.jpg' },
     { id: 4, brand: 'Poco', name: 'Poco X5 Pro 5G', price: 32000, tag: { en: 'Performance', bn: 'হাই স্পিড' }, specs: ['120Hz Flow AMOLED', 'Snapdragon 778G 5G', '108MP Pro Camera', '67W Turbo Charge'], img: 'https://fdn2.gsmarena.com/vv/bigpic/xiaomi-poco-x5-pro-5g.jpg' },
     { id: 5, brand: 'Poco', name: 'Poco M5', price: 15500, tag: { en: 'Gaming Entry', bn: 'গেমিং চয়েস' }, specs: ['90Hz DynamicSwitch', 'Helio G99 (6nm)', '50MP AI Camera', '5000mAh Long-Life'], img: 'https://fdn2.gsmarena.com/vv/bigpic/xiaomi-poco-m5-.jpg' },
-    
+
     { id: 6, brand: 'Realme', name: 'Realme 11 Pro 5G', price: 35000, tag: { en: 'Curved OLED', bn: 'কার্ভড ওলেড' }, specs: ['120Hz Curved AMOLED', 'Dimensity 7050 5G', '100MP OIS Camera', '67W SuperVOOC'], img: 'https://fdn2.gsmarena.com/vv/bigpic/realme-11-pro.jpg' },
     { id: 7, brand: 'Realme', name: 'Realme C55', price: 18999, tag: { en: 'Mini Capsule', bn: 'মিনি ক্যাপসুল' }, specs: ['90Hz FHD+ Screen', 'Helio G88 Gaming Chip', '64MP AI Main Cam', '33W Dart Charge'], img: 'https://fdn2.gsmarena.com/vv/bigpic/realme-c55.jpg' },
     { id: 8, brand: 'Realme', name: 'Realme 10', price: 20000, tag: { en: 'Super AMOLED', bn: 'সুপার অ্যামোলেড' }, specs: ['Super AMOLED 90Hz', 'Helio G99 6nm', '50MP Color AI Cam', 'Ultra-Slim 7.9mm'], img: 'https://fdn2.gsmarena.com/vv/bigpic/realme-10-4g.jpg' },
     { id: 9, brand: 'Realme', name: 'Realme C53', price: 14999, tag: { en: 'Budget Pick', bn: 'বাজেট পিক' }, specs: ['90Hz Display', 'Unisoc T612 Octa-Core', '50MP Dual Camera', '33W Fast Charge'], img: 'https://fdn2.gsmarena.com/vv/bigpic/realme-c53.jpg' },
-    
+
     { id: 10, brand: 'Samsung', name: 'Galaxy A24', price: 24500, tag: { en: 'OIS Camera', bn: 'OIS ক্যামেরা' }, specs: ['Super AMOLED 90Hz', 'Helio G99 Processor', '50MP Main with OIS', '5000mAh Battery'], img: 'https://fdn2.gsmarena.com/vv/bigpic/samsung-galaxy-a24-4g.jpg' },
     { id: 11, brand: 'Samsung', name: 'Galaxy M14 5G', price: 21000, tag: { en: '6000mAh Monster', bn: '৬০০০mAh ব্যাটারি' }, specs: ['90Hz FHD+ Display', 'Exynos 1330 (5nm)', '50MP Triple Camera', '6000mAh Massive Bat'], img: 'https://fdn2.gsmarena.com/vv/bigpic/samsung-galaxy-m14-5g.jpg' },
     { id: 12, brand: 'Samsung', name: 'Galaxy A14', price: 18500, tag: { en: 'Reliable', bn: 'দীর্ঘস্থায়ী' }, specs: ['6.6" FHD+ Large Screen', 'Octa-core Processor', '50MP Triple Camera', '13MP High-res Selfie'], img: 'https://fdn2.gsmarena.com/vv/bigpic/samsung-galaxy-a14-4g.jpg' },
     { id: 13, brand: 'Samsung', name: 'Galaxy A04s', price: 13500, tag: { en: 'Entry Level', bn: 'এন্ট্রি লেভেল' }, specs: ['90Hz Smooth Display', 'Exynos 850 Stable', '50MP Triple Camera', 'Dolby Atmos Audio'], img: 'https://fdn2.gsmarena.com/vv/bigpic/samsung-galaxy-a04s.jpg' },
-    
+
     { id: 14, brand: 'Vivo', name: 'Vivo V27e', price: 32999, tag: { en: 'Aura Light', bn: 'অরা লাইট' }, specs: ['120Hz AMOLED Panel', 'Helio G99 High Speed', '64MP OIS Aura Portrait', '66W FlashCharge'], img: 'https://fdn2.gsmarena.com/vv/bigpic/vivo-v27e.jpg' },
     { id: 15, brand: 'Vivo', name: 'Vivo Y22', price: 17500, tag: { en: 'Design', bn: 'স্লিক ডিজাইন' }, specs: ['6.55" Sunlight Screen', 'Helio G85 Processor', '50MP Night Camera', '18W Fast Charge'], img: 'https://fdn2.gsmarena.com/vv/bigpic/vivo-y22.jpg' },
     { id: 16, brand: 'Vivo', name: 'Vivo Y16', price: 14000, tag: { en: 'Slim', bn: 'স্লিম বিল্ড' }, specs: ['2.5D Curved Design', 'Helio P35 Octa-Core', 'AI Dual Camera', '5000mAh All-day'], img: 'https://fdn2.gsmarena.com/vv/bigpic/vivo-y16.jpg' },
-    
+
     { id: 17, brand: 'Oppo', name: 'Oppo A78', price: 26500, tag: { en: '67W Flash', bn: '৬৭W ফাস্ট চার্জ' }, specs: ['FHD+ AMOLED 90Hz', 'Snapdragon 680', '50MP AI Dual Camera', '67W SUPERVOOC'], img: 'https://fdn2.gsmarena.com/vv/bigpic/oppo-a78-4g.jpg' },
     { id: 18, brand: 'Oppo', name: 'Oppo A17', price: 14500, tag: { en: 'Leather Feel', bn: 'লেদার ফিনিশ' }, specs: ['Premium Leather Design', 'Helio G35 Processor', '50MP AI Camera', '5000mAh Battery'], img: 'https://fdn2.gsmarena.com/vv/bigpic/oppo-a17.jpg' },
-    
+
     { id: 19, brand: 'Infinix', name: 'Infinix Note 30', price: 18500, tag: { en: '45W Fast', bn: '৪৫W ফাস্ট চার্জ' }, specs: ['120Hz FHD+ Display', 'Helio G99 6nm', '64MP Ultra Clear Cam', '45W Bypass Charge'], img: 'https://fdn2.gsmarena.com/vv/bigpic/infinix-note-30.jpg' },
     { id: 20, brand: 'Infinix', name: 'Infinix Hot 30', price: 15000, tag: { en: 'Gaming', bn: 'গেমিং ডিসপ্লে' }, specs: ['90Hz 1080P Screen', 'Helio G88 Processor', '50MP Night Camera', '33W Fast Charge'], img: 'https://fdn2.gsmarena.com/vv/bigpic/infinix-hot-30.jpg' },
-    
+
     { id: 21, brand: 'Tecno', name: 'Tecno Camon 20', price: 19999, tag: { en: 'AMOLED Portrait', bn: 'অ্যামোলেড পোর্ট্রেট' }, specs: ['FHD+ AMOLED Screen', 'Helio G85 Processor', '64MP RGBW Sensor', '33W Flash Charge'], img: 'https://fdn2.gsmarena.com/vv/bigpic/tecno-camon-20.jpg' },
     { id: 22, brand: 'Tecno', name: 'Tecno Spark 10 Pro', price: 15500, tag: { en: '32MP Selfie', bn: '৩২MP সেলফি' }, specs: ['90Hz FHD+ Big Screen', 'Helio G88 Gaming Chip', '50MP Ultra Clear', 'Glass Starry Design'], img: 'https://fdn2.gsmarena.com/vv/bigpic/tecno-spark-10-pro.jpg' },
-    
+
     { id: 23, brand: 'OnePlus', name: 'OnePlus Nord CE 3 Lite', price: 28000, tag: { en: '108MP Master', bn: '১০৮MP ক্যামেরা' }, specs: ['120Hz Smooth Display', 'Snapdragon 695 5G', '108MP 3x Lossless Zoom', '67W SUPERVOOC'], img: 'https://fdn2.gsmarena.com/vv/bigpic/oneplus-nord-ce-3-lite-5g.jpg' },
     { id: 24, brand: 'Motorola', name: 'Moto G32', price: 17000, tag: { en: 'Stereo Dolby', bn: 'ডলবি স্পিকার' }, specs: ['90Hz FHD+ Display', 'Snapdragon 680', '50MP Quad Pixel Cam', 'Dual Stereo Speakers'], img: 'https://fdn2.gsmarena.com/vv/bigpic/motorola-moto-g32.jpg' }
 ];
@@ -779,14 +778,14 @@ function initInventoryCatalog() {
 
     const render = () => {
         let filtered = INVENTORY_DATA.filter(item => {
-            const matchesFilter = (currentFilter === 'all') || 
-                                  (item.brand.toLowerCase() === currentFilter.toLowerCase()) ||
-                                  (currentFilter === 'xiaomi' && item.brand.toLowerCase() === 'poco') ||
-                                  (currentFilter === 'infinix' && item.brand.toLowerCase() === 'tecno');
+            const matchesFilter = (currentFilter === 'all') ||
+                (item.brand.toLowerCase() === currentFilter.toLowerCase()) ||
+                (currentFilter === 'xiaomi' && item.brand.toLowerCase() === 'poco') ||
+                (currentFilter === 'infinix' && item.brand.toLowerCase() === 'tecno');
 
             const matchesSearch = item.name.toLowerCase().includes(currentSearch.toLowerCase()) ||
-                                  item.brand.toLowerCase().includes(currentSearch.toLowerCase()) ||
-                                  item.specs.some(s => s.toLowerCase().includes(currentSearch.toLowerCase()));
+                item.brand.toLowerCase().includes(currentSearch.toLowerCase()) ||
+                item.specs.some(s => s.toLowerCase().includes(currentSearch.toLowerCase()));
 
             return matchesFilter && matchesSearch;
         });
@@ -822,7 +821,7 @@ function initInventoryCatalog() {
             const waText = encodeURIComponent(currentLanguage === 'bn'
                 ? `আসসালামু আলাইকুম মোবাইল এক্সপ্রেস, আমি ${item.brand} ${item.name} (৳${formattedPrice}) ক্রয় করতে আগ্রহী। এটি কি স্টকে আছে?`
                 : `Assalamu Alaikum Mobile Express, I am interested in purchasing the ${item.brand} ${item.name} (৳${formattedPrice}). Is it available in store?`);
-            
+
             const specsList = item.specs.map(s => `<li><i class="fa-solid fa-microchip"></i> <span>${s}</span></li>`).join('');
 
             return `
@@ -881,7 +880,7 @@ function initInventoryCatalog() {
 function initServiceWorker() {
     if ('serviceWorker' in navigator && (window.location.protocol === 'https:' || window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1')) {
         window.addEventListener('load', () => {
-            navigator.serviceWorker.register('./sw.js').catch(() => {});
+            navigator.serviceWorker.register('./sw.js').catch(() => { });
         });
     }
 }
