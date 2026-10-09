@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="bn" class="lang-bn" data-theme="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Active Inventory | Mobile Express</title>
     <meta name="description" content="Certified mid and budget-range smartphones in Bangladesh. Tested, verified, and warrantied by Mobile Express.">
-    <meta name="theme-color" content="#0d0e12">
+    <meta name="theme-color" content="#f3f5f9">
     <meta name="referrer" content="no-referrer">
 
     <!-- Typography (English & Bengali Fonts) -->
@@ -58,16 +58,17 @@
             </a>
 
             <div class="nav-links">
+                <div class="nav-pill-indicator" aria-hidden="true"></div>
                 <a href="index.html#hero" data-i18n="nav-home">Home</a>
                 <a href="index.html#services" data-i18n="nav-diagnostics">Diagnostics</a>
                 <a href="index.html#estimator" data-i18n="nav-estimator">Estimator</a>
-                <a href="inventory.html" class="active"><span data-i18n="nav-inventory">Inventory</span> <span class="nav-count">24+</span></a>
                 <a href="index.html#contact" data-i18n="nav-contact">Contact</a>
+                <a href="inventory.html" class="active"><span data-i18n="nav-inventory">Inventory</span> <span class="nav-count">24+</span></a>
             </div>
 
             <div class="nav-actions">
                 <!-- Theme Segmented Toggle (Sun on left / Light, Moon on right / Dark) -->
-                <button type="button" class="segmented-toggle theme-segmented-toggle" id="themeToggleBtn" data-state="right"
+                <button type="button" class="segmented-toggle theme-segmented-toggle" id="themeToggleBtn" data-state="left"
                     aria-label="Toggle Theme (Light / Dark)" title="Toggle Theme (Light / Dark)">
                     <div class="toggle-slider" aria-hidden="true"></div>
                     <span class="toggle-opt opt-left" data-val="light" aria-label="Light mode">
@@ -79,7 +80,7 @@
                 </button>
 
                 <!-- Language Segmented Toggle (BN on left, EN on right) -->
-                <button type="button" class="segmented-toggle lang-segmented-toggle" id="langToggleBtn" data-state="right"
+                <button type="button" class="segmented-toggle lang-segmented-toggle" id="langToggleBtn" data-state="left"
                     aria-label="Toggle Language (BN / EN)" title="Toggle Language (BN / EN)">
                     <div class="toggle-slider" aria-hidden="true"></div>
                     <span class="toggle-opt opt-left" data-val="bn">BN</span>
@@ -121,8 +122,8 @@
                 <li><a href="index.html#hero"><i class="fa-solid fa-house"></i> <span data-i18n="nav-home">Home</span></a></li>
                 <li><a href="index.html#services"><i class="fa-solid fa-microchip"></i> <span data-i18n="nav-diagnostics">Diagnostic Lab</span></a></li>
                 <li><a href="index.html#estimator"><i class="fa-solid fa-calculator"></i> <span data-i18n="nav-estimator">Cost Estimator</span></a></li>
-                <li><a href="inventory.html" class="active"><i class="fa-solid fa-mobile-screen"></i> <span data-i18n="nav-inventory">Inventory</span> <span class="nav-count">24+</span></a></li>
                 <li><a href="index.html#contact"><i class="fa-solid fa-address-card"></i> <span data-i18n="nav-contact">Contact & Location</span></a></li>
+                <li><a href="inventory.html" class="active"><i class="fa-solid fa-mobile-screen"></i> <span data-i18n="nav-inventory">Inventory</span> <span class="nav-count">24+</span></a></li>
             </ul>
         </div>
 
@@ -130,7 +131,7 @@
             <div class="drawer-segmented-wrapper">
                 <div class="drawer-toggle-item">
                     <span class="drawer-toggle-label"><i class="fa-solid fa-circle-half-stroke"></i> <span data-i18n="theme-lbl">Theme</span></span>
-                    <button type="button" class="segmented-toggle theme-segmented-toggle" data-state="right"
+                    <button type="button" class="segmented-toggle theme-segmented-toggle" data-state="left"
                         aria-label="Toggle Theme (Light / Dark)" title="Toggle Theme (Light / Dark)">
                         <div class="toggle-slider" aria-hidden="true"></div>
                         <span class="toggle-opt opt-left" data-val="light" aria-label="Light mode">
@@ -143,7 +144,7 @@
                 </div>
                 <div class="drawer-toggle-item">
                     <span class="drawer-toggle-label"><i class="fa-solid fa-globe"></i> <span data-i18n="lang-lbl">Language</span></span>
-                    <button type="button" class="segmented-toggle lang-segmented-toggle" data-state="right"
+                    <button type="button" class="segmented-toggle lang-segmented-toggle" data-state="left"
                         aria-label="Toggle Language (BN / EN)" title="Toggle Language (BN / EN)">
                         <div class="toggle-slider" aria-hidden="true"></div>
                         <span class="toggle-opt opt-left" data-val="bn">BN</span>

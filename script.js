@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initLanguageManager();
     initCrossingBandsParallax();
     initGlassNavbar();
+    initNavPillSelector();
     initMobileDrawer();
     initDiagnosticCalculator();
     initInventoryCatalog();
@@ -17,7 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
    1. Theme Manager (Dark / Light "White" Mode)
    ========================================================================== */
 function initThemeManager() {
-    const savedTheme = localStorage.getItem('me_theme') || 'dark';
+    const savedTheme = localStorage.getItem('me_theme') || 'light';
     applyTheme(savedTheme);
 
     const themeToggles = document.querySelectorAll('.theme-segmented-toggle, #themeToggleBtn, .theme-toggle-btn');
@@ -201,10 +202,10 @@ const I18N_DICTIONARY = {
     }
 };
 
-let currentLanguage = 'en';
+let currentLanguage = 'bn';
 
 function initLanguageManager() {
-    currentLanguage = localStorage.getItem('me_lang') || 'en';
+    currentLanguage = localStorage.getItem('me_lang') || 'bn';
     applyLanguage(currentLanguage);
 
     const langToggles = document.querySelectorAll('.lang-segmented-toggle, #langToggleBtn, .lang-toggle-btn');
@@ -253,6 +254,11 @@ function applyLanguage(lang) {
     searchInputs.forEach(input => {
         input.placeholder = dict['inv-search-placeholder'] || input.placeholder;
     });
+
+    // Refresh nav pill position for updated text widths
+    if (typeof window.refreshNavPill === 'function') {
+        window.refreshNavPill();
+    }
 }
 
 /* Helper to convert numbers to Bengali numeral digits */
@@ -326,6 +332,121 @@ function initGlassNavbar() {
 
     window.addEventListener('scroll', handleScroll, { passive: true });
     handleScroll();
+}
+
+/* ==========================================================================
+   4.1 Buttery Smooth Top Navbar Pill Selector Indicator
+   ========================================================================== */
+function initNavPillSelector() {
+    const navLinksContainer = document.querySelector('.nav-links');
+    if (!navLinksContainer) return;
+
+    let indicator = navLinksContainer.querySelector('.nav-pill-indicator');
+    if (!indicator) {
+        indicator = document.createElement('div');
+        indicator.className = 'nav-pill-indicator';
+        indicator.setAttribute('aria-hidden', 'true');
+        navLinksContainer.prepend(indicator);
+    }
+
+    const links = Array.from(navLinksContainer.querySelectorAll('a'));
+    if (!links.length) return;
+
+    let currentActiveLink = navLinksContainer.querySelector('a.active') || links[0];
+
+    const updatePillPosition = (targetLink, animate = true) => {
+        if (!targetLink) return;
+
+        const left = targetLink.offsetLeft;
+        const width = targetLink.offsetWidth;
+
+        if (!animate) {
+            indicator.style.transition = 'none';
+        } else {
+            indicator.style.transition = 'transform 0.38s cubic-bezier(0.16, 1, 0.3, 1), width 0.32s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.2s ease';
+        }
+
+        indicator.style.transform = `translateX(${left}px)`;
+        indicator.style.width = `${width}px`;
+        indicator.style.opacity = '1';
+
+        if (!animate) {
+            indicator.offsetHeight; // force reflow
+            indicator.style.transition = 'transform 0.38s cubic-bezier(0.16, 1, 0.3, 1), width 0.32s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.2s ease';
+        }
+    };
+
+    // Position indicator once layout is ready
+    requestAnimationFrame(() => {
+        updatePillPosition(currentActiveLink, false);
+    });
+
+    // Handle clicks: smoothly glide the indicator to the new active tab
+    links.forEach(link => {
+        link.addEventListener('click', () => {
+            const href = link.getAttribute('href');
+            if (href && (href.startsWith('#') || href.includes('#'))) {
+                links.forEach(l => l.classList.remove('active'));
+                link.classList.add('active');
+                currentActiveLink = link;
+                updatePillPosition(link, true);
+            }
+        });
+    });
+
+    // Scroll spy for index.html sections
+    const isIndexPage = window.location.pathname.endsWith('index.html') || window.location.pathname === '/' || !window.location.pathname.includes('.html');
+    if (isIndexPage) {
+        const sectionIds = ['hero', 'services', 'estimator', 'contact'];
+        const sections = sectionIds.map(id => document.getElementById(id)).filter(Boolean);
+
+        let scrollTicking = false;
+        const handleScrollSpy = () => {
+            const scrollPos = window.scrollY + 160;
+            let activeSection = null;
+
+            for (let i = sections.length - 1; i >= 0; i--) {
+                const section = sections[i];
+                if (section.offsetTop <= scrollPos) {
+                    activeSection = section;
+                    break;
+                }
+            }
+
+            if (activeSection) {
+                const activeHref = `#${activeSection.id}`;
+                const matchingLink = links.find(l => l.getAttribute('href') === activeHref);
+                if (matchingLink && !matchingLink.classList.contains('active')) {
+                    links.forEach(l => l.classList.remove('active'));
+                    matchingLink.classList.add('active');
+                    currentActiveLink = matchingLink;
+                    updatePillPosition(matchingLink, true);
+                }
+            }
+            scrollTicking = false;
+        };
+
+        window.addEventListener('scroll', () => {
+            if (!scrollTicking) {
+                window.requestAnimationFrame(handleScrollSpy);
+                scrollTicking = true;
+            }
+        }, { passive: true });
+    }
+
+    // Handle window resize
+    window.addEventListener('resize', () => {
+        const active = navLinksContainer.querySelector('a.active') || currentActiveLink;
+        updatePillPosition(active, false);
+    });
+
+    // Language / dynamic refresh hook
+    window.refreshNavPill = () => {
+        setTimeout(() => {
+            const active = navLinksContainer.querySelector('a.active') || currentActiveLink;
+            updatePillPosition(active, true);
+        }, 60);
+    };
 }
 
 /* ==========================================================================
