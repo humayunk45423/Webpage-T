@@ -17,12 +17,10 @@ document.addEventListener('DOMContentLoaded', () => {
    1. Theme Manager (Dark / Light "White" Mode)
    ========================================================================== */
 function initThemeManager() {
-    const savedTheme = localStorage.getItem('me_theme') || 
-                       (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
-    
+    const savedTheme = localStorage.getItem('me_theme') || 'dark';
     applyTheme(savedTheme);
 
-    const themeToggles = document.querySelectorAll('.theme-toggle-btn');
+    const themeToggles = document.querySelectorAll('.theme-segmented-toggle, #themeToggleBtn, .theme-toggle-btn');
     themeToggles.forEach(btn => {
         btn.addEventListener('click', () => {
             const currentTheme = document.documentElement.getAttribute('data-theme') || 'dark';
@@ -35,16 +33,22 @@ function initThemeManager() {
 
 function applyTheme(theme) {
     document.documentElement.setAttribute('data-theme', theme);
+    const themeToggles = document.querySelectorAll('.theme-segmented-toggle, #themeToggleBtn, .theme-toggle-btn');
+    themeToggles.forEach(btn => {
+        const isDark = theme === 'dark';
+        btn.setAttribute('data-state', isDark ? 'right' : 'left');
+        btn.setAttribute('aria-label', isDark ? 'Switch to Light Mode' : 'Switch to Dark Mode');
+        btn.setAttribute('title', isDark ? 'Switch to Light Mode' : 'Switch to Dark Mode');
+    });
+
     const themeIcons = document.querySelectorAll('.theme-icon');
     themeIcons.forEach(icon => {
         if (theme === 'light') {
             icon.classList.remove('fa-sun');
             icon.classList.add('fa-moon');
-            icon.title = 'Switch to Dark Mode';
         } else {
             icon.classList.remove('fa-moon');
             icon.classList.add('fa-sun');
-            icon.title = 'Switch to Light Mode';
         }
     });
 }
@@ -60,6 +64,7 @@ const I18N_DICTIONARY = {
         'nav-inventory': 'Inventory',
         'nav-contact': 'Contact',
         'nav-support': 'Support',
+        'theme-lbl': 'Theme',
         'call-line': '+88 01834 254875',
         'apple-badge': 'Apple Expert Diagnostic Lab',
         'hero-title-1': 'Flawless Security',
@@ -129,6 +134,7 @@ const I18N_DICTIONARY = {
         'nav-inventory': 'স্মার্টফোন কালেকশন',
         'nav-contact': 'যোগাযোগ',
         'nav-support': 'সাপোর্ট',
+        'theme-lbl': 'থিম মোড',
         'call-line': '+৮৮ ০১৮৩৪ ২৫৪৮৭৫',
         'apple-badge': 'অ্যাপল এক্সপার্ট ডায়াগনস্টিক ল্যাব',
         'hero-title-1': 'নিখুঁত সিকিউরিটি',
@@ -199,7 +205,7 @@ function initLanguageManager() {
     currentLanguage = localStorage.getItem('me_lang') || 'en';
     applyLanguage(currentLanguage);
 
-    const langToggles = document.querySelectorAll('.lang-toggle-btn');
+    const langToggles = document.querySelectorAll('.lang-segmented-toggle, #langToggleBtn, .lang-toggle-btn');
     langToggles.forEach(btn => {
         btn.addEventListener('click', () => {
             currentLanguage = currentLanguage === 'en' ? 'bn' : 'en';
@@ -217,7 +223,14 @@ function initLanguageManager() {
 function applyLanguage(lang) {
     document.body.classList.toggle('lang-bn', lang === 'bn');
     
-    // Update language switch label
+    // Update segmented toggle state (BN on left, EN on right)
+    const langToggles = document.querySelectorAll('.lang-segmented-toggle, #langToggleBtn, .lang-toggle-btn');
+    langToggles.forEach(btn => {
+        btn.setAttribute('data-state', lang === 'en' ? 'right' : 'left');
+        btn.setAttribute('aria-label', lang === 'en' ? 'Switch to Bengali (বাংলা)' : 'Switch to English');
+        btn.setAttribute('title', lang === 'en' ? 'Switch to Bengali (বাংলা)' : 'Switch to English');
+    });
+
     const langLabels = document.querySelectorAll('.lang-label');
     langLabels.forEach(lbl => {
         lbl.textContent = lang === 'en' ? 'বাং' : 'EN';

@@ -65,15 +65,24 @@
             </div>
 
             <div class="nav-actions">
-                <!-- Theme Mode Switcher (Dark / Light White Mode) -->
-                <button class="btn-toggle-ctrl btn-toggle-icon theme-toggle-btn" aria-label="Toggle Light / Dark Mode" title="Toggle Light / Dark Mode">
-                    <i class="fa-solid fa-sun theme-icon"></i>
+                <!-- Theme Segmented Toggle (Sun on left / Light, Moon on right / Dark) -->
+                <button type="button" class="segmented-toggle theme-segmented-toggle" id="themeToggleBtn" data-state="right"
+                    aria-label="Toggle Theme (Light / Dark)" title="Toggle Theme (Light / Dark)">
+                    <div class="toggle-slider" aria-hidden="true"></div>
+                    <span class="toggle-opt opt-left" data-val="light" aria-label="Light mode">
+                        <i class="fa-solid fa-sun"></i>
+                    </span>
+                    <span class="toggle-opt opt-right" data-val="dark" aria-label="Dark mode">
+                        <i class="fa-solid fa-moon"></i>
+                    </span>
                 </button>
 
-                <!-- Language Switcher (EN / BN) -->
-                <button class="btn-toggle-ctrl lang-toggle-btn" aria-label="Toggle Language" title="Toggle Language (English / বাংলা)">
-                    <i class="fa-solid fa-globe"></i>
-                    <span class="lang-label">বাং</span>
+                <!-- Language Segmented Toggle (BN on left, EN on right) -->
+                <button type="button" class="segmented-toggle lang-segmented-toggle" id="langToggleBtn" data-state="right"
+                    aria-label="Toggle Language (BN / EN)" title="Toggle Language (BN / EN)">
+                    <div class="toggle-slider" aria-hidden="true"></div>
+                    <span class="toggle-opt opt-left" data-val="bn">BN</span>
+                    <span class="toggle-opt opt-right" data-val="en">EN</span>
                 </button>
 
                 <!-- WhatsApp Live Support -->
@@ -117,12 +126,14 @@
         </div>
 
         <div>
-            <div style="display: flex; gap: 8px; margin-bottom: 12px;">
-                <button class="btn-toggle-ctrl theme-toggle-btn" style="flex: 1; justify-content: center;">
-                    <i class="fa-solid fa-sun theme-icon"></i> Theme
+            <div class="drawer-ctrl-row">
+                <button class="drawer-ctrl-btn theme-toggle-btn" aria-label="Toggle Light / Dark Mode">
+                    <i class="fa-solid fa-moon theme-icon"></i>
+                    <span data-i18n="theme-lbl">Theme</span>
                 </button>
-                <button class="btn-toggle-ctrl lang-toggle-btn" style="flex: 1; justify-content: center;">
-                    <i class="fa-solid fa-globe"></i> <span class="lang-label">বাং</span>
+                <button class="drawer-ctrl-btn lang-toggle-btn" aria-label="Toggle Language">
+                    <i class="fa-solid fa-globe"></i>
+                    <span class="lang-label">বাং</span>
                 </button>
             </div>
             <a href="https://wa.me/8801834254875" target="_blank" class="btn-primary btn-full" style="margin-bottom: 10px;">
