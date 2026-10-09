@@ -456,7 +456,7 @@ function initDiagnosticCalculator() {
    ========================================================================== */
 const INVENTORY_DATA = [
     { id: 1, brand: 'Xiaomi', name: 'Redmi Note 13', price: 22999, tag: { en: 'Bestseller', bn: 'বেস্টসেলার' }, specs: ['AMOLED 120Hz 6.67"', 'Snapdragon 685 (6nm)', '108MP Triple Camera', '5000mAh | 33W Fast'], img: 'https://fdn2.gsmarena.com/vv/bigpic/xiaomi-redmi-note-13-4g.jpg' },
-    { id: 2, brand: 'Xiaomi', name: 'Redmi Note 12', price: 19500, tag: { en: 'Popular', bn: 'জনপ্রিয়' }, specs: ['AMOLED 120Hz Display', 'Snapdragon 685 Chip', '50MP AI Triple Cam', '5000mAh Battery'], img: 'https://fdn2.gsmarena.com/vv/bigpic/xiaomi-redmi-note-12-4g.jpg' },
+    { id: 2, brand: 'Xiaomi', name: 'Redmi Note 12', price: 19500, tag: { en: 'Popular', bn: 'জনপ্রিয়' }, specs: ['AMOLED 120Hz Display', 'Snapdragon 685 Chip', '50MP AI Triple Cam', '5000mAh Battery'], img: 'https://fdn2.gsmarena.com/vv/bigpic/xiaomi-redmi-note-12.jpg' },
     { id: 3, brand: 'Xiaomi', name: 'Redmi 12', price: 16999, tag: { en: 'Budget King', bn: 'বাজেট কিং' }, specs: ['90Hz FHD+ IPS Display', 'MediaTek Helio G88', '50MP Triple Camera', 'Glass Back Finish'], img: 'https://fdn2.gsmarena.com/vv/bigpic/xiaomi-redmi-12.jpg' },
     { id: 4, brand: 'Poco', name: 'Poco X5 Pro 5G', price: 32000, tag: { en: 'Performance', bn: 'হাই স্পিড' }, specs: ['120Hz Flow AMOLED', 'Snapdragon 778G 5G', '108MP Pro Camera', '67W Turbo Charge'], img: 'https://fdn2.gsmarena.com/vv/bigpic/xiaomi-poco-x5-pro-5g.jpg' },
     { id: 5, brand: 'Poco', name: 'Poco M5', price: 15500, tag: { en: 'Gaming Entry', bn: 'গেমিং চয়েস' }, specs: ['90Hz DynamicSwitch', 'Helio G99 (6nm)', '50MP AI Camera', '5000mAh Long-Life'], img: 'https://fdn2.gsmarena.com/vv/bigpic/xiaomi-poco-m5-.jpg' },
@@ -542,7 +542,7 @@ function initInventoryCatalog() {
         grid.innerHTML = filtered.map(item => {
             const formattedPrice = currentLanguage === 'bn' ? toBengaliDigits(item.price.toLocaleString('en-BD')) : item.price.toLocaleString('en-BD');
             const itemTag = (typeof item.tag === 'object') ? (item.tag[currentLanguage] || item.tag.en) : item.tag;
-            const btnText = currentLanguage === 'bn' ? 'অর্ডার / তথ্য জানুন' : 'Acquire Device';
+            const btnText = currentLanguage === 'bn' ? 'অর্ডার করুন' : 'Order Now';
             const waText = encodeURIComponent(currentLanguage === 'bn'
                 ? `আসসালামু আলাইকুম মোবাইল এক্সপ্রেস, আমি ${item.brand} ${item.name} (৳${formattedPrice}) ক্রয় করতে আগ্রহী। এটি কি স্টকে আছে?`
                 : `Assalamu Alaikum Mobile Express, I am interested in purchasing the ${item.brand} ${item.name} (৳${formattedPrice}). Is it available in store?`);
@@ -551,18 +551,20 @@ function initInventoryCatalog() {
 
             return `
                 <div class="inv-card">
-                    <span class="inv-badge-top">${itemTag}</span>
-                    <div class="inv-img">
-                        <img src="${item.img}" alt="${item.name}" loading="lazy" onerror="this.onerror=null; this.src='assets/logo.png';">
+                    <div class="inv-card-top">
+                        <span class="inv-badge-top">${itemTag}</span>
+                        <span class="inv-brand">${item.brand}</span>
                     </div>
-                    <span class="inv-brand">${item.brand}</span>
+                    <div class="inv-img">
+                        <img src="${item.img}" alt="${item.name}" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null; this.src='assets/logo.png';">
+                    </div>
                     <h3>${item.name}</h3>
                     <div class="inv-price">৳ ${formattedPrice}</div>
                     <ul class="inv-specs">
                         ${specsList}
                     </ul>
                     <a href="https://wa.me/8801834254875?text=${waText}" target="_blank" rel="noopener noreferrer" class="btn-primary btn-full">
-                        <i class="fa-brands fa-whatsapp"></i> ${btnText}
+                        <i class="fa-brands fa-whatsapp"></i> <span>${btnText}</span>
                     </a>
                 </div>
             `;

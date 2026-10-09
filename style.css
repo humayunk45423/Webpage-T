@@ -1330,6 +1330,31 @@ body:not([data-theme="light"]) .toggle-slider {
     box-shadow: 0 4px 14px var(--red-glow);
 }
 
+.inv-status-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    margin-top: 20px;
+    padding-top: 16px;
+    border-top: 1px solid var(--border-glass);
+}
+
+.inv-count-badge {
+    font-size: 0.92rem;
+    font-weight: 700;
+    color: var(--text-secondary);
+}
+
+.inv-guarantee-badge {
+    font-size: 0.85rem;
+    color: var(--green-wa);
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
 .inv-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -1340,7 +1365,7 @@ body:not([data-theme="light"]) .toggle-slider {
     background: var(--bg-card-inner);
     border: 1px solid var(--border-glass);
     border-radius: 24px;
-    padding: 24px;
+    padding: 22px 20px;
     display: flex;
     flex-direction: column;
     position: relative;
@@ -1354,17 +1379,25 @@ body:not([data-theme="light"]) .toggle-slider {
     background: var(--bg-panel-hover);
 }
 
+.inv-card-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 12px;
+    width: 100%;
+}
+
 .inv-badge-top {
-    position: absolute;
-    top: 16px;
-    left: 16px;
-    background: var(--bg-surface-input);
-    border: 1px solid var(--border-glass);
-    font-size: 0.72rem;
+    position: static;
+    background: var(--red-subtle);
+    border: 1px solid var(--border-red);
+    font-size: 0.70rem;
     font-weight: 800;
     padding: 3px 10px;
     border-radius: 999px;
-    color: var(--red-hover);
+    color: var(--red-main);
+    white-space: nowrap;
 }
 
 .inv-img {
@@ -1761,31 +1794,33 @@ body:not([data-theme="light"]) .toggle-slider {
         padding: 24px 14px 20px;
     }
     .inv-controls-wrapper {
-        margin-bottom: 20px;
+        margin-bottom: 18px;
     }
     
     .inv-search-bar { 
         display: flex;
-        flex-direction: row; 
+        flex-direction: column; 
         gap: 8px;
-        margin-bottom: 12px;
+        margin-bottom: 10px;
     }
     
     .search-input-wrap input {
-        padding: 10px 14px 10px 36px;
-        font-size: 0.82rem;
+        width: 100%;
+        padding: 11px 16px 11px 40px;
+        font-size: 0.84rem;
+        border-radius: 999px;
     }
     
     .search-input-wrap i {
-        left: 13px;
-        font-size: 0.82rem;
+        left: 15px;
+        font-size: 0.84rem;
     }
     
     .sort-dropdown { 
-        width: auto;
-        padding: 10px 12px;
-        font-size: 0.78rem;
-        min-width: 120px;
+        width: 100%;
+        padding: 10px 16px;
+        font-size: 0.82rem;
+        border-radius: 999px;
     }
     
     .brand-chips {
@@ -1794,7 +1829,7 @@ body:not([data-theme="light"]) .toggle-slider {
         overflow-x: auto;
         -webkit-overflow-scrolling: touch;
         gap: 6px;
-        padding-bottom: 6px;
+        padding: 2px 2px 8px;
         margin-bottom: 6px;
         scrollbar-width: none;
     }
@@ -1805,78 +1840,157 @@ body:not([data-theme="light"]) .toggle-slider {
     
     .chip-btn {
         flex-shrink: 0;
-        padding: 6px 13px;
+        padding: 6px 14px;
         font-size: 0.76rem;
         white-space: nowrap;
+        border-radius: 999px;
+    }
+    
+    .inv-status-bar {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        gap: 6px;
+        margin-top: 8px;
+        padding-top: 10px;
+    }
+    
+    .inv-count-badge {
+        font-size: 0.74rem;
+        white-space: nowrap;
+        font-weight: 700;
+    }
+    
+    .inv-guarantee-badge {
+        font-size: 0.70rem;
+        font-weight: 600;
+        text-align: right;
     }
     
     .inv-grid {
         grid-template-columns: repeat(2, 1fr);
-        gap: 10px;
+        gap: 8px;
     }
     
     .inv-card {
-        padding: 12px 10px;
-        border-radius: 18px;
+        padding: 10px 8px 10px;
+        border-radius: 16px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        min-height: 100%;
+    }
+    
+    .inv-card-top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 4px;
+        margin-bottom: 5px;
+        width: 100%;
     }
     
     .inv-badge-top {
-        top: 8px;
-        left: 8px;
-        font-size: 0.58rem;
-        padding: 2px 7px;
-    }
-    
-    .inv-img {
-        height: 110px;
-        padding: 8px;
-        margin-bottom: 8px;
-        border-radius: 12px;
+        position: static;
+        font-size: 0.54rem;
+        padding: 2px 6px;
+        border-radius: 999px;
+        font-weight: 700;
+        line-height: 1.2;
     }
     
     .inv-brand {
-        font-size: 0.62rem;
-        margin-bottom: 2px;
+        font-size: 0.56rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+        color: var(--text-dim);
+    }
+    
+    .inv-img {
+        height: 105px;
+        padding: 4px;
+        margin-bottom: 6px;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .inv-img img {
+        max-height: 100%;
+        max-width: 100%;
+        object-fit: contain;
     }
     
     .inv-card h3 {
-        font-size: 0.88rem;
-        line-height: 1.2;
-        margin-bottom: 4px;
-        white-space: nowrap;
+        font-size: 0.82rem;
+        font-weight: 800;
+        line-height: 1.22;
+        min-height: 2.45em;
+        margin-bottom: 3px;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
         overflow: hidden;
         text-overflow: ellipsis;
+        white-space: normal;
+        color: var(--text-primary);
     }
     
     .inv-price {
-        font-size: 0.95rem;
-        margin-bottom: 8px;
-        font-weight: 800;
+        font-size: 0.92rem;
+        font-weight: 900;
+        color: var(--red-main);
+        margin-bottom: 6px;
+        line-height: 1.1;
     }
     
     .inv-specs {
-        font-size: 0.66rem;
-        gap: 4px;
-        margin-bottom: 10px;
+        font-size: 0.62rem;
+        gap: 3px;
+        margin-bottom: 8px;
         padding-top: 6px;
+        border-top: 1px dashed var(--border-glass);
+        list-style: none;
+        display: flex;
+        flex-direction: column;
     }
     
     .inv-specs li {
-        gap: 5px;
+        display: flex;
+        align-items: center;
+        gap: 4px;
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
+        color: var(--text-secondary);
+        line-height: 1.25;
     }
     
     .inv-specs li i {
-        font-size: 0.62rem;
+        font-size: 0.55rem;
+        color: var(--red-hover);
+        flex-shrink: 0;
+    }
+    
+    .inv-specs li span {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
     }
     
     .inv-card .btn-full {
-        padding: 8px 6px;
+        padding: 8px 4px;
         font-size: 0.72rem;
+        font-weight: 700;
         gap: 4px;
         border-radius: 999px;
+        width: 100%;
+        justify-content: center;
+        white-space: nowrap;
+        margin-top: auto;
     }
 
     /* Contact Section Mobile Ergonomics */
@@ -1931,4 +2045,22 @@ body:not([data-theme="light"]) .toggle-slider {
     }
 
     .floating-wa-btn { bottom: 20px; right: 20px; width: 50px; height: 50px; font-size: 1.5rem; }
+}
+
+/* Ultra-narrow screen threshold: 1 column fallback when screen is narrower than 340px */
+@media (max-width: 339px) {
+    .inv-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+    .inv-card {
+        padding: 14px 12px;
+    }
+    .inv-img {
+        height: 135px;
+    }
+    .inv-card h3 {
+        min-height: auto;
+        font-size: 0.90rem;
+    }
 }
