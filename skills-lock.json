@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "skills": {
+    "design-taste-frontend": {
+      "source": "Leonxlnx/taste-skill",
+      "sourceType": "github",
+      "skillPath": "skills/taste-skill/SKILL.md",
+      "computedHash": "ac769e17340097d1d1e4fe8c8baf543324c81ce94d600283d70b6546ccd4d51d"
+    },
+    "impeccable": {
+      "source": "pbakaus/impeccable",
+      "sourceType": "github",
+      "skillPath": ".agents/skills/impeccable/SKILL.md",
+      "computedHash": "a149f6321502631ef180eb193e713d434f126554ee01e342f6f6e7fb12002b62"
+    }
+  }
+}
