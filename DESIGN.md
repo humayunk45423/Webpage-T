@@ -7,7 +7,14 @@ colors:
   primary: "#0066cc"
   primary-focus: "#0071e3"
   primary-on-dark: "#2997ff"
+  brand-crimson: "#c8102e"
+  brand-crimson-hover: "#9e0b22"
+  brand-crimson-soft: "#fef2f3"
+  brand-crimson-border: "#f5c2c7"
+  whatsapp-emerald: "#127838"
+  facebook-blue: "#1877f2"
   ink: "#1d1d1f"
+  ink-secondary: "#3a3a3c"
   body: "#1d1d1f"
   body-on-dark: "#ffffff"
   body-muted: "#cccccc"
@@ -28,97 +35,97 @@ colors:
 
 typography:
   hero-display:
-    fontFamily: "SF Pro Display, system-ui, -apple-system, sans-serif"
+    fontFamily: "Public Sans, Noto Sans Bengali, Anek Bangla, SF Pro Display, system-ui, -apple-system, sans-serif"
     fontSize: 56px
     fontWeight: 600
     lineHeight: 1.07
     letterSpacing: -0.28px
   display-lg:
-    fontFamily: "SF Pro Display, system-ui, -apple-system, sans-serif"
+    fontFamily: "Public Sans, Noto Sans Bengali, Anek Bangla, SF Pro Display, system-ui, -apple-system, sans-serif"
     fontSize: 40px
     fontWeight: 600
     lineHeight: 1.1
     letterSpacing: 0
   display-md:
-    fontFamily: "SF Pro Text, system-ui, -apple-system, sans-serif"
+    fontFamily: "Public Sans, Noto Sans Bengali, SF Pro Text, system-ui, -apple-system, sans-serif"
     fontSize: 34px
     fontWeight: 600
     lineHeight: 1.47
     letterSpacing: -0.374px
   lead:
-    fontFamily: "SF Pro Display, system-ui, -apple-system, sans-serif"
+    fontFamily: "Public Sans, Noto Sans Bengali, SF Pro Display, system-ui, -apple-system, sans-serif"
     fontSize: 28px
     fontWeight: 400
     lineHeight: 1.14
     letterSpacing: 0.196px
   lead-airy:
-    fontFamily: "SF Pro Text, system-ui, -apple-system, sans-serif"
+    fontFamily: "Public Sans, Noto Sans Bengali, SF Pro Text, system-ui, -apple-system, sans-serif"
     fontSize: 24px
     fontWeight: 300
     lineHeight: 1.5
     letterSpacing: 0
   tagline:
-    fontFamily: "SF Pro Display, system-ui, -apple-system, sans-serif"
+    fontFamily: "Public Sans, Noto Sans Bengali, SF Pro Display, system-ui, -apple-system, sans-serif"
     fontSize: 21px
     fontWeight: 600
     lineHeight: 1.19
     letterSpacing: 0.231px
   body-strong:
-    fontFamily: "SF Pro Text, system-ui, -apple-system, sans-serif"
+    fontFamily: "Public Sans, Noto Sans Bengali, SF Pro Text, system-ui, -apple-system, sans-serif"
     fontSize: 17px
     fontWeight: 600
     lineHeight: 1.24
     letterSpacing: -0.374px
   body:
-    fontFamily: "SF Pro Text, system-ui, -apple-system, sans-serif"
+    fontFamily: "Public Sans, Noto Sans Bengali, SF Pro Text, system-ui, -apple-system, sans-serif"
     fontSize: 17px
     fontWeight: 400
     lineHeight: 1.47
     letterSpacing: -0.374px
   dense-link:
-    fontFamily: "SF Pro Text, system-ui, -apple-system, sans-serif"
+    fontFamily: "Public Sans, Noto Sans Bengali, SF Pro Text, system-ui, -apple-system, sans-serif"
     fontSize: 17px
     fontWeight: 400
     lineHeight: 2.41
     letterSpacing: 0
   caption:
-    fontFamily: "SF Pro Text, system-ui, -apple-system, sans-serif"
+    fontFamily: "Public Sans, Noto Sans Bengali, SF Pro Text, system-ui, -apple-system, sans-serif"
     fontSize: 14px
     fontWeight: 400
     lineHeight: 1.43
     letterSpacing: -0.224px
   caption-strong:
-    fontFamily: "SF Pro Text, system-ui, -apple-system, sans-serif"
+    fontFamily: "Public Sans, Noto Sans Bengali, SF Pro Text, system-ui, -apple-system, sans-serif"
     fontSize: 14px
     fontWeight: 600
     lineHeight: 1.29
     letterSpacing: -0.224px
   button-large:
-    fontFamily: "SF Pro Text, system-ui, -apple-system, sans-serif"
+    fontFamily: "Public Sans, Noto Sans Bengali, SF Pro Text, system-ui, -apple-system, sans-serif"
     fontSize: 18px
     fontWeight: 300
     lineHeight: 1.0
     letterSpacing: 0
   button-utility:
-    fontFamily: "SF Pro Text, system-ui, -apple-system, sans-serif"
+    fontFamily: "Public Sans, Noto Sans Bengali, SF Pro Text, system-ui, -apple-system, sans-serif"
     fontSize: 14px
     fontWeight: 400
     lineHeight: 1.29
     letterSpacing: -0.224px
   fine-print:
-    fontFamily: "SF Pro Text, system-ui, -apple-system, sans-serif"
+    fontFamily: "Public Sans, Noto Sans Bengali, SF Pro Text, system-ui, -apple-system, sans-serif"
     fontSize: 12px
     fontWeight: 400
     lineHeight: 1.0
     letterSpacing: -0.12px
   micro-legal:
-    fontFamily: "SF Pro Text, system-ui, -apple-system, sans-serif"
+    fontFamily: "Public Sans, Noto Sans Bengali, SF Pro Text, system-ui, -apple-system, sans-serif"
     fontSize: 10px
     fontWeight: 400
     lineHeight: 1.3
     letterSpacing: -0.08px
   nav-link:
-    fontFamily: "SF Pro Text, system-ui, -apple-system, sans-serif"
+    fontFamily: "Public Sans, Noto Sans Bengali, SF Pro Text, system-ui, -apple-system, sans-serif"
     fontSize: 12px
     fontWeight: 400
     lineHeight: 1.0
@@ -128,8 +135,13 @@ rounded:
   none: 0px
   xs: 5px
   sm: 8px
+  control: 10px
   md: 11px
+  nav: 12px
+  card-sm: 14px
   lg: 18px
+  panel: 24px
+  pill-apple: 980px
   pill: 9999px
   full: 9999px
 

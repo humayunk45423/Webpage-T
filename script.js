@@ -1,6 +1,6 @@
 /**
  * Mobile Express - Enterprise Commercial Core Engine
- * Features: Light/Dark Mode, Bilingual (EN/BN) i18n, 3D Crossing Bands Parallax, Real-Time Catalog & Estimator
+ * Features: Light/Dark Mode, Bilingual (EN/BN) i18n, Accessible Navbar & Drawer, Real-Time Catalog & Estimator
  */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -74,7 +74,7 @@ const I18N_DICTIONARY = {
         'apple-badge': 'Apple & Android Expert Service Center',
         'hero-title-1': 'Mobile Express',
         'hero-title-2': 'Buy • Exchange • Sell.',
-        'hero-desc': 'Your trusted Apple & Smartphone destination by Tanvir Iqbal — permanent iCloud bypass, expert hardware repair, and certified handset exchange in <br><a href="https://maps.app.goo.gl/1e6A4LQxwAeqnt4p8" target="_blank" rel="noopener noreferrer" class="location-highlight" title="Get Directions to Mobile Express on Google Maps"><i class="fa-solid fa-location-dot"></i> Badarganj, Rangpur</a>.',
+        'hero-desc': 'Your trusted Apple & Smartphone destination by Tanvir Iqbal — permanent iCloud bypass, expert hardware repair, and certified handset exchange in <a href="https://maps.app.goo.gl/1e6A4LQxwAeqnt4p8" target="_blank" rel="noopener noreferrer" class="location-highlight" title="Get Directions to Mobile Express on Google Maps"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Badarganj, Rangpur</a>.',
         'btn-browse': 'Browse Handsets',
         'btn-browse-motto': 'Buy / Exchange Phones (24+)',
         'btn-protocols': 'View Protocols',
@@ -87,39 +87,56 @@ const I18N_DICTIONARY = {
         'stat-turnaround-lbl': 'Express Turnaround',
         'services-tag': 'Diagnostic',
         'services-tag-hi': 'Expertise',
-        'services-sub': 'Advanced hardware benches and proprietary diagnostic algorithms engineered to safely restore locked, disabled, and bricked devices.',
+        'services-sub': 'Advanced hardware benches and precision diagnostic workflows to safely restore locked, disabled, and dead smartphones.',
         'srv-apple-flagship': 'Specialist Mastery',
         'srv-icloud-title': 'Apple iCloud Lab (Create, Fix & Bypass)',
         'srv-icloud-desc': 'Official Apple iCloud account creation, Apple ID security & password fix, Ramdisk activation lock bypass, and iPhone disabled screen restoration.',
         'srv-icloud-time': '15 - 45 Mins',
         'srv-frp-title': 'FRP Account Removal',
-        'srv-frp-desc': 'Instantaneous Factory Reset Protection (FRP) unlocking for Samsung, Xiaomi, Oppo, Vivo, Realme, and Infinix with zero data risk.',
+        'srv-frp-desc': 'Fast Factory Reset Protection (FRP) unlocking for Samsung, Xiaomi, Oppo, Vivo, Realme, and Infinix with zero data risk.',
         'srv-frp-time': '10 - 25 Mins',
         'srv-deadboot-title': 'Dead Boot & Board Fix',
         'srv-deadboot-desc': 'Motherboard flashing, Qualcomm 9008 EDL revival, direct ISP memory reconstruction, and deeply bricked device resurrection.',
         'srv-deadboot-time': 'Same Day Turnaround',
-        'btn-inquire': 'Inquire',
+        'btn-inquire': 'Ask on WhatsApp',
         'est-title-1': 'Instant Diagnostic',
-        'est-title-2': 'Estimator',
-        'est-sub': 'Select your device platform and failure type for an immediate cost range and procedure estimate.',
-        'est-lbl-plat': 'Platform',
-        'est-lbl-issue': 'Failure / Symptom',
-        'est-lbl-model': 'Model (Optional)',
-        'btn-calc': 'Calculate',
-        'contact-title-1': 'Establish',
-        'contact-title-2': 'Connection',
-        'contact-sub': 'Direct communication channels and shop location for proprietor Tanvir Iqbal in Badarganj, Rangpur.',
+        'est-title-2': 'Cost Estimator',
+        'est-sub': 'Select your phone type and problem below for an immediate cost range and repair time estimate.',
+        'est-lbl-plat': '1. Phone Type',
+        'est-lbl-issue': '2. Problem / Symptom',
+        'est-lbl-model': '3. Phone Model (Optional)',
+        'est-opt-plat-default': 'Select Phone Type…',
+        'est-opt-plat-apple': 'Apple (iPhone / iPad)',
+        'est-opt-plat-android': 'Android (Samsung / Xiaomi / Others)',
+        'est-opt-issue-default': 'Select Problem…',
+        'est-opt-issue-icloud': 'iCloud Activation Lock',
+        'est-opt-issue-disabled': 'iPhone Disabled / Unavailable Screen',
+        'est-opt-issue-restore': 'Unable to Activate / Baseband Fix',
+        'est-opt-issue-frp': 'Android Google Account (FRP) Lock',
+        'est-opt-issue-deadboot': 'Dead Phone / Won’t Turn On (9008)',
+        'est-opt-issue-network': 'SIM Network / Country Lock',
+        'est-opt-issue-hardware': 'Motherboard Power / Chip Repair',
+        'est-model-placeholder': 'e.g. iPhone 13, Redmi Note 12…',
+        'btn-calc': 'Calculate Cost',
+        'btn-confirm-wa': 'Confirm on WhatsApp',
+        'contact-title-1': 'Visit or Contact',
+        'contact-title-2': 'Mobile Express',
+        'contact-sub': 'Direct WhatsApp desk, Facebook page, and showroom address for proprietor Tanvir Iqbal in Badarganj, Rangpur.',
         'contact-pill-2-sub': 'Official WhatsApp Desk',
-        'contact-pill-4-sub': 'Shop Location',
+        'contact-pill-4-sub': 'Showroom Address',
         'contact-pill-4-val': 'Mita Cinema Hall Adjacent, Zilla Parishad Market, Badarganj, Rangpur',
         'contact-pill-5-sub': 'Official Facebook Page',
-        'qr-scan-label': 'Scan to Connect on WhatsApp',
-        'ethics-text': '"The honest and trustworthy merchant will be with the prophets, the truthful ones, and the martyrs on the Day of Resurrection."',
+        'qr-scan-label': 'Scan to Chat on WhatsApp',
+        'ethics-text': '“The honest and trustworthy merchant will be with the prophets, the truthful ones, and the martyrs on the Day of Resurrection.”',
         'ethics-ref': '[Sunan At-Tirmidhi, Hadith No. 1209]',
         'inv-header-1': 'Certified Smartphone',
         'inv-header-2': 'Inventory',
-        'inv-header-sub': 'Looking to buy, exchange, or sell your smartphone? Explore 24+ handpicked, motherboard-tested devices at <br><a href="https://maps.app.goo.gl/1e6A4LQxwAeqnt4p8" target="_blank" rel="noopener noreferrer" class="location-highlight" title="Get Directions to Mobile Express on Google Maps"><i class="fa-solid fa-location-dot"></i> Badarganj, Rangpur</a> with our 7-Day Replacement Guarantee.',
-        'inv-search-placeholder': 'Search by name, brand, processor, camera (e.g. Note 13, 108MP, G99)...',
+        'inv-header-sub': 'Looking to buy, exchange, or sell your smartphone? Explore 24+ handpicked, motherboard-tested devices in <a href="https://maps.app.goo.gl/1e6A4LQxwAeqnt4p8" target="_blank" rel="noopener noreferrer" class="location-highlight" title="Get Directions to Mobile Express on Google Maps"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Badarganj, Rangpur</a> with our 7-Day Replacement Guarantee.',
+        'inv-search-placeholder': 'Search by phone name, brand, or camera (e.g. Note 13, Samsung, 108MP)…',
+        'sort-featured': 'Sort: Featured Phones',
+        'sort-price-low': 'Price: Low to High',
+        'sort-price-high': 'Price: High to Low',
+        'sort-name': 'Name: A to Z',
         'filter-all': 'All Brands',
         'filter-xiaomi': 'Xiaomi & Poco',
         'filter-samsung': 'Samsung',
@@ -130,7 +147,12 @@ const I18N_DICTIONARY = {
         'filter-oneplus': 'OnePlus',
         'filter-motorola': 'Motorola',
         'guarantee-badge': '7-Day Replacement Guarantee Included',
-        'btn-order': 'Acquire Device',
+        'btn-order': 'Order on WhatsApp',
+        'btn-reset-filter': 'Show All Phones',
+        'err-404-title': 'Page Not Found',
+        'err-404-desc': 'The page you are looking for does not exist or has been moved. Return to the home page or browse our certified phones.',
+        'err-404-home': 'Back to Home Page',
+        'err-404-inv': 'Browse Phones (24+)',
         'footer-copy': '© 2026 Mobile Express. Apple Expert Tanvir Iqbal.',
         'footer-loc': 'Mita Road, Zilla Parishad Market, Badarganj, Rangpur • Bangladesh'
     },
@@ -149,7 +171,7 @@ const I18N_DICTIONARY = {
         'apple-badge': 'অ্যাপল ও অ্যান্ড্রয়েড এক্সপার্ট সার্ভিস সেন্টার',
         'hero-title-1': 'মোবাইল এক্সপ্রেস',
         'hero-title-2': 'ক্রয় • বিনিময় • বিক্রয়।',
-        'hero-desc': 'তানভীর ইকবালের বিশ্বস্ত অ্যাপল ও স্মার্টফোন হাব — আইক্লাউড অ্যাকাউন্ট তৈরি, পাসকোড/লক রিকভারি ও বাইপাস সমাধান এবং <a href="https://maps.app.goo.gl/1e6A4LQxwAeqnt4p8" target="_blank" rel="noopener noreferrer" class="location-highlight" title="গুগল ম্যাপে শপের লোকেশন ও ডিরেকশন দেখুন"><i class="fa-solid fa-location-dot"></i> বদরগঞ্জ, রংপুরে</a> ৭ দিনের গ্যারান্টি সহ স্মার্টফোন ক্রয় • বিনিময় • বিক্রয় সুবিধা।',
+        'hero-desc': 'তানভীর ইকবালের বিশ্বস্ত অ্যাপল ও স্মার্টফোন হাব — আইক্লাউড অ্যাকাউন্ট তৈরি, পাসকোড/লক রিকভারি ও বাইপাস সমাধান এবং <a href="https://maps.app.goo.gl/1e6A4LQxwAeqnt4p8" target="_blank" rel="noopener noreferrer" class="location-highlight" title="গুগল ম্যাপে শপের লোকেশন ও ডিরেকশন দেখুন"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> বদরগঞ্জ, রংপুরে</a> ৭ দিনের গ্যারান্টি সহ স্মার্টফোন ক্রয় • বিনিময় • বিক্রয় সুবিধা।',
         'btn-browse': 'স্মার্টফোন দেখুন',
         'btn-browse-motto': 'স্মার্টফোন দেখুন ও এক্সচেঞ্জ (২৪+)',
         'btn-protocols': 'সার্ভিস প্রটোকল',
@@ -162,7 +184,7 @@ const I18N_DICTIONARY = {
         'stat-turnaround-lbl': 'এক্সপ্রেস সার্ভিস',
         'services-tag': 'ডায়াগনস্টিক',
         'services-tag-hi': 'অভিজ্ঞতা ও দক্ষতা',
-        'services-sub': 'অত্যাধুনিক হার্ডওয়্যার ডায়াগনস্টিক ও আধুনিক সফটওয়্যার সল্যুশনের মাধ্যমে লক ও ডেড ডিভাইস পুনরুজ্জীবন।',
+        'services-sub': 'অত্যাধুনিক হার্ডওয়্যার ডায়াগনস্টিক ও আধুনিক সফটওয়্যার সল্যুশনের মাধ্যমে লক ও ডেড ডিভাইস নিরাপদে সচল করা হয়।',
         'srv-apple-flagship': 'স্পেশালিস্ট সেবা',
         'srv-icloud-title': 'অ্যাপল ও আইক্লাউড ল্যাব (তৈরি, ফিক্স ও বাইপাস)',
         'srv-icloud-desc': 'অফিসিয়াল অ্যাপল আইক্লাউড অ্যাকাউন্ট তৈরি, অ্যাপল আইডি রিকভারি, রামডিস্ক ও অ্যাক্টিভেশন লক বাইপাস এবং আইফোন ডিসেবল স্ক্রিন সচলকরণ।',
@@ -173,14 +195,27 @@ const I18N_DICTIONARY = {
         'srv-deadboot-title': 'ডেড বুট ও মাদারবোর্ড ফিক্স',
         'srv-deadboot-desc': 'কোয়ালকম ৯০০৮ EDL ফ্ল্যাশিং, ডিরেক্ট ISP মেমোরি রিকভারি এবং হার্ড ব্রিক ডিভাইস সচলকরণ।',
         'srv-deadboot-time': 'সেম ডে সার্ভিস',
-        'btn-inquire': 'তথ্য জানুন',
+        'btn-inquire': 'হোয়াটসঅ্যাপে জানুন',
         'est-title-1': 'ইনস্ট্যান্ট ডায়াগনস্টিক',
         'est-title-2': 'খরচ ক্যালকুলেটর',
-        'est-sub': 'আপনার ফোনের ব্র্যান্ড ও সমস্যার ধরন নির্বাচন করে সাথে সাথে খরচের রেঞ্জ ও আনুমানিক সময় জেনে নিন।',
-        'est-lbl-plat': 'প্ল্যাটফর্ম',
-        'est-lbl-issue': 'সমস্যার ধরন',
-        'est-lbl-model': 'মডেল (ঐচ্ছিক)',
+        'est-sub': 'আপনার ফোনের ধরন ও সমস্যা নির্বাচন করে সাথে সাথে আনুমানিক খরচের রেঞ্জ ও সময় জেনে নিন।',
+        'est-lbl-plat': '১. ফোনের ধরন (প্ল্যাটফর্ম)',
+        'est-lbl-issue': '২. সমস্যার ধরন',
+        'est-lbl-model': '৩. ফোনের মডেল (ঐচ্ছিক)',
+        'est-opt-plat-default': 'ফোনের ধরন নির্বাচন করুন…',
+        'est-opt-plat-apple': 'অ্যাপল (iPhone / iPad)',
+        'est-opt-plat-android': 'অ্যান্ড্রয়েড (Samsung / Xiaomi / অন্যান্য)',
+        'est-opt-issue-default': 'সমস্যার ধরন নির্বাচন করুন…',
+        'est-opt-issue-icloud': 'আইক্লাউড অ্যাক্টিভেশন লক (iCloud Lock)',
+        'est-opt-issue-disabled': 'আইফোন ডিসেবল / আনঅ্যাভেইলেবল স্ক্রিন',
+        'est-opt-issue-restore': 'অ্যাক্টিভেশন ত্রুটি / বেসব্যান্ড রিপেয়ার',
+        'est-opt-issue-frp': 'অ্যান্ড্রয়েড গুগল অ্যাকাউন্ট লক (FRP)',
+        'est-opt-issue-deadboot': 'ফোন চালু হচ্ছে না / ডেড বুট (9008)',
+        'est-opt-issue-network': 'সিম নেটওয়ার্ক / কান্ট্রি লক',
+        'est-opt-issue-hardware': 'মাদারবোর্ড শর্ট / আইসি রিপেয়ার',
+        'est-model-placeholder': 'যেমন: iPhone 13, Redmi Note 12…',
         'btn-calc': 'হিসাব করুন',
+        'btn-confirm-wa': 'হোয়াটসঅ্যাপে কথা বলুন',
         'contact-title-1': 'সরাসরি',
         'contact-title-2': 'যোগাযোগ ও ঠিকানা',
         'contact-sub': 'স্বত্বাধিকারী তানভীর ইকবালের শোরুম ও সার্ভিস সেন্টারে যোগাযোগের ঠিকানা।',
@@ -189,12 +224,16 @@ const I18N_DICTIONARY = {
         'contact-pill-4-val': 'মিতা সিনেমা হল সংলগ্ন, জেলা পরিষদ মার্কেট, বদরগঞ্জ, রংপুর',
         'contact-pill-5-sub': 'অফিসিয়াল ফেসবুক পেজ',
         'qr-scan-label': 'হোয়াটসঅ্যাপে কানেক্ট করতে স্ক্যান করুন',
-        'ethics-text': '"রাসূলুল্লাহ (সা.) বলেছেন, \'সত্যবাদী ও আমানতদার (বিশ্বস্ত) ব্যবসায়ী কিয়ামতের দিন নবীগণ, সিদ্দিকগণ এবং শহীদগণের সাথে থাকবেন।\'"',
+        'ethics-text': '“রাসূলুল্লাহ (সা.) বলেছেন, ‘সত্যবাদী ও আমানতদার (বিশ্বস্ত) ব্যবসায়ী কিয়ামতের দিন নবীগণ, সিদ্দিকগণ এবং শহীদগণের সাথে থাকবেন।’”',
         'ethics-ref': '[সুনান আত-তিরমিজি, হাদিস নং ১২০৯]',
         'inv-header-1': 'ভেরিফাইড স্মার্টফোন',
         'inv-header-2': 'সম্ভার (ক্রয় • বিনিময় • বিক্রয়)',
-        'inv-header-sub': 'স্মার্টফোন ক্রয়, বিনিময় বা বিক্রয় করতে চান? <a href="https://maps.app.goo.gl/1e6A4LQxwAeqnt4p8" target="_blank" rel="noopener noreferrer" class="location-highlight" title="গুগল ম্যাপে শপের লোকেশন ও ডিরেকশন দেখুন"><i class="fa-solid fa-location-dot"></i> বদরগঞ্জ, রংপুরের</a> সবচেয়ে বিশ্বস্ত ২৪+ টেস্টেড হ্যান্ডসেট কালেকশন।',
-        'inv-search-placeholder': 'মডেল, ব্র্যান্ড, প্রসেসর বা ক্যামেরা দিয়ে সার্চ করুন (যেমন: Note 13, 108MP, G99)...',
+        'inv-header-sub': 'স্মার্টফোন ক্রয়, বিনিময় বা বিক্রয় করতে চান? <a href="https://maps.app.goo.gl/1e6A4LQxwAeqnt4p8" target="_blank" rel="noopener noreferrer" class="location-highlight" title="গুগল ম্যাপে শপের লোকেশন ও ডিরেকশন দেখুন"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> বদরগঞ্জ, রংপুরের</a> সবচেয়ে বিশ্বস্ত ২৪+ টেস্টেড হ্যান্ডসেট কালেকশন।',
+        'inv-search-placeholder': 'মডেল, ব্র্যান্ড, প্রসেসর বা ক্যামেরা দিয়ে সার্চ করুন (যেমন: Note 13, 108MP, G99)…',
+        'sort-featured': 'সাজান: জনপ্রিয় ফোন আগে',
+        'sort-price-low': 'দাম: কম থেকে বেশি',
+        'sort-price-high': 'দাম: বেশি থেকে কম',
+        'sort-name': 'নাম: A থেকে Z',
         'filter-all': 'সকল ব্র্যান্ড',
         'filter-xiaomi': 'শাওমি ও পোকো',
         'filter-samsung': 'স্যামসাং',
@@ -206,6 +245,11 @@ const I18N_DICTIONARY = {
         'filter-motorola': 'মটোরোলা',
         'guarantee-badge': '৭ দিনের রিপ্লেসমেন্ট গ্যারান্টি অন্তর্ভুক্ত',
         'btn-order': 'অর্ডার / তথ্য জানুন',
+        'btn-reset-filter': 'সব ফোন দেখুন',
+        'err-404-title': 'পৃষ্ঠাটি খুঁজে পাওয়া যায়নি',
+        'err-404-desc': 'আপনি যে পৃষ্ঠাটি খুঁজছেন তা পাওয়া যায়নি বা সরানো হয়েছে। হোম পেজে ফিরে যান অথবা আমাদের স্মার্টফোন কালেকশন দেখুন।',
+        'err-404-home': 'হোম পেজে ফিরুন',
+        'err-404-inv': 'স্মার্টফোন কালেকশন (২৪+)',
         'footer-copy': '© ২০২৬ মোবাইল এক্সপ্রেস। অ্যাপল এক্সপার্ট তানভীর ইকবাল।',
         'footer-loc': 'মিতা রোড, জেলা পরিষদ মার্কেট, বদরগঞ্জ, রংপুর • বাংলাদেশ'
     }
@@ -228,11 +272,17 @@ function initLanguageManager() {
             if (typeof window.reRenderInventory === 'function') {
                 window.reRenderInventory();
             }
+            // Refresh open diagnostic calculator result if visible
+            if (typeof window.refreshEstimatorResult === 'function') {
+                window.refreshEstimatorResult();
+            }
         });
     });
 }
 
 function applyLanguage(lang) {
+    document.documentElement.setAttribute('lang', lang);
+    document.documentElement.classList.toggle('lang-bn', lang === 'bn');
     document.body.classList.toggle('lang-bn', lang === 'bn');
 
     // Update segmented toggle state (BN on left, EN on right)
@@ -262,10 +312,15 @@ function applyLanguage(lang) {
         }
     });
 
-    // Update search inputs placeholders
+    // Update search & model inputs placeholders
     const searchInputs = document.querySelectorAll('#inv-search');
     searchInputs.forEach(input => {
         input.placeholder = dict['inv-search-placeholder'] || input.placeholder;
+    });
+
+    const modelInputs = document.querySelectorAll('#calc-model');
+    modelInputs.forEach(input => {
+        input.placeholder = dict['est-model-placeholder'] || input.placeholder;
     });
 
     // Refresh nav pill position for updated text widths
@@ -281,11 +336,12 @@ function toBengaliDigits(number) {
 }
 
 /* ==========================================================================
-   3. 3D Architectural Parallax Kinetic Ribbons Engine
+   3. 3D Architectural Parallax Kinetic Ribbons Engine (Safe Hook)
    ========================================================================== */
 function initCrossingBandsParallax() {
     const elements = document.querySelectorAll('.card-band, .band-beam');
     if (!elements.length) return;
+    if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
     let ticking = false;
 
@@ -348,7 +404,7 @@ function initGlassNavbar() {
 }
 
 /* ==========================================================================
-   4.1 Buttery Smooth Top Navbar Pill Selector Indicator
+   4.1 Top Navbar Pill Selector Indicator
    ========================================================================== */
 function initNavPillSelector() {
     const navLinksContainer = document.querySelector('.nav-links');
@@ -375,14 +431,15 @@ function initNavPillSelector() {
         const targetRect = targetLink.getBoundingClientRect();
         const containerRect = navLinksContainer.getBoundingClientRect();
 
-        // Subpixel precision coordinate math
         const left = Math.round((targetRect.left - containerRect.left) * 10) / 10;
         const width = Math.round(targetRect.width * 10) / 10;
+
+        const easeTransition = 'transform 0.25s cubic-bezier(0.22, 1, 0.36, 1), width 0.25s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.16s ease-out';
 
         if (!animate) {
             indicator.style.transition = 'none';
         } else {
-            indicator.style.transition = 'transform 0.35s cubic-bezier(0.25, 1, 0.35, 1), width 0.35s cubic-bezier(0.25, 1, 0.35, 1), opacity 0.2s ease';
+            indicator.style.transition = easeTransition;
         }
 
         indicator.style.transform = `translate3d(${left}px, 0, 0)`;
@@ -390,19 +447,17 @@ function initNavPillSelector() {
         indicator.style.opacity = '1';
 
         if (!animate) {
-            indicator.offsetHeight; // force reflow
-            indicator.style.transition = 'transform 0.35s cubic-bezier(0.25, 1, 0.35, 1), width 0.35s cubic-bezier(0.25, 1, 0.35, 1), opacity 0.2s ease';
+            indicator.offsetHeight;
+            indicator.style.transition = easeTransition;
         }
     };
 
-    // Position indicator once layout and fonts are ready
     const initPosition = () => updatePillPosition(currentActiveLink, false);
     requestAnimationFrame(initPosition);
     if (document.fonts && document.fonts.ready) {
         document.fonts.ready.then(initPosition);
     }
 
-    // Helper for buttery smooth scrolling with header offset
     const smoothScrollTo = (targetId) => {
         if (targetId === 'hero') {
             window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -411,7 +466,7 @@ function initNavPillSelector() {
         const targetEl = document.getElementById(targetId);
         if (!targetEl) return;
         const isMobile = window.innerWidth <= 960;
-        const headerOffset = isMobile ? 80 : 105;
+        const headerOffset = isMobile ? 76 : 96;
         const targetPosition = targetEl.getBoundingClientRect().top + window.pageYOffset;
         const offsetPosition = Math.max(0, targetPosition - headerOffset);
         window.scrollTo({
@@ -420,7 +475,8 @@ function initNavPillSelector() {
         });
     };
 
-    // Handle clicks: smoothly glide the indicator to clicked tab and lock scroll spy during travel
+    const isIndexPage = window.location.pathname.endsWith('index.html') || window.location.pathname === '/' || !window.location.pathname.includes('.html');
+
     links.forEach(link => {
         link.addEventListener('click', (e) => {
             const href = link.getAttribute('href');
@@ -449,9 +505,8 @@ function initNavPillSelector() {
         });
     });
 
-    // Also bind generic anchor links like .btn-secondary (#services)
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        if (!anchor.closest('.nav-links') && !anchor.closest('.drawer-links')) {
+        if (!anchor.closest('.nav-links') && !anchor.closest('.drawer-links') && !anchor.classList.contains('skip-link')) {
             anchor.addEventListener('click', (e) => {
                 const targetId = anchor.getAttribute('href').replace(/^#/, '');
                 const targetEl = document.getElementById(targetId);
@@ -466,8 +521,6 @@ function initNavPillSelector() {
         }
     });
 
-    // Scroll spy for in-page sections on index.html
-    const isIndexPage = window.location.pathname.endsWith('index.html') || window.location.pathname === '/' || !window.location.pathname.includes('.html');
     if (isIndexPage) {
         const sectionIds = ['hero', 'services', 'estimator', 'contact'];
         const sections = sectionIds.map(id => document.getElementById(id)).filter(Boolean);
@@ -515,7 +568,6 @@ function initNavPillSelector() {
         }, { passive: true });
     }
 
-    // Check if page was loaded with a hash (e.g. user clicked Diagnostics, Estimator, Contact from inventory.html)
     if (isIndexPage && window.location.hash) {
         const targetId = window.location.hash.replace(/^#/, '');
         const targetEl = document.getElementById(targetId);
@@ -541,7 +593,6 @@ function initNavPillSelector() {
                 smoothScrollTo(targetId);
             };
 
-            // Run at multiple frames to ensure fonts and layout have stabilized
             setTimeout(executeInitialScroll, 50);
             setTimeout(executeInitialScroll, 250);
             if (document.fonts && document.fonts.ready) {
@@ -550,13 +601,11 @@ function initNavPillSelector() {
         }
     }
 
-    // Handle window resize
     window.addEventListener('resize', () => {
         const active = navLinksContainer.querySelector('a.active') || currentActiveLink;
         updatePillPosition(active, false);
     });
 
-    // Language / dynamic refresh hook
     window.refreshNavPill = () => {
         setTimeout(() => {
             const active = navLinksContainer.querySelector('a.active') || currentActiveLink;
@@ -577,15 +626,19 @@ function initMobileDrawer() {
 
     if (!toggleBtn || !drawer || !overlay) return;
 
+    const isIndexPage = window.location.pathname.endsWith('index.html') || window.location.pathname === '/' || !window.location.pathname.includes('.html');
+
     const openDrawer = () => {
         drawer.classList.add('open');
         overlay.classList.add('active');
+        toggleBtn.setAttribute('aria-expanded', 'true');
         document.body.style.overflow = 'hidden';
     };
 
     const closeDrawer = () => {
         drawer.classList.remove('open');
         overlay.classList.remove('active');
+        toggleBtn.setAttribute('aria-expanded', 'false');
         document.body.style.overflow = '';
     };
 
@@ -607,7 +660,7 @@ function initMobileDrawer() {
                             window.scrollTo({ top: 0, behavior: 'smooth' });
                         } else {
                             const isMobile = window.innerWidth <= 960;
-                            const headerOffset = isMobile ? 80 : 105;
+                            const headerOffset = isMobile ? 76 : 96;
                             const targetPosition = targetEl.getBoundingClientRect().top + window.pageYOffset;
                             const offsetPosition = Math.max(0, targetPosition - headerOffset);
                             window.scrollTo({
@@ -631,6 +684,7 @@ function initMobileDrawer() {
     document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape' && drawer.classList.contains('open')) {
             closeDrawer();
+            toggleBtn.focus();
         }
     });
 }
@@ -641,7 +695,10 @@ function initMobileDrawer() {
 function initDiagnosticCalculator() {
     const brandSelect = document.getElementById('calc-brand');
     const issueSelect = document.getElementById('calc-issue');
+    const modelInput = document.getElementById('calc-model');
     const btn = document.getElementById('calc-btn');
+    const feedbackBox = document.getElementById('calc-feedback');
+    const feedbackText = document.getElementById('calc-feedback-text');
     const resultBox = document.getElementById('calc-result');
     const resultTitle = document.getElementById('calc-result-title');
     const resultDesc = document.getElementById('calc-result-desc');
@@ -688,14 +745,41 @@ function initDiagnosticCalculator() {
         }
     };
 
-    btn.addEventListener('click', () => {
+    const clearValidation = () => {
+        brandSelect.classList.remove('input-error');
+        issueSelect.classList.remove('input-error');
+        if (feedbackBox) feedbackBox.classList.remove('visible');
+    };
+
+    brandSelect.addEventListener('change', clearValidation);
+    issueSelect.addEventListener('change', clearValidation);
+
+    const computeEstimate = (scrollIntoView = true) => {
         const brand = brandSelect.value;
         const issue = issueSelect.value;
+        const model = modelInput ? modelInput.value.trim() : '';
 
         if (!brand || !issue) {
-            alert(currentLanguage === 'bn' ? 'দয়া করে প্ল্যাটফর্ম ও সমস্যার ধরন নির্বাচন করুন।' : 'Please select both the platform and the failure type.');
+            const msg = currentLanguage === 'bn'
+                ? 'দয়া করে ১ নং ঘর থেকে ফোনের ধরন এবং ২ নং ঘর থেকে সমস্যার ধরন নির্বাচন করুন।'
+                : 'Please select both your phone type (Step 1) and the problem (Step 2) to calculate the cost.';
+            if (feedbackBox && feedbackText) {
+                feedbackText.textContent = msg;
+                feedbackBox.classList.add('visible');
+                if (!brand) {
+                    brandSelect.classList.add('input-error');
+                    brandSelect.focus();
+                } else {
+                    issueSelect.classList.add('input-error');
+                    issueSelect.focus();
+                }
+            } else {
+                alert(msg);
+            }
             return;
         }
+
+        clearValidation();
 
         const category = brand === 'apple' ? 'apple' : 'android';
         const rawData = database[category] && database[category][issue];
@@ -707,18 +791,34 @@ function initDiagnosticCalculator() {
         };
 
         if (resultBox && resultTitle && resultDesc && resultBtn) {
-            resultTitle.textContent = `${data.title} (${data.time})`;
+            const modelSuffix = model ? ` — ${model}` : '';
+            resultTitle.textContent = `${data.title}${modelSuffix} (${data.time})`;
             resultDesc.textContent = `${currentLanguage === 'bn' ? 'আনুমানিক ডায়াগনস্টিক খরচ' : 'Diagnostic Cost Range'}: ${data.cost}. ${data.note}`;
 
             const text = encodeURIComponent(currentLanguage === 'bn'
-                ? `আসসালামু আলাইকুম মোবাইল এক্সপ্রেস, আমি ${brand.toUpperCase()} - ${data.title} সম্পর্কিত সার্ভিস নিতে চাচ্ছি।`
-                : `Hello Mobile Express, I would like to consult about ${brand.toUpperCase()} - ${data.title}. Issue: ${issue}`);
+                ? `আসসালামু আলাইকুম মোবাইল এক্সপ্রেস, আমি ${brand.toUpperCase()}${model ? ' (' + model + ')' : ''} - ${data.title} সম্পর্কিত সার্ভিস নিতে চাচ্ছি।`
+                : `Hello Mobile Express, I would like to consult about ${brand.toUpperCase()}${model ? ' (' + model + ')' : ''} - ${data.title}. Issue: ${issue}`);
             resultBtn.href = `https://wa.me/8801834254875?text=${text}`;
 
             resultBox.classList.add('visible');
-            resultBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            if (scrollIntoView) {
+                resultBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            }
         }
-    });
+    };
+
+    btn.addEventListener('click', () => computeEstimate(true));
+
+    window.refreshEstimatorResult = () => {
+        if (resultBox && resultBox.classList.contains('visible') && brandSelect.value && issueSelect.value) {
+            computeEstimate(false);
+        }
+        if (feedbackBox && feedbackBox.classList.contains('visible') && feedbackText) {
+            feedbackText.textContent = currentLanguage === 'bn'
+                ? 'দয়া করে ১ নং ঘর থেকে ফোনের ধরন এবং ২ নং ঘর থেকে সমস্যার ধরন নির্বাচন করুন।'
+                : 'Please select both your phone type (Step 1) and the problem (Step 2) to calculate the cost.';
+        }
+    };
 }
 
 /* ==========================================================================
@@ -726,18 +826,18 @@ function initDiagnosticCalculator() {
    ========================================================================== */
 const INVENTORY_DATA = [
     { id: 1, brand: 'Xiaomi', name: 'Redmi Note 13', price: 22999, tag: { en: 'Bestseller', bn: 'বেস্টসেলার' }, specs: ['AMOLED 120Hz 6.67"', 'Snapdragon 685 (6nm)', '108MP Triple Camera', '5000mAh | 33W Fast'], img: 'https://fdn2.gsmarena.com/vv/bigpic/xiaomi-redmi-note-13-4g.jpg' },
-    { id: 2, brand: 'Xiaomi', name: 'Redmi Note 12', price: 19500, tag: { en: 'Popular', bn: 'জনপ্রিয়' }, specs: ['AMOLED 120Hz Display', 'Snapdragon 685 Chip', '50MP AI Triple Cam', '5000mAh Battery'], img: 'https://fdn2.gsmarena.com/vv/bigpic/xiaomi-redmi-note-12.jpg' },
+    { id: 2, brand: 'Xiaomi', name: 'Redmi Note 12', price: 19500, tag: { en: 'Popular', bn: 'জনপ্রিয়' }, specs: ['AMOLED 120Hz Display', 'Snapdragon 685 Chip', '50MP AI Triple Cam', '5000mAh Battery'], img: 'https://fdn2.gsmarena.com/vv/bigpic/xiaomi-redmi-note-12-5g.jpg' },
     { id: 3, brand: 'Xiaomi', name: 'Redmi 12', price: 16999, tag: { en: 'Budget King', bn: 'বাজেট কিং' }, specs: ['90Hz FHD+ IPS Display', 'MediaTek Helio G88', '50MP Triple Camera', 'Glass Back Finish'], img: 'https://fdn2.gsmarena.com/vv/bigpic/xiaomi-redmi-12.jpg' },
     { id: 4, brand: 'Poco', name: 'Poco X5 Pro 5G', price: 32000, tag: { en: 'Performance', bn: 'হাই স্পিড' }, specs: ['120Hz Flow AMOLED', 'Snapdragon 778G 5G', '108MP Pro Camera', '67W Turbo Charge'], img: 'https://fdn2.gsmarena.com/vv/bigpic/xiaomi-poco-x5-pro-5g.jpg' },
     { id: 5, brand: 'Poco', name: 'Poco M5', price: 15500, tag: { en: 'Gaming Entry', bn: 'গেমিং চয়েস' }, specs: ['90Hz DynamicSwitch', 'Helio G99 (6nm)', '50MP AI Camera', '5000mAh Long-Life'], img: 'https://fdn2.gsmarena.com/vv/bigpic/xiaomi-poco-m5-.jpg' },
 
     { id: 6, brand: 'Realme', name: 'Realme 11 Pro 5G', price: 35000, tag: { en: 'Curved OLED', bn: 'কার্ভড ওলেড' }, specs: ['120Hz Curved AMOLED', 'Dimensity 7050 5G', '100MP OIS Camera', '67W SuperVOOC'], img: 'https://fdn2.gsmarena.com/vv/bigpic/realme-11-pro.jpg' },
     { id: 7, brand: 'Realme', name: 'Realme C55', price: 18999, tag: { en: 'Mini Capsule', bn: 'মিনি ক্যাপসুল' }, specs: ['90Hz FHD+ Screen', 'Helio G88 Gaming Chip', '64MP AI Main Cam', '33W Dart Charge'], img: 'https://fdn2.gsmarena.com/vv/bigpic/realme-c55.jpg' },
-    { id: 8, brand: 'Realme', name: 'Realme 10', price: 20000, tag: { en: 'Super AMOLED', bn: 'সুপার অ্যামোলেড' }, specs: ['Super AMOLED 90Hz', 'Helio G99 6nm', '50MP Color AI Cam', 'Ultra-Slim 7.9mm'], img: 'https://fdn2.gsmarena.com/vv/bigpic/realme-10-4g.jpg' },
+    { id: 8, brand: 'Realme', name: 'Realme 10', price: 20000, tag: { en: 'Super AMOLED', bn: 'সুপার অ্যামোলেড' }, specs: ['Super AMOLED 90Hz', 'Helio G99 6nm', '50MP Color AI Cam', 'Ultra-Slim 7.9mm'], img: 'https://fdn2.gsmarena.com/vv/bigpic/realme-10.jpg' },
     { id: 9, brand: 'Realme', name: 'Realme C53', price: 14999, tag: { en: 'Budget Pick', bn: 'বাজেট পিক' }, specs: ['90Hz Display', 'Unisoc T612 Octa-Core', '50MP Dual Camera', '33W Fast Charge'], img: 'https://fdn2.gsmarena.com/vv/bigpic/realme-c53.jpg' },
 
-    { id: 10, brand: 'Samsung', name: 'Galaxy A24', price: 24500, tag: { en: 'OIS Camera', bn: 'OIS ক্যামেরা' }, specs: ['Super AMOLED 90Hz', 'Helio G99 Processor', '50MP Main with OIS', '5000mAh Battery'], img: 'https://fdn2.gsmarena.com/vv/bigpic/samsung-galaxy-a24-4g.jpg' },
-    { id: 11, brand: 'Samsung', name: 'Galaxy M14 5G', price: 21000, tag: { en: '6000mAh Monster', bn: '৬০০০mAh ব্যাটারি' }, specs: ['90Hz FHD+ Display', 'Exynos 1330 (5nm)', '50MP Triple Camera', '6000mAh Massive Bat'], img: 'https://fdn2.gsmarena.com/vv/bigpic/samsung-galaxy-m14-5g.jpg' },
+    { id: 10, brand: 'Samsung', name: 'Galaxy A24', price: 24500, tag: { en: 'OIS Camera', bn: 'OIS ক্যামেরা' }, specs: ['Super AMOLED 90Hz', 'Helio G99 Processor', '50MP Main with OIS', '5000mAh Battery'], img: 'https://fdn2.gsmarena.com/vv/bigpic/samsung-galaxy-a24-4g-2.jpg' },
+    { id: 11, brand: 'Samsung', name: 'Galaxy M14 5G', price: 21000, tag: { en: '6000mAh Monster', bn: '৬০০০mAh ব্যাটারি' }, specs: ['90Hz FHD+ Display', 'Exynos 1330 (5nm)', '50MP Triple Camera', '6000mAh Massive Bat'], img: 'https://fdn2.gsmarena.com/vv/bigpic/samsung-galaxy-m14-4g.jpg' },
     { id: 12, brand: 'Samsung', name: 'Galaxy A14', price: 18500, tag: { en: 'Reliable', bn: 'দীর্ঘস্থায়ী' }, specs: ['6.6" FHD+ Large Screen', 'Octa-core Processor', '50MP Triple Camera', '13MP High-res Selfie'], img: 'https://fdn2.gsmarena.com/vv/bigpic/samsung-galaxy-a14-4g.jpg' },
     { id: 13, brand: 'Samsung', name: 'Galaxy A04s', price: 13500, tag: { en: 'Entry Level', bn: 'এন্ট্রি লেভেল' }, specs: ['90Hz Smooth Display', 'Exynos 850 Stable', '50MP Triple Camera', 'Dolby Atmos Audio'], img: 'https://fdn2.gsmarena.com/vv/bigpic/samsung-galaxy-a04s.jpg' },
 
@@ -763,6 +863,7 @@ function initInventoryCatalog() {
     if (!grid) return;
 
     const searchInput = document.getElementById('inv-search');
+    const clearSearchBtn = document.getElementById('inv-search-clear');
     const sortSelect = document.getElementById('inv-sort');
     const filterChips = document.querySelectorAll('.chip-btn');
     const countDisplay = document.getElementById('inv-count');
@@ -770,6 +871,19 @@ function initInventoryCatalog() {
     let currentFilter = 'all';
     let currentSearch = '';
     let currentSort = 'featured';
+
+    const resetAllFilters = () => {
+        currentFilter = 'all';
+        currentSearch = '';
+        currentSort = 'featured';
+        if (searchInput) searchInput.value = '';
+        if (clearSearchBtn) clearSearchBtn.classList.remove('visible');
+        if (sortSelect) sortSelect.value = 'featured';
+        filterChips.forEach(c => {
+            c.classList.toggle('active', c.getAttribute('data-filter') === 'all');
+        });
+        render();
+    };
 
     const render = () => {
         let filtered = INVENTORY_DATA.filter(item => {
@@ -799,13 +913,21 @@ function initInventoryCatalog() {
         }
 
         if (filtered.length === 0) {
+            const resetLbl = currentLanguage === 'bn' ? 'সব ফোন দেখুন' : 'Show All Phones';
             grid.innerHTML = `
-                <div style="grid-column: 1 / -1; text-align: center; padding: 60px 20px; color: var(--text-secondary);">
-                    <i class="fa-solid fa-mobile-screen-button" style="font-size: 3rem; color: var(--text-dim); margin-bottom: 16px; display:block;"></i>
-                    <h3 style="margin-bottom:8px;">${currentLanguage === 'bn' ? 'কোনো হ্যান্ডসেট পাওয়া যায়নি' : 'No smartphones match your filter'}</h3>
-                    <p>${currentLanguage === 'bn' ? 'অন্য কোনো মডেল সার্চ করুন অথবা ব্র্যান্ড ফিল্টার পরিবর্তন করুন।' : 'Try searching for a different model or clearing your active brand filter.'}</p>
+                <div class="inv-empty-state">
+                    <i class="fa-solid fa-mobile-screen-button empty-icon" aria-hidden="true"></i>
+                    <h3>${currentLanguage === 'bn' ? 'কোনো হ্যান্ডসেট পাওয়া যায়নি' : 'No smartphones match your filter'}</h3>
+                    <p>${currentLanguage === 'bn' ? 'অন্য কোনো মডেল সার্চ করুন অথবা নিচের বাটনে ক্লিক করে সব ফোন দেখুন।' : 'Try searching for a different model or click the button below to view all available phones.'}</p>
+                    <button type="button" id="inv-reset-btn" class="btn-primary">
+                        <i class="fa-solid fa-rotate-left" aria-hidden="true"></i> <span>${resetLbl}</span>
+                    </button>
                 </div>
             `;
+            const resetBtn = document.getElementById('inv-reset-btn');
+            if (resetBtn) {
+                resetBtn.addEventListener('click', resetAllFilters);
+            }
             return;
         }
 
@@ -817,16 +939,16 @@ function initInventoryCatalog() {
                 ? `আসসালামু আলাইকুম মোবাইল এক্সপ্রেস, আমি ${item.brand} ${item.name} (৳${formattedPrice}) ক্রয় করতে আগ্রহী। এটি কি স্টকে আছে?`
                 : `Assalamu Alaikum Mobile Express, I am interested in purchasing the ${item.brand} ${item.name} (৳${formattedPrice}). Is it available in store?`);
 
-            const specsList = item.specs.map(s => `<li><i class="fa-solid fa-microchip"></i> <span>${s}</span></li>`).join('');
+            const specsList = item.specs.map(s => `<li><i class="fa-solid fa-microchip" aria-hidden="true"></i> <span>${s}</span></li>`).join('');
 
             return `
-                <div class="inv-card">
+                <article class="inv-card">
                     <div class="inv-card-top">
                         <span class="inv-badge-top">${itemTag}</span>
                         <span class="inv-brand">${item.brand}</span>
                     </div>
                     <div class="inv-img">
-                        <img src="${item.img}" alt="${item.name}" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="this.onerror=null; this.src='Mobile Express.svg';">
+                        <img src="${item.img}" alt="${item.brand} ${item.name}" width="150" height="150" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="this.onerror=null; this.src='Mobile Express.svg';">
                     </div>
                     <h3>${item.name}</h3>
                     <div class="inv-price">৳ ${formattedPrice}</div>
@@ -834,9 +956,9 @@ function initInventoryCatalog() {
                         ${specsList}
                     </ul>
                     <a href="https://wa.me/8801834254875?text=${waText}" target="_blank" rel="noopener noreferrer" class="btn-primary btn-full">
-                        <i class="fa-brands fa-whatsapp"></i> <span>${btnText}</span>
+                        <i class="fa-brands fa-whatsapp" aria-hidden="true"></i> <span>${btnText}</span>
                     </a>
-                </div>
+                </article>
             `;
         }).join('');
     };
@@ -846,6 +968,19 @@ function initInventoryCatalog() {
     if (searchInput) {
         searchInput.addEventListener('input', (e) => {
             currentSearch = e.target.value.trim();
+            if (clearSearchBtn) {
+                clearSearchBtn.classList.toggle('visible', currentSearch.length > 0);
+            }
+            render();
+        });
+    }
+
+    if (clearSearchBtn && searchInput) {
+        clearSearchBtn.addEventListener('click', () => {
+            searchInput.value = '';
+            currentSearch = '';
+            clearSearchBtn.classList.remove('visible');
+            searchInput.focus();
             render();
         });
     }
@@ -879,4 +1014,3 @@ function initServiceWorker() {
         });
     }
 }
-

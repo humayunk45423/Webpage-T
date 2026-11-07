@@ -40,7 +40,7 @@
     <meta name="twitter:image" content="https://mobileexpress.vercel.app/Mobile%20Express.svg">
     <meta name="twitter:image:alt" content="Mobile Express Logo">
 
-    <meta name="theme-color" content="#f3f5f9">
+    <meta name="theme-color" content="#f5f5f7">
     <meta name="referrer" content="no-referrer">
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-capable" content="yes">
@@ -63,7 +63,7 @@
     <!-- Typography (English & Bengali Fonts) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Anek+Bangla:wght@400;500;600;700;800&family=Noto+Sans+Bengali:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Anek+Bangla:wght@400;500;600;700;800&family=Noto+Sans+Bengali:wght@400;500;600;700;800;900&family=Public+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     
     <!-- Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
@@ -137,6 +137,7 @@
     </script>
 </head>
 <body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
 
     <!-- 3D Kinetic Parallax Architectural Ribbons -->
     <div class="parallax-environment" aria-hidden="true">
@@ -275,7 +276,7 @@
         </div>
     </aside>
 
-    <main class="app-content">
+    <main id="main-content" class="app-content">
         
         <!-- Hero Section -->
         <section id="hero" class="hero-section glass-panel">
@@ -327,33 +328,39 @@
             
             <div class="bento-grid">
                 <div class="service-card glass-panel featured-apple-card">
-                    <span class="featured-tag"><i class="fa-brands fa-apple"></i> <span data-i18n="srv-apple-flagship">Specialist Mastery</span></span>
-                    <div class="s-icon-box"><i class="fa-brands fa-apple"></i></div>
-                    <h3 data-i18n="srv-icloud-title">Apple iCloud Lab (Create, Fix & Bypass)</h3>
+                    <span class="featured-tag"><i class="fa-brands fa-apple" aria-hidden="true"></i> <span data-i18n="srv-apple-flagship">Specialist Mastery</span></span>
+                    <div class="service-card-head">
+                        <div class="s-icon-box"><i class="fa-brands fa-apple" aria-hidden="true"></i></div>
+                        <h3 data-i18n="srv-icloud-title">Apple iCloud Lab (Create, Fix & Bypass)</h3>
+                    </div>
                     <p data-i18n="srv-icloud-desc">Official Apple iCloud account creation, Apple ID security & password fix, Ramdisk activation lock bypass, and iPhone disabled screen restoration.</p>
                     <div class="service-meta-badge">
-                        <span><i class="fa-regular fa-clock"></i> <span data-i18n="srv-icloud-time">15 - 45 Mins</span></span>
-                        <a href="https://wa.me/8801834254875?text=Hello,%20I%20need%20Apple%20iCloud%20Assistance" target="_blank" style="color: var(--red-hover); font-weight: 700;"><span data-i18n="btn-inquire">Inquire</span> <i class="fa-solid fa-arrow-right"></i></a>
+                        <span><i class="fa-regular fa-clock" aria-hidden="true"></i> <span data-i18n="srv-icloud-time">15 - 45 Mins</span></span>
+                        <a href="https://wa.me/8801834254875?text=Hello,%20I%20need%20Apple%20iCloud%20Assistance" target="_blank" rel="noopener noreferrer" class="service-inquire-link"><span data-i18n="btn-inquire">Inquire</span> <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
                     </div>
                 </div>
 
                 <div class="service-card glass-panel">
-                    <div class="s-icon-box"><i class="fa-solid fa-lock-open"></i></div>
-                    <h3 data-i18n="srv-frp-title">FRP Account Removal</h3>
+                    <div class="service-card-head">
+                        <div class="s-icon-box"><i class="fa-solid fa-lock-open" aria-hidden="true"></i></div>
+                        <h3 data-i18n="srv-frp-title">FRP Account Removal</h3>
+                    </div>
                     <p data-i18n="srv-frp-desc">Instantaneous Factory Reset Protection (FRP) unlocking for Samsung, Xiaomi, Oppo, Vivo, Realme, and Infinix with zero data risk.</p>
                     <div class="service-meta-badge">
-                        <span><i class="fa-regular fa-clock"></i> <span data-i18n="srv-frp-time">10 - 25 Mins</span></span>
-                        <a href="https://wa.me/8801834254875?text=Hello,%20I%20need%20FRP%20Removal" target="_blank" style="color: var(--red-hover); font-weight: 700;"><span data-i18n="btn-inquire">Inquire</span> <i class="fa-solid fa-arrow-right"></i></a>
+                        <span><i class="fa-regular fa-clock" aria-hidden="true"></i> <span data-i18n="srv-frp-time">10 - 25 Mins</span></span>
+                        <a href="https://wa.me/8801834254875?text=Hello,%20I%20need%20FRP%20Removal" target="_blank" rel="noopener noreferrer" class="service-inquire-link"><span data-i18n="btn-inquire">Inquire</span> <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
                     </div>
                 </div>
 
                 <div class="service-card glass-panel">
-                    <div class="s-icon-box"><i class="fa-solid fa-microchip"></i></div>
-                    <h3 data-i18n="srv-deadboot-title">Dead Boot & Board Fix</h3>
+                    <div class="service-card-head">
+                        <div class="s-icon-box"><i class="fa-solid fa-microchip" aria-hidden="true"></i></div>
+                        <h3 data-i18n="srv-deadboot-title">Dead Boot & Board Fix</h3>
+                    </div>
                     <p data-i18n="srv-deadboot-desc">Motherboard flashing, Qualcomm 9008 EDL revival, direct ISP memory reconstruction, and deeply bricked device resurrection.</p>
                     <div class="service-meta-badge">
-                        <span><i class="fa-regular fa-clock"></i> <span data-i18n="srv-deadboot-time">Same Day Turnaround</span></span>
-                        <a href="https://wa.me/8801834254875?text=Hello,%20I%20have%20a%20Dead%20Boot%20Device" target="_blank" style="color: var(--red-hover); font-weight: 700;"><span data-i18n="btn-inquire">Inquire</span> <i class="fa-solid fa-arrow-right"></i></a>
+                        <span><i class="fa-regular fa-clock" aria-hidden="true"></i> <span data-i18n="srv-deadboot-time">Same Day Turnaround</span></span>
+                        <a href="https://wa.me/8801834254875?text=Hello,%20I%20have%20a%20Dead%20Boot%20Device" target="_blank" rel="noopener noreferrer" class="service-inquire-link"><span data-i18n="btn-inquire">Inquire</span> <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
                     </div>
                 </div>
             </div>
@@ -368,23 +375,23 @@
                 <div class="form-group">
                     <label for="calc-brand" class="form-label" data-i18n="est-lbl-plat">Platform</label>
                     <select id="calc-brand" class="form-control">
-                        <option value="" disabled selected>Select Platform...</option>
-                        <option value="apple">Apple (iPhone / iPad)</option>
-                        <option value="android">Android (Samsung / Xiaomi / etc.)</option>
+                        <option value="" disabled selected data-i18n="est-opt-plat-default">Select Platform...</option>
+                        <option value="apple" data-i18n="est-opt-plat-apple">Apple (iPhone / iPad)</option>
+                        <option value="android" data-i18n="est-opt-plat-android">Android (Samsung / Xiaomi / etc.)</option>
                     </select>
                 </div>
 
                 <div class="form-group">
                     <label for="calc-issue" class="form-label" data-i18n="est-lbl-issue">Failure / Symptom</label>
                     <select id="calc-issue" class="form-control">
-                        <option value="" disabled selected>Select Issue...</option>
-                        <option value="icloud">iCloud Activation Lock</option>
-                        <option value="disabled">iPhone Disabled / Unavailable</option>
-                        <option value="restore">Unable to Activate / Baseband</option>
-                        <option value="frp">Android Google FRP Lock</option>
-                        <option value="deadboot">Dead Boot / Qualcomm 9008</option>
-                        <option value="network">SIM Carrier / Region Locked</option>
-                        <option value="hardware">Motherboard Power Short</option>
+                        <option value="" disabled selected data-i18n="est-opt-issue-default">Select Issue...</option>
+                        <option value="icloud" data-i18n="est-opt-issue-icloud">iCloud Activation Lock</option>
+                        <option value="disabled" data-i18n="est-opt-issue-disabled">iPhone Disabled / Unavailable</option>
+                        <option value="restore" data-i18n="est-opt-issue-restore">Unable to Activate / Baseband</option>
+                        <option value="frp" data-i18n="est-opt-issue-frp">Android Google FRP Lock</option>
+                        <option value="deadboot" data-i18n="est-opt-issue-deadboot">Dead Boot / Qualcomm 9008</option>
+                        <option value="network" data-i18n="est-opt-issue-network">SIM Carrier / Region Locked</option>
+                        <option value="hardware" data-i18n="est-opt-issue-hardware">Motherboard Power Short</option>
                     </select>
                 </div>
 
@@ -393,9 +400,14 @@
                     <input type="text" id="calc-model" class="form-control" placeholder="e.g. iPhone 13, Note 12">
                 </div>
 
-                <button id="calc-btn" class="btn-primary" style="height: 50px; justify-content: center;">
-                    <i class="fa-solid fa-calculator"></i> <span data-i18n="btn-calc">Calculate</span>
+                <button type="button" id="calc-btn" class="btn-primary">
+                    <i class="fa-solid fa-calculator" aria-hidden="true"></i> <span data-i18n="btn-calc">Calculate</span>
                 </button>
+            </div>
+
+            <div id="calc-feedback" class="calc-feedback" role="alert" aria-live="polite">
+                <i class="fa-solid fa-circle-exclamation" aria-hidden="true"></i>
+                <span id="calc-feedback-text"></span>
             </div>
 
             <div id="calc-result" class="calc-result">
@@ -403,8 +415,8 @@
                     <div id="calc-result-title" class="calc-result-title">Selected Diagnostic Procedure</div>
                     <div id="calc-result-desc" class="calc-result-desc">Estimation details will appear here.</div>
                 </div>
-                <a id="calc-wa-btn" href="#" target="_blank" rel="noopener noreferrer" class="btn-live-support" style="flex-shrink: 0; padding: 10px 22px;">
-                    <i class="fa-brands fa-whatsapp"></i> Confirm on WhatsApp
+                <a id="calc-wa-btn" href="#" target="_blank" rel="noopener noreferrer" class="btn-live-support">
+                    <i class="fa-brands fa-whatsapp" aria-hidden="true"></i> <span data-i18n="btn-confirm-wa">Confirm on WhatsApp</span>
                 </a>
             </div>
         </section>
@@ -445,8 +457,8 @@
                 <!-- QR Code Presentation -->
                 <div class="qr-box">
                     <div class="qr-frame">
-                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=160x160&data=https%3A%2F%2Fwa.me%2F8801834254875&color=0d0e12&bgcolor=ffffff" alt="Scan to WhatsApp" loading="lazy">
-                        <div class="qr-whatsapp-icon"><i class="fa-brands fa-whatsapp"></i></div>
+                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=160x160&data=https%3A%2F%2Fwa.me%2F8801834254875&color=0d0e12&bgcolor=ffffff" alt="Scan to WhatsApp" width="140" height="140" loading="lazy" onerror="this.onerror=null; this.src='Mobile Express.svg';">
+                        <div class="qr-whatsapp-icon"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i></div>
                     </div>
                     <span data-i18n="qr-scan-label">Scan to Connect on WhatsApp</span>
                 </div>
