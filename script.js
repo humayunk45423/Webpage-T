@@ -12,6 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initMobileDrawer();
     initDiagnosticCalculator();
     initInventoryCatalog();
+    initHeroPhoneVisual();
     initServiceWorker();
 });
 
@@ -74,6 +75,10 @@ const I18N_DICTIONARY = {
         'apple-badge': 'Apple & Android Expert Service Center',
         'hero-title-1': 'Mobile Express',
         'hero-title-2': 'Buy • Exchange • Sell.',
+        'hero-chip-verified': 'Used • Verified',
+        'hero-chip-exchange': 'Exchange',
+        'hero-chip-repair': 'Repair & iCloud Unlock',
+        'hero-chip-genuine': '100% Genuine Handsets',
         'hero-desc': 'Your trusted Apple & Smartphone destination by Tanvir Iqbal — permanent iCloud bypass, expert hardware repair, and certified handset exchange in <br><a href="https://maps.app.goo.gl/1e6A4LQxwAeqnt4p8" target="_blank" rel="noopener noreferrer" class="location-highlight" title="Get Directions to Mobile Express on Google Maps"><i class="fa-solid fa-location-dot"></i> Badarganj, Rangpur</a>.',
         'btn-browse': 'Browse Handsets',
         'btn-browse-motto': 'Buy / Exchange Phones (24+)',
@@ -118,7 +123,7 @@ const I18N_DICTIONARY = {
         'ethics-ref': '[Sunan At-Tirmidhi, Hadith No. 1209]',
         'inv-header-1': 'Certified Smartphone',
         'inv-header-2': 'Inventory',
-        'inv-header-sub': 'Looking to buy, exchange, or sell your smartphone? Explore 24+ handpicked, motherboard-tested devices at <br><a href="https://maps.app.goo.gl/1e6A4LQxwAeqnt4p8" target="_blank" rel="noopener noreferrer" class="location-highlight" title="Get Directions to Mobile Express on Google Maps"><i class="fa-solid fa-location-dot"></i> Badarganj, Rangpur</a> with our 7-Day Replacement Guarantee.',
+        'inv-header-sub': 'Looking to buy, exchange, or sell your smartphone? Explore 24+ handpicked, motherboard-tested devices at <br><a href="https://maps.app.goo.gl/1e6A4LQxwAeqnt4p8" target="_blank" rel="noopener noreferrer" class="location-highlight" title="Get Directions to Mobile Express on Google Maps"><i class="fa-solid fa-location-dot"></i> Badarganj, Rangpur</a>.',
         'inv-search-placeholder': 'Search by name, brand, processor, camera (e.g. Note 13, 108MP, G99)...',
         'filter-all': 'All Brands',
         'filter-xiaomi': 'Xiaomi & Poco',
@@ -129,7 +134,7 @@ const I18N_DICTIONARY = {
         'filter-infinix': 'Infinix & Tecno',
         'filter-oneplus': 'OnePlus',
         'filter-motorola': 'Motorola',
-        'guarantee-badge': '7-Day Replacement Guarantee Included',
+        'guarantee-badge': '100% Tested & Verified Handsets',
         'btn-order': 'Acquire Device',
         'footer-copy': '© 2026 Mobile Express. Apple Expert Tanvir Iqbal.',
         'footer-loc': 'Mita Road, Zilla Parishad Market, Badarganj, Rangpur • Bangladesh'
@@ -149,7 +154,11 @@ const I18N_DICTIONARY = {
         'apple-badge': 'অ্যাপল ও অ্যান্ড্রয়েড এক্সপার্ট সার্ভিস সেন্টার',
         'hero-title-1': 'মোবাইল এক্সপ্রেস',
         'hero-title-2': 'ক্রয় • বিনিময় • বিক্রয়।',
-        'hero-desc': 'তানভীর ইকবালের বিশ্বস্ত অ্যাপল ও স্মার্টফোন হাব — আইক্লাউড অ্যাকাউন্ট তৈরি, পাসকোড/লক রিকভারি ও বাইপাস সমাধান এবং <a href="https://maps.app.goo.gl/1e6A4LQxwAeqnt4p8" target="_blank" rel="noopener noreferrer" class="location-highlight" title="গুগল ম্যাপে শপের লোকেশন ও ডিরেকশন দেখুন"><i class="fa-solid fa-location-dot"></i> বদরগঞ্জ, রংপুরে</a> ৭ দিনের গ্যারান্টি সহ স্মার্টফোন ক্রয় • বিনিময় • বিক্রয় সুবিধা।',
+        'hero-chip-verified': 'ব্যবহৃত • যাচাইকৃত',
+        'hero-chip-exchange': 'এক্সচেঞ্জ সুবিধা',
+        'hero-chip-repair': 'রিপেয়ার ও আনলক',
+        'hero-chip-genuine': '১০০% অরিজিনাল ফোন',
+        'hero-desc': 'তানভীর ইকবালের বিশ্বস্ত অ্যাপল ও স্মার্টফোন হাব — পার্মানেন্ট আইক্লাউড বাইপাস, অ্যাডভান্সড হার্ডওয়্যার রিপেয়ার ও সার্টিফাইড হ্যান্ডসেট এক্সচেঞ্জ সুবিধা নিয়ে <a href="https://maps.app.goo.gl/1e6A4LQxwAeqnt4p8" target="_blank" rel="noopener noreferrer" class="location-highlight" title="গুগল ম্যাপে শপের লোকেশন ও ডিরেকশন দেখুন"><i class="fa-solid fa-location-dot"></i> বদরগঞ্জ, রংপুর</a>।',
         'btn-browse': 'স্মার্টফোন দেখুন',
         'btn-browse-motto': 'স্মার্টফোন দেখুন ও এক্সচেঞ্জ (২৪+)',
         'btn-protocols': 'সার্ভিস প্রটোকল',
@@ -204,7 +213,7 @@ const I18N_DICTIONARY = {
         'filter-infinix': 'ইনফিনিক্স ও টেকনো',
         'filter-oneplus': 'ওয়ানপ্লাস',
         'filter-motorola': 'মটোরোলা',
-        'guarantee-badge': '৭ দিনের রিপ্লেসমেন্ট গ্যারান্টি অন্তর্ভুক্ত',
+        'guarantee-badge': '১০০% টেস্টেড ও ভেরিফাইড হ্যান্ডসেট',
         'btn-order': 'অর্ডার / তথ্য জানুন',
         'footer-copy': '© ২০২৬ মোবাইল এক্সপ্রেস। অ্যাপল এক্সপার্ট তানভীর ইকবাল।',
         'footer-loc': 'মিতা রোড, জেলা পরিষদ মার্কেট, বদরগঞ্জ, রংপুর • বাংলাদেশ'
@@ -877,6 +886,71 @@ function initServiceWorker() {
         window.addEventListener('load', () => {
             navigator.serviceWorker.register('./sw.js').catch(() => { });
         });
+    }
+}
+
+/* ==========================================================================
+   9. Hero Phone Visual & Floating Animation Management
+   Performance: Pauses idle loops when hero is off-screen or tab is hidden.
+   Parallax: Fine pointer subtle 3D depth shift.
+   ========================================================================== */
+function initHeroPhoneVisual() {
+    const stage = document.querySelector('.hero-phone-stage');
+    if (!stage) return;
+
+    // IntersectionObserver to pause animations when off-screen
+    if ('IntersectionObserver' in window) {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    stage.classList.remove('animations-paused');
+                } else {
+                    stage.classList.add('animations-paused');
+                }
+            });
+        }, { threshold: 0.05 });
+        observer.observe(stage);
+    }
+
+    // VisibilityChange to pause when tab is hidden
+    document.addEventListener('visibilitychange', () => {
+        if (document.hidden) {
+            stage.classList.add('animations-paused');
+        } else {
+            stage.classList.remove('animations-paused');
+        }
+    });
+
+    // Optional subtle desktop parallax for fine pointers
+    if (window.matchMedia('(pointer: fine) and (min-width: 992px)').matches && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        const heroSection = document.getElementById('hero');
+        const frontGroup = stage.querySelector('.phone-group-front');
+        const rightGroup = stage.querySelector('.phone-group-right');
+        const leftGroup = stage.querySelector('.phone-group-left');
+
+        if (heroSection && frontGroup) {
+            let ticking = false;
+            heroSection.addEventListener('mousemove', (e) => {
+                if (ticking) return;
+                ticking = true;
+                requestAnimationFrame(() => {
+                    const rect = heroSection.getBoundingClientRect();
+                    const x = (e.clientX - rect.left) / rect.width - 0.5;
+                    const y = (e.clientY - rect.top) / rect.height - 0.5;
+
+                    if (frontGroup) frontGroup.style.transform = `translate(${x * 8}px, ${y * 8}px)`;
+                    if (rightGroup) rightGroup.style.transform = `translate(${x * -6}px, ${y * -6}px)`;
+                    if (leftGroup) leftGroup.style.transform = `translate(${x * 4}px, ${y * -4}px)`;
+                    ticking = false;
+                });
+            });
+
+            heroSection.addEventListener('mouseleave', () => {
+                if (frontGroup) frontGroup.style.transform = '';
+                if (rightGroup) rightGroup.style.transform = '';
+                if (leftGroup) leftGroup.style.transform = '';
+            });
+        }
     }
 }
 

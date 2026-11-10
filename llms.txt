@@ -27,5 +27,5 @@
 
 ## Smartphone Inventory & Sales
 - **Catalog:** Over 24+ tested, certified mid-range and budget smartphones (Xiaomi, Poco, Realme, Samsung, Vivo, Oppo, Infinix, Tecno, OnePlus, Motorola).
-- **Warranty:** 7-Day Replacement Guarantee on all certified devices.
+- **Quality Assurance:** 100% Motherboard-Tested & Verified on all certified devices.
 - **Inventory Page:** https://mobileexpress.vercel.app/inventory.html
